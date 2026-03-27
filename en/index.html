@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIB Parts — precision metal components manufacturer. CNC machining, casting, forging, powder metallurgy and hydraulic cylinders. Full cycle from prototype to series. Latvia, EU.">
+  <meta name="keywords" content="CNC machining, metal parts, hydraulic cylinders, powder metallurgy, casting, forging, OEM manufacturer, Latvia, Europe">
+  <meta property="og:title" content="BIB Parts — Precision Metal Manufacturing">
+  <meta property="og:description" content="Custom metal components. Full cycle from prototype to series. CNC machining, casting, forging, powder metal, hydraulic cylinders.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bibparts.com/">
+  <link rel="canonical" href="https://www.bibparts.com/">
+
+  <!-- Hreflang for multilingual -->
+  <link rel="alternate" hreflang="en" href="https://www.bibparts.com/">
+  <link rel="alternate" hreflang="pl" href="https://www.bibparts.com/pl/">
+  <link rel="alternate" hreflang="de" href="https://www.bibparts.com/de/">
+  <link rel="alternate" hreflang="es" href="https://www.bibparts.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://www.bibparts.com/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://www.bibparts.com/">
+
+  <title>BIB Parts — Precision Metal Manufacturing | Prototype to Series</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Force font load before paint */
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ── CSS Variables ── */
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --gray-hero: #EEF2F0;
+      --border: #e0deda;
+      --text-muted: #888888;
+      --text-faint: #bbbbbb;
+    }
+
+    /* ── LOGO ── */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-mark {
+      display: flex;
+      align-items: stretch;
+      gap: 3px;
+      height: 32px;
+    }
+    .logo-slash {
+      border-radius: 2px;
+      transform: skewX(-8deg);
+    }
+    .logo-slash-1 {
+      width: 10px;
+      background: #1D9E75;
+    }
+    .logo-slash-2 {
+      width: 6px;
+      background: #1D9E75;
+      opacity: 0.28;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      line-height: 1;
+    }
+    .logo-bib {
+      font-family: 'Anton', sans-serif;
+      font-size: 22px;
+      color: #111111;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+    }
+    .logo-parts {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      color: #1D9E75;
+      letter-spacing: 4px;
+      line-height: 1;
+    }
+
+    /* ── NAVIGATION ── */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 48px;
+      border-bottom: 0.5px solid var(--border);
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #666;
+      list-style: none;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+
+    /* Language switcher */
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: #666;
+      background: transparent;
+      border: 0.5px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 10px;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      background: #fff;
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      padding: 4px;
+      min-width: 150px;
+      z-index: 200;
+      display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: #444;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-option .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+
+    .btn-cta {
+      background: var(--green);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 9px 20px;
+      border: none;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      min-height: 520px;
+    }
+    .hero-left {
+      padding: 72px 56px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .hero-h1 { margin-bottom: 22px; }
+    .hero-h1 .l1 {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 52px;
+      font-weight: 500;
+      line-height: 1.06;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+    .hero-h1 .l2 {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 52px;
+      font-weight: 500;
+      line-height: 1.06;
+      color: var(--green);
+      letter-spacing: -0.02em;
+    }
+    .hero-h1 .l3 {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 300;
+      font-style: italic;
+      color: #999;
+      margin-top: 12px;
+      letter-spacing: 0;
+    }
+    .hero-sub {
+      font-size: 15px;
+      color: #777;
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 460px;
+      font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 12px; }
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 13px 26px;
+      border: none;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--black);
+      font-size: 14px;
+      font-weight: 400;
+      padding: 13px 22px;
+      border: 0.5px solid var(--border);
+      border-radius: 4px;
+      transition: border-color 0.15s;
+    }
+    .btn-secondary:hover { border-color: #aaa; }
+
+    .hero-right {
+      background: var(--gray-hero);
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+    }
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Placeholder shown when no image */
+    .hero-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 420px;
+    }
+    .hero-placeholder-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #dde8e3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-placeholder p {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #9ab5ac;
+      letter-spacing: 0.06em;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(255,255,255,0.94);
+      border-radius: 6px;
+      padding: 11px 16px;
+      border: 0.5px solid rgba(0,0,0,0.07);
+      backdrop-filter: blur(4px);
+    }
+    .hero-badge-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: #999;
+      margin-bottom: 3px;
+    }
+    .hero-badge-value {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    /* ── STATS ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .stat {
+      padding: 28px 36px;
+      border-right: 0.5px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--green);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 5px;
+      line-height: 1.45;
+      font-weight: 300;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-h {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-faint);
+      font-weight: 300;
+    }
+
+    /* ── CAPABILITIES ── */
+    .capabilities { padding: 72px 48px; }
+    .caps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .cap-card {
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      padding: 26px 22px;
+      transition: border-color 0.15s;
+    }
+    .cap-card:hover { border-color: var(--green); }
+    .cap-accent {
+      width: 28px;
+      height: 3px;
+      background: var(--green);
+      margin-bottom: 16px;
+      border-radius: 1px;
+    }
+    .cap-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+    .cap-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .cap-spec {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--green);
+      margin-top: 14px;
+    }
+
+    /* ── PROJECTS ── */
+    .projects {
+      padding: 72px 48px;
+      background: var(--gray-bg);
+    }
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .proj-card {
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      border: 0.5px solid var(--border);
+      transition: border-color 0.15s;
+    }
+    .proj-card:hover { border-color: var(--green); }
+    .proj-img {
+      height: 200px;
+      background: #dde8e3;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .proj-img-placeholder {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #9ab5ac;
+    }
+    .proj-body { padding: 20px; }
+    .proj-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--green);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .proj-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--black);
+    }
+    .proj-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+      border-top: 0.5px solid var(--border);
+    }
+    .contact-desc {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.75;
+      margin-top: 14px;
+      max-width: 360px;
+      font-weight: 300;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .contact-item {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: #aaa;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .inp, .txa {
+      border: 0.5px solid var(--border);
+      border-radius: 4px;
+      padding: 11px 14px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--black);
+      background: #fff;
+      transition: border-color 0.15s;
+      width: 100%;
+    }
+    .inp:focus, .txa:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+    .txa { height: 100px; resize: none; }
+
+    /* File upload */
+    .file-label {
+      display: flex; flex-direction: column; gap: 6px;
+      border: 0.5px dashed var(--border); border-radius: 4px;
+      padding: 14px 16px; cursor: pointer; transition: border-color 0.15s;
+      position: relative;
+    }
+    .file-label:hover { border-color: var(--green); }
+    .file-label-text { font-size: 13px; font-weight: 500; color: var(--black); }
+    .file-hint { font-size: 11px; color: var(--text-faint); font-weight: 300; }
+    .file-inp { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; }
+    .file-btn {
+      display: inline-block; align-self: flex-start;
+      font-size: 12px; font-weight: 500; color: var(--green);
+      border: 0.5px solid var(--green); border-radius: 3px;
+      padding: 5px 12px; pointer-events: none;
+    }
+    .file-selected { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+    }
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--text-faint);
+      list-style: none;
+    }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: #ccc;
+    }
+
+    /* ── RESPONSIVE ── */
+
+    /* ── BURGER MENU ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 36px; height: 36px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 4px;
+      padding: 8px; cursor: pointer;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px;
+      transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none !important; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 99;
+      padding: 32px 24px;
+      flex-direction: column; gap: 0;
+      border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex !important; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border);
+      display: block;
+    }
+    .mobile-menu-link.active { color: var(--green); }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom {
+      margin-top: auto; padding-top: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff;
+      font-size: 15px; font-weight: 500; text-align: center;
+      padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 260px; }
+      .hero-left { padding: 48px 24px 40px; }
+      .hero-h1 .l1, .hero-h1 .l2 { font-size: 38px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .caps-grid { grid-template-columns: 1fr; }
+      .capabilities { padding: 48px 24px; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .projects { padding: 48px 24px; }
+      .contact { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .caps-grid { grid-template-columns: 1fr; }
+      .hero-h1 .l1, .hero-h1 .l2 { font-size: 32px; }
+      .hero-h1 .l3 { font-size: 18px; }
+    }
+  </style>
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ManufacturingBusiness",
+    "name": "BIB Parts",
+    "legalName": "Baltijas Inzenieru Birojs",
+    "url": "https://www.bibparts.com",
+    "email": "info@bibparts.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "LV"
+    },
+    "description": "Precision metal components manufacturer. CNC machining, casting, forging, powder metallurgy and hydraulic cylinders. Full cycle from prototype to series.",
+    "areaServed": "Worldwide",
+    "knowsLanguage": ["en", "pl", "de", "es", "fr"]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/en/" class="nav-logo" aria-label="BIB Parts home">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/en/capabilities/">Capabilities</a></li>
+        <li><a href="/en/projects/">Projects</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language" aria-expanded="false">
+            <span id="lang-code">EN</span>
+            <span class="lang-chevron" id="lang-chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+            <div class="lang-option active" onclick="selectLang('EN','/en/',this)" role="option">
+              <span class="lang-name">English</span><span class="lang-check" aria-label="selected">✓</span>
+            </div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/',this)" role="option">
+              <span class="lang-name">Polski</span>
+            </div>
+            <div class="lang-option" onclick="selectLang('DE','/de/',this)" role="option">
+              <span class="lang-name">Deutsch</span>
+            </div>
+            <div class="lang-option" onclick="selectLang('ES','/es/',this)" role="option">
+              <span class="lang-name">Español</span>
+            </div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/',this)" role="option">
+              <span class="lang-name">Français</span>
+            </div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/en/contact/" class="btn-cta">Get a quote</a>
+      </div>
+    </div>
+  
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/en/" class="mobile-menu-link">Home</a>
+    <a href="/en/capabilities/" class="mobile-menu-link">Capabilities</a>
+    <a href="/en/projects/" class="mobile-menu-link">Projects</a>
+    <a href="/en/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/en/contact/" class="mobile-menu-link">Contact</a>
+    <div class="mobile-menu-bottom">
+      <a href="/en/contact/" class="mobile-menu-cta">Get a quote</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn active">EN</button>
+        <button class="mobile-lang-btn">PL</button>
+        <button class="mobile-lang-btn">DE</button>
+        <button class="mobile-lang-btn">ES</button>
+        <button class="mobile-lang-btn">FR</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-left">
+      <p class="hero-tag">Metal parts manufacturer · Baltic · EU</p>
+      <h1 class="hero-h1">
+        <span class="l1">Precision parts,</span>
+        <span class="l2">full cycle.</span>
+        <span class="l3">From prototype to series.</span>
+      </h1>
+      <p class="hero-sub">Custom metal components via CNC machining, casting, forging and powder metallurgy. Hydraulic cylinders. Serving OEM, aerospace, oil&amp;gas and medical industries worldwide.</p>
+      <div class="hero-btns">
+        <a href="/en/contact/" class="btn-primary">Request a quote</a>
+        <a href="/en/capabilities/" class="btn-secondary">View capabilities →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!--
+        REPLACE THIS PLACEHOLDER WITH YOUR PHOTO:
+        <img src="/assets/images/hero-production.jpg" alt="BIB Parts production facility" loading="eager">
+      -->
+      <div class="hero-placeholder" aria-hidden="true">
+        <div class="hero-placeholder-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="1" y="5" width="22" height="14" rx="2" stroke="#8aaa9a" stroke-width="1.2"/><circle cx="12" cy="12" r="3.5" stroke="#8aaa9a" stroke-width="1.2"/></svg>
+        </div>
+        <p>Add your production photo here</p>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-label">ISO certified · Latvia · EU</div>
+        <div class="hero-badge-value">Delivering across Europe &amp; beyond</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <section class="stats" aria-label="Key numbers">
+    <div class="stat">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Product directions<br>under one roof</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">20+</div>
+      <div class="stat-label">Countries served<br>across Europe &amp; GCC</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">In-house engineering<br>from drawing to part</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">ISO</div>
+      <div class="stat-label">Quality certified<br>production</div>
+    </div>
+  </section>
+
+  <!-- ── CAPABILITIES ── -->
+  <section class="capabilities" id="capabilities" aria-labelledby="caps-heading">
+    <div class="section-tag">What we make</div>
+    <h2 class="section-h" id="caps-heading">Manufacturing capabilities</h2>
+    <p class="section-sub">Three product directions — one engineering partner.</p>
+    <div class="caps-grid">
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">CNC machined parts</h3>
+        <p class="cap-desc">Precision milling and turning for complex geometries. From single prototypes to mid-volume series. Steel, aluminium, titanium, brass.</p>
+        <p class="cap-spec">Tolerances from ±0.01 mm</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Casting &amp; forging</h3>
+        <p class="cap-desc">Die casting and forging for structural parts requiring high strength. Aluminium and iron casting with full finishing.</p>
+        <p class="cap-spec">From 50 pcs · Net shape capability</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Powder metal parts</h3>
+        <p class="cap-desc">Sintered components for high-volume production. Complex shapes, tight tolerances, minimal waste. Ideal for OEM series.</p>
+        <p class="cap-spec">High-volume · Near-net shape</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Prototyping</h3>
+        <p class="cap-desc">Rapid prototype to functional sample. DFM support, material selection, first article inspection. Start your project in days.</p>
+        <p class="cap-spec">Lead time from 5 days</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Hydraulic cylinders</h3>
+        <p class="cap-desc">Custom single- and double-acting cylinders for mobile, industrial and OEM applications. Full design, manufacturing and testing.</p>
+        <p class="cap-spec">Bore 30–500 mm · Up to 450 bar</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Engineering support</h3>
+        <p class="cap-desc">Our engineers review your drawings and suggest improvements for manufacturability, cost and lead time.</p>
+        <p class="cap-spec">DFM · DFQ · Value engineering</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="projects" id="projects" aria-labelledby="proj-heading">
+    <div class="section-tag">Case studies</div>
+    <h2 class="section-h" id="proj-heading">Selected projects</h2>
+    <p class="section-sub">Parts and assemblies delivered across industries.</p>
+    <div class="proj-grid">
+
+      <article class="proj-card">
+        <div class="proj-img">
+          <!--
+            REPLACE WITH:
+            <img src="/assets/images/project-bracket.jpg" alt="CNC aluminium structural bracket for aerospace OEM">
+          -->
+          <span class="proj-img-placeholder">project photo</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-tag">Aerospace</p>
+          <h3 class="proj-title">Structural bracket — CNC aluminium</h3>
+          <p class="proj-desc">5-axis machined, ±0.01 mm, anodised. Series of 200 pcs for European OEM.</p>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-img">
+          <!--
+            REPLACE WITH:
+            <img src="/assets/images/project-cylinder.jpg" alt="Telescopic hydraulic cylinder for forestry crane">
+          -->
+          <span class="proj-img-placeholder">project photo</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-tag">Hydraulics</p>
+          <h3 class="proj-title">Telescopic cylinder — forestry crane</h3>
+          <p class="proj-desc">3-stage, 2400 mm stroke, chrome-plated, −40°C seals.</p>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-img">
+          <!--
+            REPLACE WITH:
+            <img src="/assets/images/project-gear.jpg" alt="Powder metal sintered gear for OEM machinery">
+          -->
+          <span class="proj-img-placeholder">project photo</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-tag">OEM / Machinery</p>
+          <h3 class="proj-title">Sintered gear — powder metallurgy</h3>
+          <p class="proj-desc">High-volume PM gear, 50,000 pcs/year, consistent density and tolerances.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div>
+      <div class="section-tag">Get in touch</div>
+      <h2 class="section-h" id="contact-heading">Let's discuss<br>your project</h2>
+      <p class="contact-desc">Send us your drawings or specifications. We respond within one business day with a quote or technical questions.</p>
+      <div class="contact-info">
+        <a href="mailto:info@bibparts.com" class="contact-item">info@bibparts.com</a>
+        <span class="contact-item">Latvia · EU</span>
+      </div>
+    </div>
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" enctype="multipart/form-data" action="/en/thank-you/">
+      <input type="hidden" name="form-name" value="contact">
+      <div class="form-row">
+        <input class="inp" type="text" name="name" placeholder="Your name" required>
+        <input class="inp" type="text" name="company" placeholder="Company" required>
+      </div>
+      <input class="inp" type="email" name="email" placeholder="Email" required>
+      <input class="inp" type="text" name="subject" placeholder="Subject — machining / hydraulics / powder metal">
+      <textarea class="txa" name="message" placeholder="Describe your requirements…" required></textarea>
+      <label class="file-label">
+        <span class="file-label-text">Attach files</span>
+        <span class="file-hint">Drawings, 3D models, Excel, PDF — up to 10 MB each</span>
+        <input class="file-inp" type="file" name="attachments" multiple accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.xlsx,.xls,.docx,.doc,.txt,.zip,.png,.jpg">
+        <span class="file-btn">Choose files</span>
+        <span class="file-selected" id="file-selected">No files selected</span>
+      </label>
+      <button type="submit" class="btn-primary" style="align-self:flex-start;">Send request</button>
+    </form>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <a href="/en/" aria-label="BIB Parts home">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/en/capabilities/">Capabilities</a></li>
+        <li><a href="/en/projects/">Projects</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 BIB Parts · Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Burger menu
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+
+      // Lang switcher
+      function toggleLang() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        c.classList.toggle('open', open);
+      }
+      function selectLang(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '\u2713';
+        el.appendChild(chk);
+        window.location.href = path;
+      }
+
+      // Make toggleLang and selectLang global
+      window.toggleLang = toggleLang;
+      window.selectLang = selectLang;
+
+      // Close dropdowns on outside click
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+          if (mobileMenu && mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      // Nav shadow on scroll
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>

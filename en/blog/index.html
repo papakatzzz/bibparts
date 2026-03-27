@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIB Parts blog — insights on precision manufacturing, CNC machining, powder metallurgy, hydraulic cylinders and company news.">
+  <meta property="og:title" content="Blog — BIB Parts">
+  <meta property="og:description" content="Manufacturing insights, technology guides and company news from BIB Parts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bibparts.com/en/blog/">
+  <link rel="canonical" href="https://www.bibparts.com/en/blog/">
+  <link rel="alternate" hreflang="en" href="https://www.bibparts.com/en/blog/">
+  <link rel="alternate" hreflang="x-default" href="https://www.bibparts.com/en/blog/">
+
+  <title>Blog — BIB Parts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --border: #e0deda;
+      --text-muted: #888888;
+      --text-faint: #bbbbbb;
+    }
+
+    /* ── LOGO ── */
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px; border-bottom: 0.5px solid var(--border);
+      background: #fff; position: sticky; top: 0; z-index: 100;
+    }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .active { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #666;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 4px; padding: 6px 10px; cursor: pointer;
+    }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      background: #fff; border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 4px; min-width: 150px; z-index: 200; display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #444;
+      border-radius: 4px; cursor: pointer;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+    .btn-cta {
+      background: var(--green); color: #fff; font-size: 13px; font-weight: 500;
+      padding: 9px 20px; border: none; border-radius: 4px;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── LAYOUT: fixed left header + scrollable right feed ── */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      height: calc(100vh - 61px);
+    }
+
+    /* ── LEFT: sticky header panel ── */
+    .blog-left {
+      padding: 56px 40px;
+      border-right: 0.5px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      position: sticky;
+      top: 61px;
+      height: calc(100vh - 61px);
+      overflow: hidden;
+    }
+    .page-tag {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      letter-spacing: 0.1em; color: var(--green); text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .page-h1 {
+      font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 500;
+      line-height: 1.1; letter-spacing: -0.02em; color: var(--black);
+      margin-bottom: 12px;
+    }
+    .page-h1 em { color: var(--green); font-style: normal; }
+    .page-intro {
+      font-size: 13px; color: #888; line-height: 1.75; font-weight: 300;
+    }
+
+    /* Category filter */
+    .category-list { display: flex; flex-direction: column; gap: 2px; }
+    .cat-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
+      color: var(--text-faint); text-transform: uppercase; margin-bottom: 8px;
+    }
+    .cat-btn {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 13px; color: #777; background: transparent; border: none;
+      padding: 7px 10px; border-radius: 4px; cursor: pointer;
+      text-align: left; transition: all 0.12s;
+    }
+    .cat-btn:hover { background: var(--gray-bg); color: var(--black); }
+    .cat-btn.active { background: var(--green-light); color: var(--green); font-weight: 500; }
+    .cat-count {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      color: var(--text-faint);
+    }
+    .cat-btn.active .cat-count { color: var(--green); }
+
+    /* Bottom CTA */
+    .blog-left-cta {
+      margin-top: auto;
+      padding: 16px; background: var(--gray-bg);
+      border-radius: 6px; border: 0.5px solid var(--border);
+    }
+    .blog-left-cta p { font-size: 12px; color: #888; line-height: 1.6; font-weight: 300; margin-bottom: 10px; }
+    .blog-left-cta a {
+      font-size: 12px; font-weight: 500; color: var(--green);
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .blog-left-cta a:hover { color: var(--green-dark); }
+
+    /* ── RIGHT: scrollable feed ── */
+    .blog-feed {
+      overflow-y: auto;
+      height: calc(100vh - 61px);
+      padding: 0;
+    }
+
+    /* Featured post — first/top */
+    .post-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--border);
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+    .post-featured:hover { background: #fafaf9; }
+    .post-featured-img {
+      height: 280px; background: #EEF2F0;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 6px; overflow: hidden;
+    }
+    .post-featured-img img { width: 100%; height: 100%; object-fit: cover; }
+    .post-img-placeholder { font-family: 'DM Mono', monospace; font-size: 11px; color: #9ab5ac; }
+    .post-featured-body {
+      padding: 36px 40px;
+      display: flex; flex-direction: column; justify-content: center; gap: 12px;
+      border-left: 0.5px solid var(--border);
+    }
+    .post-meta {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .post-cat {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      color: var(--green); text-transform: uppercase;
+    }
+    .post-date {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .post-sep { color: var(--text-faint); font-size: 10px; }
+    .post-title {
+      font-size: 20px; font-weight: 500; color: var(--black);
+      line-height: 1.3; letter-spacing: -0.01em;
+    }
+    .post-excerpt {
+      font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 300;
+    }
+    .post-read-more {
+      font-size: 12px; color: var(--green); font-weight: 500;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .featured-badge {
+      font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em;
+      background: var(--green); color: #fff;
+      padding: 3px 8px; border-radius: 2px; text-transform: uppercase;
+      align-self: flex-start;
+    }
+
+    /* Regular post row */
+    .post-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      border-bottom: 0.5px solid var(--border);
+      cursor: pointer;
+      transition: background 0.12s;
+      min-height: 140px;
+    }
+    .post-row:hover { background: #fafaf9; }
+    .post-row-img {
+      background: #EEF2F0; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 4px;
+    }
+    .post-row-img img { width: 100%; height: 100%; object-fit: cover; }
+    .post-row-body {
+      padding: 24px 32px;
+      display: flex; flex-direction: column; justify-content: center; gap: 8px;
+      border-left: 0.5px solid var(--border);
+    }
+    .post-row-title {
+      font-size: 16px; font-weight: 500; color: var(--black);
+      line-height: 1.35; letter-spacing: -0.01em;
+    }
+    .post-row-excerpt {
+      font-size: 13px; color: var(--text-muted); line-height: 1.65; font-weight: 300;
+    }
+
+    /* Empty state */
+    .feed-empty {
+      padding: 80px 48px; text-align: center;
+      display: none;
+    }
+    .feed-empty p { font-size: 14px; color: var(--text-faint); }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px; border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; background: #fff;
+    }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+
+    /* ── RESPONSIVE ── */
+
+    /* ── BURGER MENU ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 36px; height: 36px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 4px;
+      padding: 8px; cursor: pointer;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px;
+      transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none !important; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 99;
+      padding: 32px 24px;
+      flex-direction: column; gap: 0;
+      border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex !important; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border);
+      display: block;
+    }
+    .mobile-menu-link.active { color: var(--green); }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom {
+      margin-top: auto; padding-top: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff;
+      font-size: 15px; font-weight: 500; text-align: center;
+      padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .blog-layout { grid-template-columns: 1fr; height: auto; }
+      .blog-left { position: static; height: auto; padding: 40px 24px 32px; border-right: none; border-bottom: 0.5px solid var(--border); }
+      .blog-feed { height: auto; overflow-y: visible; }
+      .post-featured { grid-template-columns: 1fr; }
+      .post-featured-img { height: 200px; }
+      .post-featured-body { border-left: none; border-top: 0.5px solid var(--border); padding: 24px; }
+      .post-row { grid-template-columns: 120px 1fr; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/en/" class="nav-logo" aria-label="BIB Parts home">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/en/capabilities/">Capabilities</a></li>
+        <li><a href="/en/projects/">Projects</a></li>
+        <li><a href="/en/blog/" class="active">Blog</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language">
+            <span id="lang-code">EN</span>
+            <span class="lang-chevron" id="lang-chevron">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <div class="lang-option active" onclick="selectLang('EN','/en/blog/',this)"><span class="lang-name">English</span><span class="lang-check">✓</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/blog/',this)"><span class="lang-name">Polski</span></div>
+            <div class="lang-option" onclick="selectLang('DE','/de/blog/',this)"><span class="lang-name">Deutsch</span></div>
+            <div class="lang-option" onclick="selectLang('ES','/es/blog/',this)"><span class="lang-name">Español</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/blog/',this)"><span class="lang-name">Français</span></div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/en/contact/" class="btn-cta">Get a quote</a>
+      </div>
+    </div>
+  
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/en/" class="mobile-menu-link">Home</a>
+    <a href="/en/capabilities/" class="mobile-menu-link">Capabilities</a>
+    <a href="/en/projects/" class="mobile-menu-link">Projects</a>
+    <a href="/en/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/en/contact/" class="mobile-menu-link">Contact</a>
+    <div class="mobile-menu-bottom">
+      <a href="/en/contact/" class="mobile-menu-cta">Get a quote</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn active">EN</button>
+        <button class="mobile-lang-btn">PL</button>
+        <button class="mobile-lang-btn">DE</button>
+        <button class="mobile-lang-btn">ES</button>
+        <button class="mobile-lang-btn">FR</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ── BLOG LAYOUT ── -->
+  <div class="blog-layout">
+
+    <!-- LEFT PANEL -->
+    <aside class="blog-left">
+      <div>
+        <p class="page-tag">Insights & news</p>
+        <h1 class="page-h1">BIB Parts <em>blog</em></h1>
+        <p class="page-intro">Manufacturing technology, engineering guides and company updates. New articles added regularly.</p>
+      </div>
+
+      <div class="category-list">
+        <div class="cat-label">Topics</div>
+        <button class="cat-btn active" onclick="filterCat('all', this)">
+          All articles <span class="cat-count" id="count-all">0</span>
+        </button>
+        <button class="cat-btn" onclick="filterCat('technology', this)">
+          Technology <span class="cat-count" id="count-technology">0</span>
+        </button>
+        <button class="cat-btn" onclick="filterCat('company', this)">
+          Company news <span class="cat-count" id="count-company">0</span>
+        </button>
+        <button class="cat-btn" onclick="filterCat('engineering', this)">
+          Engineering guides <span class="cat-count" id="count-engineering">0</span>
+        </button>
+      </div>
+
+      <div class="blog-left-cta">
+        <p>Have a project in mind? Send us your drawings and receive a quote within one business day.</p>
+        <a href="/en/contact/">Get a quote →</a>
+      </div>
+    </aside>
+
+    <!-- RIGHT: FEED -->
+    <main class="blog-feed" id="blog-feed" role="main">
+
+      <!--
+        HOW TO ADD A NEW ARTICLE:
+        1. Copy one of the post blocks below
+        2. Update: href, data-cat, post-cat text, post-date, post-title, post-excerpt
+        3. Replace the placeholder image comment with a real <img> tag
+        4. Create the article page: en/blog/your-article-slug/index.html
+           (use the article-template.html as a base)
+        5. The first post in the feed automatically gets the "featured" large layout
+      -->
+
+      <!-- POST 1 — featured (first post = large layout) -->
+      <a href="/en/blog/cnc-machining-tolerances-guide/" class="post-featured" data-cat="technology">
+        <div class="post-featured-img">
+          <!--
+            REPLACE WITH:
+            <img src="/assets/images/blog-cnc-tolerances.jpg" alt="CNC machining tolerance guide">
+          -->
+          <span class="post-img-placeholder">article cover photo</span>
+        </div>
+        <div class="post-featured-body">
+          <span class="featured-badge">Latest</span>
+          <div class="post-meta">
+            <span class="post-cat">Technology</span>
+            <span class="post-sep">·</span>
+            <span class="post-date">March 2026</span>
+          </div>
+          <div class="post-title">CNC machining tolerances: what they mean and how to specify them correctly</div>
+          <div class="post-excerpt">Tolerance specifications directly affect your part cost and lead time. We explain the most common tolerance standards, when tight tolerances are actually necessary, and how to write a drawing that your manufacturer will understand.</div>
+          <span class="post-read-more">Read article →</span>
+        </div>
+      </a>
+
+      <!-- POST 2 -->
+      <a href="/en/blog/powder-metallurgy-vs-cnc/" class="post-row" data-cat="technology">
+        <div class="post-row-img">
+          <!--
+            REPLACE WITH:
+            <img src="/assets/images/blog-pm-vs-cnc.jpg" alt="Powder metallurgy vs CNC machining comparison">
+          -->
+          <span class="post-img-placeholder" style="font-family:'DM Mono',monospace;font-size:10px;color:#9ab5ac;">photo</span>
+        </div>
+        <div class="post-row-body">
+          <div class="post-meta">
+            <span class="post-cat">Technology</span>
+            <span class="post-sep">·</span>
+            <span class="post-date">February 2026</span>
+          </div>
+          <div class="post-row-title">Powder metallurgy vs CNC machining — how to choose the right process for your part</div>
+          <div class="post-row-excerpt">Both processes produce precise metal parts, but the right choice depends on volume, geometry and cost targets. A practical guide for engineers and procurement teams.</div>
+        </div>
+      </a>
+
+      <!-- POST 3 -->
+      <a href="/en/blog/hydraulic-cylinder-seal-selection/" class="post-row" data-cat="engineering">
+        <div class="post-row-img">
+          <!--
+            REPLACE WITH:
+            <img src="/assets/images/blog-seals.jpg" alt="Hydraulic cylinder seal selection guide">
+          -->
+          <span class="post-img-placeholder" style="font-family:'DM Mono',monospace;font-size:10px;color:#9ab5ac;">photo</span>
+        </div>
+        <div class="post-row-body">
+          <div class="post-meta">
+            <span class="post-cat">Engineering guide</span>
+            <span class="post-sep">·</span>
+            <span class="post-date">January 2026</span>
+          </div>
+          <div class="post-row-title">Hydraulic cylinder seal selection: materials, temperature ranges and application guide</div>
+          <div class="post-row-excerpt">Seal failure is one of the most common causes of hydraulic cylinder downtime. We cover the main seal materials, their operating limits and how to specify the right seal for your application.</div>
+        </div>
+      </a>
+
+      <div class="feed-empty" id="feed-empty">
+        <p>No articles in this category yet.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <a href="/en/" aria-label="BIB Parts home">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/en/capabilities/">Capabilities</a></li>
+        <li><a href="/en/projects/">Projects</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 BIB Parts · Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Burger menu
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    
+      }
+
+      // Lang switcher
+      function toggleLang() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        c.classList.toggle('open', open);
+      }
+      function selectLang(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+    
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '\u2713';
+        el.appendChild(chk);
+        window.location.href = path;
+      }
+
+      // Make toggleLang and selectLang global
+      window.toggleLang = toggleLang;
+      window.selectLang = selectLang;
+
+      // Close dropdowns on outside click
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+          if (mobileMenu && mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+  
+
+      // Nav shadow on scroll
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+    
+      }
+
+      function filterCat(cat, btn) {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      let visible = 0;
+      posts.forEach(post => {
+        const show = cat === 'all' || post.dataset.cat === cat;
+        post.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.getElementById('feed-empty').style.display = visible === 0 ? 'block' : 'none';
+      // First visible post gets featured layout
+      const visiblePosts = Array.from(posts).filter(p => p.style.display !== 'none');
+      visiblePosts.forEach((p, i) => {
+        if (i === 0 && cat === 'all') {
+          p.className = 'post-featured';
+        }
+      });
+    }
+
+      function updateCounts(activeCat) {
+      const total = posts.length;
+      document.getElementById('count-all').textContent = total;
+      cats.forEach(cat => {
+        const count = document.querySelectorAll(`[data-cat="${cat}"]`).length;
+        document.getElementById(`count-${cat}`).textContent = count;
+      });
+    }
+
+      updateCounts();
+
+    });
+  </script>
+
+</body>
+</html>

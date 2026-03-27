@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact BIB Parts — send us your drawings or specifications and receive a quote within one business day. Precision metal parts, hydraulic cylinders, prototyping.">
+  <meta property="og:title" content="Contact — BIB Parts">
+  <meta property="og:description" content="Get in touch with BIB Parts. Send drawings, request a quote, or ask a technical question. We respond within one business day.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bibparts.com/en/contact/">
+  <link rel="canonical" href="https://www.bibparts.com/en/contact/">
+  <link rel="alternate" hreflang="en" href="https://www.bibparts.com/en/contact/">
+  <link rel="alternate" hreflang="pl" href="https://www.bibparts.com/pl/contact/">
+  <link rel="alternate" hreflang="de" href="https://www.bibparts.com/de/contact/">
+  <link rel="alternate" hreflang="es" href="https://www.bibparts.com/es/contact/">
+  <link rel="alternate" hreflang="fr" href="https://www.bibparts.com/fr/contact/">
+  <link rel="alternate" hreflang="x-default" href="https://www.bibparts.com/en/contact/">
+
+  <title>Contact & Get a Quote — BIB Parts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --border: #e0deda;
+      --text-muted: #888888;
+      --text-faint: #bbbbbb;
+    }
+
+    /* ── LOGO ── */
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px; border-bottom: 0.5px solid var(--border);
+      background: #fff; position: sticky; top: 0; z-index: 100;
+    }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .active { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #666;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 4px; padding: 6px 10px; cursor: pointer;
+    }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      background: #fff; border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 4px; min-width: 150px; z-index: 200; display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #444;
+      border-radius: 4px; cursor: pointer;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+    .btn-cta {
+      background: var(--green); color: #fff; font-size: 13px; font-weight: 500;
+      padding: 9px 20px; border: none; border-radius: 4px;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── MAIN LAYOUT ── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      min-height: calc(100vh - 61px);
+    }
+
+    /* ── LEFT PANEL ── */
+    .contact-left {
+      padding: 64px 48px;
+      border-right: 0.5px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .page-tag {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      letter-spacing: 0.1em; color: var(--green); text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .page-h1 {
+      font-family: 'DM Sans', sans-serif; font-size: 40px; font-weight: 500;
+      line-height: 1.1; letter-spacing: -0.02em; color: var(--black);
+      margin-bottom: 14px;
+    }
+    .page-h1 em { color: var(--green); font-style: normal; }
+    .page-intro {
+      font-size: 14px; color: #777; line-height: 1.75; font-weight: 300;
+    }
+
+    /* Contact details */
+    .contact-details { display: flex; flex-direction: column; gap: 20px; }
+    .contact-detail-group { display: flex; flex-direction: column; gap: 5px; }
+    .detail-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
+      color: var(--text-faint); text-transform: uppercase;
+    }
+    .detail-value {
+      font-size: 14px; color: var(--black); font-weight: 400;
+    }
+    .detail-value a:hover { color: var(--green); }
+    .detail-sub { font-size: 12px; color: var(--text-muted); font-weight: 300; margin-top: 2px; }
+
+    /* Response time badge */
+    .response-badge {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--green-light); border-radius: 6px;
+      padding: 12px 16px; border: 0.5px solid rgba(29,158,117,0.2);
+    }
+    .response-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+    .response-text { font-size: 13px; color: var(--green-dark); font-weight: 400; }
+
+    /* What to send */
+    .what-to-send { }
+    .what-title {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
+      color: var(--text-faint); text-transform: uppercase; margin-bottom: 12px;
+    }
+    .what-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .what-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13px; color: #666; line-height: 1.5; font-weight: 300;
+    }
+    .what-list li::before {
+      content: '';
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0; margin-top: 7px;
+    }
+
+    /* ── RIGHT PANEL — FORM ── */
+    .contact-right {
+      padding: 64px 56px;
+      background: var(--gray-bg);
+    }
+    .form-heading {
+      font-size: 18px; font-weight: 500; color: var(--black);
+      margin-bottom: 28px; letter-spacing: -0.01em;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+    /* Subject tabs */
+    .subject-tabs {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 4px;
+    }
+    .subject-tab {
+      font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em;
+      color: #888; background: #fff;
+      border: 0.5px solid var(--border); border-radius: 3px;
+      padding: 6px 12px; cursor: pointer; transition: all 0.15s;
+      text-transform: uppercase;
+    }
+    .subject-tab:hover { border-color: var(--green); color: var(--green); }
+    .subject-tab.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+    /* Form rows */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      color: var(--text-muted); text-transform: uppercase;
+    }
+    .inp, .txa, .sel {
+      border: 0.5px solid #d0cdc9; border-radius: 4px;
+      padding: 11px 14px; font-size: 14px;
+      font-family: 'DM Sans', sans-serif; color: var(--black);
+      background: #fff; transition: border-color 0.15s; width: 100%;
+    }
+    .inp:focus, .txa:focus, .sel:focus {
+      outline: none; border-color: var(--green);
+    }
+    .inp::placeholder, .txa::placeholder { color: #ccc; }
+    .txa { height: 120px; resize: none; }
+    .sel { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%23aaa' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+
+    /* File upload */
+    .file-upload {
+      border: 0.5px dashed #c8c4be; border-radius: 6px;
+      background: #fff; transition: border-color 0.15s; position: relative;
+      cursor: pointer;
+    }
+    .file-upload:hover { border-color: var(--green); }
+    .file-upload-inner {
+      padding: 20px; display: flex; flex-direction: column;
+      align-items: center; gap: 8px; text-align: center;
+    }
+    .file-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--green-light); display: flex; align-items: center; justify-content: center;
+    }
+    .file-icon svg { width: 18px; height: 18px; }
+    .file-upload-title { font-size: 13px; font-weight: 500; color: var(--black); }
+    .file-upload-hint {
+      font-size: 11px; color: var(--text-faint); font-weight: 300; line-height: 1.5;
+    }
+    .file-upload-btn {
+      font-size: 12px; font-weight: 500; color: var(--green);
+      border: 0.5px solid var(--green); border-radius: 3px;
+      padding: 5px 14px; background: transparent; cursor: pointer;
+      pointer-events: none;
+    }
+    .file-inp {
+      position: absolute; inset: 0; opacity: 0;
+      cursor: pointer; width: 100%; height: 100%;
+    }
+    .file-selected-list {
+      padding: 0 16px 12px; display: flex; flex-direction: column; gap: 4px;
+    }
+    .file-selected-item {
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted);
+      background: var(--gray-bg); border-radius: 3px; padding: 5px 10px;
+    }
+    .file-remove {
+      background: none; border: none; color: #ccc; cursor: pointer;
+      font-size: 14px; line-height: 1; padding: 0 0 0 8px;
+      pointer-events: all; position: relative; z-index: 2;
+    }
+    .file-remove:hover { color: #e24b4a; }
+
+    /* Submit */
+    .form-submit { display: flex; align-items: center; gap: 16px; margin-top: 4px; }
+    .btn-submit {
+      background: var(--green); color: #fff; font-size: 14px; font-weight: 500;
+      padding: 13px 28px; border: none; border-radius: 4px;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .btn-submit:hover { background: var(--green-dark); }
+    .form-note {
+      font-size: 11px; color: var(--text-faint); font-weight: 300; line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px; border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; background: #fff;
+    }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+
+    /* ── RESPONSIVE ── */
+
+    /* ── BURGER MENU ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 36px; height: 36px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 4px;
+      padding: 8px; cursor: pointer;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px;
+      transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none !important; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 99;
+      padding: 32px 24px;
+      flex-direction: column; gap: 0;
+      border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex !important; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border);
+      display: block;
+    }
+    .mobile-menu-link.active { color: var(--green); }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom {
+      margin-top: auto; padding-top: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff;
+      font-size: 15px; font-weight: 500; text-align: center;
+      padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-left { padding: 48px 24px; border-right: none; border-bottom: 0.5px solid var(--border); }
+      .contact-right { padding: 48px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/en/" class="nav-logo" aria-label="BIB Parts home">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/en/capabilities/">Capabilities</a></li>
+        <li><a href="/en/projects/">Projects</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/contact/" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language">
+            <span id="lang-code">EN</span>
+            <span class="lang-chevron" id="lang-chevron">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <div class="lang-option active" onclick="selectLang('EN','/en/contact/',this)"><span class="lang-name">English</span><span class="lang-check">✓</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/contact/',this)"><span class="lang-name">Polski</span></div>
+            <div class="lang-option" onclick="selectLang('DE','/de/contact/',this)"><span class="lang-name">Deutsch</span></div>
+            <div class="lang-option" onclick="selectLang('ES','/es/contact/',this)"><span class="lang-name">Español</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/contact/',this)"><span class="lang-name">Français</span></div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/en/contact/" class="btn-cta">Get a quote</a>
+      </div>
+    </div>
+  
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/en/" class="mobile-menu-link">Home</a>
+    <a href="/en/capabilities/" class="mobile-menu-link">Capabilities</a>
+    <a href="/en/projects/" class="mobile-menu-link">Projects</a>
+    <a href="/en/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/en/contact/" class="mobile-menu-link">Contact</a>
+    <div class="mobile-menu-bottom">
+      <a href="/en/contact/" class="mobile-menu-cta">Get a quote</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn active">EN</button>
+        <button class="mobile-lang-btn">PL</button>
+        <button class="mobile-lang-btn">DE</button>
+        <button class="mobile-lang-btn">ES</button>
+        <button class="mobile-lang-btn">FR</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ── MAIN LAYOUT ── -->
+  <div class="contact-layout">
+
+    <!-- LEFT: info -->
+    <aside class="contact-left">
+      <div>
+        <p class="page-tag">Get in touch</p>
+        <h1 class="page-h1">Let's discuss<br><em>your project</em></h1>
+        <p class="page-intro">Send us your drawings or specifications and we will come back to you with a quote or technical questions within one business day.</p>
+      </div>
+
+      <div class="response-badge">
+        <div class="response-dot"></div>
+        <span class="response-text">We respond within <strong>1 business day</strong></span>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-detail-group">
+          <div class="detail-label">Email</div>
+          <div class="detail-value"><a href="mailto:info@bibparts.com">info@bibparts.com</a></div>
+          <div class="detail-sub">For quotes, technical questions and general enquiries</div>
+        </div>
+        <div class="contact-detail-group">
+          <div class="detail-label">Location</div>
+          <div class="detail-value">Latvia · European Union</div>
+          <div class="detail-sub">Deliveries across Europe, GCC and worldwide</div>
+        </div>
+        <div class="contact-detail-group">
+          <div class="detail-label">Working hours</div>
+          <div class="detail-value">Monday – Friday, 08:00 – 17:00 EET</div>
+          <div class="detail-sub">UTC+2 (UTC+3 in summer)</div>
+        </div>
+      </div>
+
+      <div class="what-to-send">
+        <div class="what-title">What to include in your request</div>
+        <ul class="what-list">
+          <li>Technical drawings (DWG, DXF, PDF) or 3D models (STEP, IGES, STL)</li>
+          <li>Material specification or requirements</li>
+          <li>Required tolerances and surface finish</li>
+          <li>Quantity — prototype, small series or volume production</li>
+          <li>Target delivery date or lead time requirement</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- RIGHT: form -->
+    <main class="contact-right">
+      <div class="form-heading">Send us a request</div>
+
+      <form
+        class="contact-form"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        enctype="multipart/form-data"
+        action="/en/thank-you/"
+      >
+        <input type="hidden" name="form-name" value="contact">
+
+        <!-- Name + Company -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Your name *</label>
+            <input class="inp" type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="company">Company *</label>
+            <input class="inp" type="text" id="company" name="company" placeholder="Acme Industries" required>
+          </div>
+        </div>
+
+        <!-- Email + Phone -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="email">Email *</label>
+            <input class="inp" type="email" id="email" name="email" placeholder="john@acme.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="inp" type="tel" id="phone" name="phone" placeholder="+371 00 000 000">
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <label class="form-label" for="message">Project description *</label>
+          <textarea class="txa" id="message" name="message" placeholder="Describe your part, material requirements, tolerances, required quantity, delivery date, or any other relevant details…" required></textarea>
+        </div>
+
+        <!-- File upload -->
+        <div class="form-group">
+          <div class="form-label">Attachments</div>
+          <div class="file-upload" id="file-upload-area">
+            <div class="file-upload-inner">
+              <div class="file-icon">
+                <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 2v10M5 6l4-4 4 4" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 13v1a2 2 0 002 2h10a2 2 0 002-2v-1" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="file-upload-title">Drop files here or click to browse</div>
+              <div class="file-upload-hint">
+                DWG, DXF, STEP, IGES, STL, PDF, XLSX, DOCX, ZIP<br>
+                Up to 10 MB per file · Multiple files accepted
+              </div>
+              <div class="file-upload-btn">Choose files</div>
+            </div>
+            <div class="file-selected-list" id="file-list"></div>
+            <input
+              class="file-inp"
+              type="file"
+              name="attachments"
+              id="file-input"
+              multiple
+              accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.xlsx,.xls,.docx,.doc,.txt,.zip,.png,.jpg,.jpeg"
+            >
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Send request</button>
+          <p class="form-note">By submitting this form you agree to us contacting you<br>regarding your enquiry. We do not share your data.</p>
+        </div>
+
+      </form>
+    </main>
+
+  </div>
+
+  <!-- ── FOOTER ── */
+  <footer class="footer" role="contentinfo">
+    <a href="/en/" aria-label="BIB Parts home">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/en/capabilities/">Capabilities</a></li>
+        <li><a href="/en/projects/">Projects</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 BIB Parts · Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Burger menu
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+
+      // Lang switcher
+      function toggleLang() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        c.classList.toggle('open', open);
+      }
+      function selectLang(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '\u2713';
+        el.appendChild(chk);
+        window.location.href = path;
+      }
+
+      // Make toggleLang and selectLang global
+      window.toggleLang = toggleLang;
+      window.selectLang = selectLang;
+
+      // Close dropdowns on outside click
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+          if (mobileMenu && mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      // Nav shadow on scroll
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>
