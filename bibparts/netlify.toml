@@ -1,0 +1,20 @@
+# BIB Parts — Netlify configuration
+
+# Redirect root to English version
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  force = true
+
+# When adding new languages, add redirects here:
+# [[redirects]]
+#   from = "/pl/"
+#   to = "/pl/"
+#   status = 200
+
+# 404 fallback
+[[redirects]]
+  from = "/*"
+  to = "/en/404.html"
+  status = 404
