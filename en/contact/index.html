@@ -502,6 +502,7 @@
         method="POST"
         action="https://form.bibparts.com/contact"
         enctype="multipart/form-data"
+        onsubmit="return window._bibSubmit ? window._bibSubmit(event) : true"
         novalidate
       >
 
@@ -740,12 +741,11 @@
       var errorMsg = form ? form.querySelector('.form-error-msg') : null;
       var successBox = document.querySelector('.form-success');
 
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          submitForm();
-        });
-      }
+      window._bibSubmit = function(e) {
+        e.preventDefault();
+        submitForm();
+        return false;
+      };
 
       async function submitForm() {
 
