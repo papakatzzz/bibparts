@@ -611,15 +611,13 @@
 
   <script>
     document.documentElement.style.visibility = 'hidden';
-    document.fonts.ready.then(function() {
-      document.documentElement.style.visibility = '';
-    });
+    document.fonts.ready.then(function() { document.documentElement.style.visibility = ''; });
 
-    document.addEventListener('DOMContentLoaded', function() {
-
+    function _bibInit() {
       var burgerBtn = document.getElementById('burger');
       var mobileMenu = document.getElementById('mobile-menu');
-      if (burgerBtn && mobileMenu) {
+      if (burgerBtn && mobileMenu && !burgerBtn._bibDone) {
+        burgerBtn._bibDone = true;
         burgerBtn.addEventListener('click', function(e) {
           e.stopPropagation();
           burgerBtn.classList.toggle('open');
@@ -627,122 +625,128 @@
           document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
         });
       }
-
-      function toggleLang() {
-        var d = document.getElementById('lang-dropdown');
-        var c = document.getElementById('lang-chevron');
-        if (!d) return;
-        var open = d.classList.toggle('show');
-        c.classList.toggle('open', open);
-      }
-      function selectLang(code, path, el) {
-        var codeEl = document.getElementById('lang-code');
-        var d = document.getElementById('lang-dropdown');
-        var c = document.getElementById('lang-chevron');
-        if (codeEl) codeEl.textContent = code;
-        if (d) d.classList.remove('show');
-        if (c) c.classList.remove('open');
-        document.querySelectorAll('.lang-option').forEach(function(o) {
-          o.classList.remove('active');
-          var chk = o.querySelector('.lang-check');
-          if (chk) chk.remove();
-        });
-        el.classList.add('active');
-        var chk = document.createElement('span');
-        chk.className = 'lang-check';
-        chk.textContent = '\u2713';
-        el.appendChild(chk);
-        window.location.href = path;
-      }
-      window.toggleLang = toggleLang;
-      window.selectLang = selectLang;
-
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.lang-wrap')) {
+      if (!window._bibLangDone) {
+        window._bibLangDone = true;
+        window.toggleLang = function() {
           var d = document.getElementById('lang-dropdown');
           var c = document.getElementById('lang-chevron');
+          if (!d) return;
+          var open = d.classList.toggle('show');
+          c.classList.toggle('open', open);
+        };
+        window.selectLang = function(code, path, el) {
+          var codeEl = document.getElementById('lang-code');
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (codeEl) codeEl.textContent = code;
           if (d) d.classList.remove('show');
           if (c) c.classList.remove('open');
-        }
-        if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
-          if (mobileMenu && mobileMenu.classList.contains('open')) {
-            mobileMenu.classList.remove('open');
-            if (burgerBtn) burgerBtn.classList.remove('open');
-            document.body.style.overflow = '';
+          document.querySelectorAll('.lang-option').forEach(function(o) {
+            o.classList.remove('active');
+            var chk = o.querySelector('.lang-check');
+            if (chk) chk.remove();
+          });
+          el.classList.add('active');
+          var chk = document.createElement('span');
+          chk.className = 'lang-check';
+          chk.textContent = '✓';
+          el.appendChild(chk);
+          window.location.href = path;
+        };
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.lang-wrap')) {
+            var d = document.getElementById('lang-dropdown');
+            var c = document.getElementById('lang-chevron');
+            if (d) d.classList.remove('show');
+            if (c) c.classList.remove('open');
           }
-        }
-      });
-
-      var nav = document.querySelector('.nav');
-      if (nav) {
-        window.addEventListener('scroll', function() {
-          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+            if (mobileMenu && mobileMenu.classList.contains('open')) {
+              mobileMenu.classList.remove('open');
+              if (burgerBtn) burgerBtn.classList.remove('open');
+              document.body.style.overflow = '';
+            }
+          }
         });
+        var nav = document.querySelector('.nav');
+        if (nav) {
+          window.addEventListener('scroll', function() {
+            nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+          });
+        }
       }
 
+      // File upload
       var fileInput = document.getElementById('file-input');
       var fileList = document.getElementById('file-list');
-      var selectedFiles = [];
-      if (fileInput && fileList) {
+      if (fileInput && !fileInput._bibDone) {
+        fileInput._bibDone = true;
+        var selectedFiles = [];
         fileInput.addEventListener('change', function() {
           Array.from(fileInput.files).forEach(function(f) {
             if (selectedFiles.length < 10 && !selectedFiles.find(function(x) { return x.name === f.name && x.size === f.size; })) selectedFiles.push(f);
           });
           fileInput.value = '';
-          renderFileList();
+          renderFL();
         });
-      }
-      function renderFileList() {
-        if (!fileList) return;
-        fileList.innerHTML = '';
-        selectedFiles.forEach(function(f, i) {
-          var item = document.createElement('div'); item.className = 'file-selected-item';
-          var nm = document.createElement('span'); nm.textContent = f.name;
-          var rm = document.createElement('button'); rm.className = 'file-remove'; rm.type = 'button'; rm.textContent = '\u00d7';
-          rm.addEventListener('click', function(e) { e.stopPropagation(); selectedFiles.splice(i, 1); renderFileList(); });
-          item.appendChild(nm); item.appendChild(rm); fileList.appendChild(item);
-        });
-      }
+        function renderFL() {
+          if (!fileList) return;
+          fileList.innerHTML = '';
+          selectedFiles.forEach(function(f, i) {
+            var item = document.createElement('div'); item.className = 'file-selected-item';
+            var nm = document.createElement('span'); nm.textContent = f.name;
+            var rm = document.createElement('button'); rm.className = 'file-remove'; rm.type = 'button'; rm.textContent = '×';
+            rm.addEventListener('click', function(e) { e.stopPropagation(); selectedFiles.splice(i, 1); renderFL(); });
+            item.appendChild(nm); item.appendChild(rm);
+            if (fileList) fileList.appendChild(item);
+          });
+        }
 
-      var contactForm = document.getElementById('contact-form');
-      var submitBtn = contactForm ? contactForm.querySelector('.btn-submit') : null;
-      var errorBox = contactForm ? contactForm.querySelector('.form-error-msg') : null;
-      var successBox = document.querySelector('.form-success');
-      if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          var nameVal = contactForm.querySelector('[name="name"]').value.trim();
-          var emailVal = contactForm.querySelector('[name="email"]').value.trim();
-          if (!nameVal || !emailVal) { showErr('Please fill in your name and email.'); return; }
-          var fd = new FormData();
-          fd.append('name', nameVal);
-          fd.append('company', contactForm.querySelector('[name="company"]').value.trim());
-          fd.append('email', emailVal);
-          fd.append('phone', contactForm.querySelector('[name="phone"]').value.trim());
-          fd.append('message', contactForm.querySelector('[name="message"]').value.trim());
-          selectedFiles.forEach(function(f) { fd.append('files', f); });
-          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
-          hideErr();
-          try {
-            var res = await fetch('https://form.bibparts.com/contact', { method: 'POST', body: fd });
-            var data = await res.json();
-            if (data.ok) {
-              contactForm.style.display = 'none';
-              if (successBox) successBox.classList.add('show');
-            } else {
-              showErr(data.error || 'Something went wrong. Please try again.');
-              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send request'; }
+        // Form
+        var cf = document.getElementById('contact-form');
+        var sb = cf ? cf.querySelector('.btn-submit') : null;
+        var eb = cf ? cf.querySelector('.form-error-msg') : null;
+        var sc = document.querySelector('.form-success');
+        if (cf && !cf._bibDone) {
+          cf._bibDone = true;
+          cf.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var nv = cf.querySelector('[name="name"]').value.trim();
+            var ev2 = cf.querySelector('[name="email"]').value.trim();
+            if (!nv || !ev2) { if (eb) { eb.textContent = 'Please fill in your name and email.'; eb.classList.add('show'); } return; }
+            var fd = new FormData();
+            fd.append('name', nv);
+            fd.append('company', cf.querySelector('[name="company"]').value.trim());
+            fd.append('email', ev2);
+            fd.append('phone', cf.querySelector('[name="phone"]').value.trim());
+            fd.append('message', cf.querySelector('[name="message"]').value.trim());
+            selectedFiles.forEach(function(f) { fd.append('files', f); });
+            if (sb) { sb.disabled = true; sb.textContent = 'Sending…'; }
+            if (eb) eb.classList.remove('show');
+            try {
+              var res = await fetch('https://form.bibparts.com/contact', { method: 'POST', body: fd });
+              var data = await res.json();
+              if (data.ok) {
+                cf.style.display = 'none';
+                if (sc) sc.classList.add('show');
+              } else {
+                if (eb) { eb.textContent = data.error || 'Something went wrong. Please try again.'; eb.classList.add('show'); }
+                if (sb) { sb.disabled = false; sb.textContent = 'Send request'; }
+              }
+            } catch (err) {
+              if (eb) { eb.textContent = 'Connection error. Please try again.'; eb.classList.add('show'); }
+              if (sb) { sb.disabled = false; sb.textContent = 'Send request'; }
             }
-          } catch (err) {
-            showErr('Connection error. Please try again.');
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send request'; }
-          }
-        });
+          });
+        }
       }
-      function showErr(msg) { if (errorBox) { errorBox.textContent = msg; errorBox.classList.add('show'); } }
-      function hideErr() { if (errorBox) errorBox.classList.remove('show'); }
+    }
 
-    });
+    // Run immediately (script is at end of body, DOM is ready)
+    _bibInit();
+    // Also hook DOMContentLoaded and load as fallback
+    document.addEventListener('DOMContentLoaded', _bibInit);
+    window.addEventListener('load', _bibInit);
   </script>
 
 </body>
