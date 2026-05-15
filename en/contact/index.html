@@ -272,6 +272,28 @@
     }
     .file-remove:hover { color: #e24b4a; }
 
+    /* Form states */
+    .form-success {
+      display: none; flex-direction: column; align-items: center;
+      text-align: center; padding: 48px 24px; gap: 16px;
+    }
+    .form-success.show { display: flex; }
+    .success-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--green-light); display: flex; align-items: center; justify-content: center;
+      border: 0.5px solid rgba(29,158,117,0.3);
+    }
+    .success-icon svg { width: 28px; height: 28px; }
+    .success-title { font-size: 20px; font-weight: 500; color: var(--black); letter-spacing: -0.01em; }
+    .success-text { font-size: 14px; color: #777; font-weight: 300; line-height: 1.7; max-width: 340px; }
+    .form-error-msg {
+      font-size: 13px; color: #e24b4a; background: #fff5f5;
+      border: 0.5px solid #f5c2c2; border-radius: 4px;
+      padding: 10px 14px; display: none;
+    }
+    .form-error-msg.show { display: block; }
+    .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+
     /* Submit */
     .form-submit { display: flex; align-items: center; gap: 16px; margin-top: 4px; }
     .btn-submit {
@@ -589,29 +611,6 @@
       <p class="footer-copy">© 2026 BIB Parts · Baltijas Inzenieru Birojs</p>
     </div>
   </footer>
-
-  <style>
-    .form-success {
-      display: none; flex-direction: column; align-items: center;
-      text-align: center; padding: 48px 24px; gap: 16px;
-    }
-    .form-success.show { display: flex; }
-    .success-icon {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: var(--green-light); display: flex; align-items: center; justify-content: center;
-      border: 0.5px solid rgba(29,158,117,0.3);
-    }
-    .success-icon svg { width: 28px; height: 28px; }
-    .success-title { font-size: 20px; font-weight: 500; color: var(--black); letter-spacing: -0.01em; }
-    .success-text { font-size: 14px; color: #777; font-weight: 300; line-height: 1.7; max-width: 340px; }
-    .form-error-msg {
-      font-size: 13px; color: #e24b4a; background: #fff5f5;
-      border: 0.5px solid #f5c2c2; border-radius: 4px;
-      padding: 10px 14px; display: none;
-    }
-    .form-error-msg.show { display: block; }
-    .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; }
-  </style>
 
   <script>
     document.documentElement.style.visibility = 'hidden';
