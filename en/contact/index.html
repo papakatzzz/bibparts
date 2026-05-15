@@ -496,7 +496,7 @@
     <main class="contact-right">
       <div class="form-heading">Send us a request</div>
 
-      <form class="contact-form" id="contact-form" novalidate>
+      <form class="contact-form" id="contact-form" novalidate onsubmit="return bibSub(event)">
 
         <!-- Name + Company -->
         <div class="form-row">
@@ -608,145 +608,137 @@
       <p class="footer-copy">© 2026 BIB Parts · Baltijas Inzenieru Birojs</p>
     </div>
   </footer>
-
   <script>
     document.documentElement.style.visibility = 'hidden';
     document.fonts.ready.then(function() { document.documentElement.style.visibility = ''; });
 
-    function _bibInit() {
-      var burgerBtn = document.getElementById('burger');
-      var mobileMenu = document.getElementById('mobile-menu');
-      if (burgerBtn && mobileMenu && !burgerBtn._bibDone) {
-        burgerBtn._bibDone = true;
-        burgerBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          burgerBtn.classList.toggle('open');
-          mobileMenu.classList.toggle('open');
-          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    // File upload - top level, runs immediately (script at end of body)
+    var _bF = [];
+    var _bFI = document.getElementById('file-input');
+    var _bFL = document.getElementById('file-list');
+    if (_bFI) {
+      _bFI.addEventListener('change', function() {
+        Array.from(_bFI.files).forEach(function(f) {
+          if (_bF.length < 10 && !_bF.find(function(x) { return x.name === f.name && x.size === f.size; })) _bF.push(f);
         });
-      }
-      if (!window._bibLangDone) {
-        window._bibLangDone = true;
-        window.toggleLang = function() {
-          var d = document.getElementById('lang-dropdown');
-          var c = document.getElementById('lang-chevron');
-          if (!d) return;
-          var open = d.classList.toggle('show');
-          c.classList.toggle('open', open);
-        };
-        window.selectLang = function(code, path, el) {
-          var codeEl = document.getElementById('lang-code');
-          var d = document.getElementById('lang-dropdown');
-          var c = document.getElementById('lang-chevron');
-          if (codeEl) codeEl.textContent = code;
-          if (d) d.classList.remove('show');
-          if (c) c.classList.remove('open');
-          document.querySelectorAll('.lang-option').forEach(function(o) {
-            o.classList.remove('active');
-            var chk = o.querySelector('.lang-check');
-            if (chk) chk.remove();
-          });
-          el.classList.add('active');
-          var chk = document.createElement('span');
-          chk.className = 'lang-check';
-          chk.textContent = '✓';
-          el.appendChild(chk);
-          window.location.href = path;
-        };
-        document.addEventListener('click', function(e) {
-          if (!e.target.closest('.lang-wrap')) {
-            var d = document.getElementById('lang-dropdown');
-            var c = document.getElementById('lang-chevron');
-            if (d) d.classList.remove('show');
-            if (c) c.classList.remove('open');
-          }
-          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
-            if (mobileMenu && mobileMenu.classList.contains('open')) {
-              mobileMenu.classList.remove('open');
-              if (burgerBtn) burgerBtn.classList.remove('open');
-              document.body.style.overflow = '';
-            }
-          }
-        });
-        var nav = document.querySelector('.nav');
-        if (nav) {
-          window.addEventListener('scroll', function() {
-            nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
-          });
-        }
-      }
-
-      // File upload
-      var fileInput = document.getElementById('file-input');
-      var fileList = document.getElementById('file-list');
-      if (fileInput && !fileInput._bibDone) {
-        fileInput._bibDone = true;
-        var selectedFiles = [];
-        fileInput.addEventListener('change', function() {
-          Array.from(fileInput.files).forEach(function(f) {
-            if (selectedFiles.length < 10 && !selectedFiles.find(function(x) { return x.name === f.name && x.size === f.size; })) selectedFiles.push(f);
-          });
-          fileInput.value = '';
-          renderFL();
-        });
-        function renderFL() {
-          if (!fileList) return;
-          fileList.innerHTML = '';
-          selectedFiles.forEach(function(f, i) {
-            var item = document.createElement('div'); item.className = 'file-selected-item';
-            var nm = document.createElement('span'); nm.textContent = f.name;
-            var rm = document.createElement('button'); rm.className = 'file-remove'; rm.type = 'button'; rm.textContent = '×';
-            rm.addEventListener('click', function(e) { e.stopPropagation(); selectedFiles.splice(i, 1); renderFL(); });
-            item.appendChild(nm); item.appendChild(rm);
-            if (fileList) fileList.appendChild(item);
-          });
-        }
-
-        // Form
-        var cf = document.getElementById('contact-form');
-        var sb = cf ? cf.querySelector('.btn-submit') : null;
-        var eb = cf ? cf.querySelector('.form-error-msg') : null;
-        var sc = document.querySelector('.form-success');
-        if (cf && !cf._bibDone) {
-          cf._bibDone = true;
-          cf.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            var nv = cf.querySelector('[name="name"]').value.trim();
-            var ev2 = cf.querySelector('[name="email"]').value.trim();
-            if (!nv || !ev2) { if (eb) { eb.textContent = 'Please fill in your name and email.'; eb.classList.add('show'); } return; }
-            var fd = new FormData();
-            fd.append('name', nv);
-            fd.append('company', cf.querySelector('[name="company"]').value.trim());
-            fd.append('email', ev2);
-            fd.append('phone', cf.querySelector('[name="phone"]').value.trim());
-            fd.append('message', cf.querySelector('[name="message"]').value.trim());
-            selectedFiles.forEach(function(f) { fd.append('files', f); });
-            if (sb) { sb.disabled = true; sb.textContent = 'Sending…'; }
-            if (eb) eb.classList.remove('show');
-            try {
-              var res = await fetch('https://form.bibparts.com/contact', { method: 'POST', body: fd });
-              var data = await res.json();
-              if (data.ok) {
-                cf.style.display = 'none';
-                if (sc) sc.classList.add('show');
-              } else {
-                if (eb) { eb.textContent = data.error || 'Something went wrong. Please try again.'; eb.classList.add('show'); }
-                if (sb) { sb.disabled = false; sb.textContent = 'Send request'; }
-              }
-            } catch (err) {
-              if (eb) { eb.textContent = 'Connection error. Please try again.'; eb.classList.add('show'); }
-              if (sb) { sb.disabled = false; sb.textContent = 'Send request'; }
-            }
-          });
-        }
-      }
+        _bFI.value = '';
+        _bRFL();
+      });
+    }
+    function _bRFL() {
+      if (!_bFL) return;
+      _bFL.innerHTML = '';
+      _bF.forEach(function(f, i) {
+        var item = document.createElement('div'); item.className = 'file-selected-item';
+        var nm = document.createElement('span'); nm.textContent = f.name;
+        var rm = document.createElement('button'); rm.className = 'file-remove'; rm.type = 'button'; rm.textContent = '×';
+        rm.addEventListener('click', function(e) { e.stopPropagation(); _bF.splice(i, 1); _bRFL(); });
+        item.appendChild(nm); item.appendChild(rm);
+        if (_bFL) _bFL.appendChild(item);
+      });
     }
 
-    // Run immediately (script is at end of body, DOM is ready)
-    _bibInit();
-    // Also hook DOMContentLoaded and load as fallback
-    document.addEventListener('DOMContentLoaded', _bibInit);
-    window.addEventListener('load', _bibInit);
+    // Form submit handler - global function called via onsubmit attribute
+    function bibSub(e) {
+      e.preventDefault();
+      var cf = document.getElementById('contact-form');
+      if (!cf) return false;
+      var nv = cf.querySelector('[name="name"]').value.trim();
+      var ev = cf.querySelector('[name="email"]').value.trim();
+      var eb = cf.querySelector('.form-error-msg');
+      var sb = cf.querySelector('.btn-submit');
+      var sc = document.querySelector('.form-success');
+      if (!nv || !ev) {
+        if (eb) { eb.textContent = 'Please fill in your name and email.'; eb.classList.add('show'); }
+        return false;
+      }
+      var fd = new FormData();
+      fd.append('name', nv);
+      fd.append('company', cf.querySelector('[name="company"]').value.trim());
+      fd.append('email', ev);
+      fd.append('phone', cf.querySelector('[name="phone"]').value.trim());
+      fd.append('message', cf.querySelector('[name="message"]').value.trim());
+      _bF.forEach(function(f) { fd.append('files', f); });
+      if (sb) { sb.disabled = true; sb.textContent = 'Sending…'; }
+      if (eb) eb.classList.remove('show');
+      fetch('https://form.bibparts.com/contact', { method: 'POST', body: fd })
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d.ok) {
+            cf.style.display = 'none';
+            if (sc) sc.classList.add('show');
+          } else {
+            if (eb) { eb.textContent = d.error || 'Something went wrong. Please try again.'; eb.classList.add('show'); }
+            if (sb) { sb.disabled = false; sb.textContent = 'Send request'; }
+          }
+        })
+        .catch(function() {
+          if (eb) { eb.textContent = 'Connection error. Please try again.'; eb.classList.add('show'); }
+          if (sb) { sb.disabled = false; sb.textContent = 'Send request'; }
+        });
+      return false;
+    }
+
+    // Nav: burger + lang switcher + scroll shadow
+    document.addEventListener('DOMContentLoaded', function() {
+      var burger = document.getElementById('burger');
+      var menu = document.getElementById('mobile-menu');
+      if (burger && menu) {
+        burger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burger.classList.toggle('open');
+          menu.classList.toggle('open');
+          document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+      window.toggleLang = function() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        if (c) c.classList.toggle('open', open);
+      };
+      window.selectLang = function(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '✓';
+        el.appendChild(chk);
+        window.location.href = path;
+      };
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (menu && menu.classList.contains('open')) {
+          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+            menu.classList.remove('open');
+            if (burger) burger.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+    });
   </script>
 
 </body>
