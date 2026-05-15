@@ -475,13 +475,9 @@
 
       <form
         class="contact-form"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        enctype="multipart/form-data"
-        action="/en/thank-you/"
+        id="contact-form"
+        novalidate
       >
-        <input type="hidden" name="form-name" value="contact">
 
         <!-- Name + Company -->
         <div class="form-row">
@@ -526,8 +522,8 @@
               </div>
               <div class="file-upload-title">Drop files here or click to browse</div>
               <div class="file-upload-hint">
-                DWG, DXF, STEP, IGES, STL, PDF, XLSX, DOCX, ZIP<br>
-                Up to 10 MB per file · Multiple files accepted
+                DWG, DXF, STEP, IGES, STL, PDF, XLSX, DOCX, ZIP, images…<br>
+                Up to 50 MB per file · Up to 10 files
               </div>
               <div class="file-upload-btn">Choose files</div>
             </div>
@@ -535,13 +531,16 @@
             <input
               class="file-inp"
               type="file"
-              name="attachments"
+              name="files"
               id="file-input"
               multiple
-              accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.xlsx,.xls,.docx,.doc,.txt,.zip,.png,.jpg,.jpeg"
+              accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.obj,.3mf,.xlsx,.xls,.docx,.doc,.txt,.csv,.zip,.rar,.7z,.tar,.gz,.png,.jpg,.jpeg,.gif,.webp,.tiff,.tif,.bmp,.svg"
             >
           </div>
         </div>
+
+        <!-- Error -->
+        <div class="form-error-msg" role="alert"></div>
 
         <!-- Submit -->
         <div class="form-submit">
@@ -550,6 +549,18 @@
         </div>
 
       </form>
+
+      <!-- Success state -->
+      <div class="form-success" role="status" aria-live="polite">
+        <div class="success-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14l5 5 9-9" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="success-title">Request sent!</div>
+        <div class="success-text">Thank you — we have received your inquiry and will get back to you within one business day.</div>
+      </div>
+
     </main>
 
   </div>
@@ -578,6 +589,29 @@
       <p class="footer-copy">© 2026 BIB Parts · Baltijas Inzenieru Birojs</p>
     </div>
   </footer>
+
+  <style>
+    .form-success {
+      display: none; flex-direction: column; align-items: center;
+      text-align: center; padding: 48px 24px; gap: 16px;
+    }
+    .form-success.show { display: flex; }
+    .success-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--green-light); display: flex; align-items: center; justify-content: center;
+      border: 0.5px solid rgba(29,158,117,0.3);
+    }
+    .success-icon svg { width: 28px; height: 28px; }
+    .success-title { font-size: 20px; font-weight: 500; color: var(--black); letter-spacing: -0.01em; }
+    .success-text { font-size: 14px; color: #777; font-weight: 300; line-height: 1.7; max-width: 340px; }
+    .form-error-msg {
+      font-size: 13px; color: #e24b4a; background: #fff5f5;
+      border: 0.5px solid #f5c2c2; border-radius: 4px;
+      padding: 10px 14px; display: none;
+    }
+    .form-error-msg.show { display: block; }
+    .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+  </style>
 
   <script>
     document.documentElement.style.visibility = 'hidden';
@@ -627,7 +661,6 @@
         window.location.href = path;
       }
 
-      // Make toggleLang and selectLang global
       window.toggleLang = toggleLang;
       window.selectLang = selectLang;
 
@@ -654,6 +687,105 @@
         window.addEventListener('scroll', function() {
           nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
         });
+      }
+
+      // \u2500\u2500 FILE MANAGEMENT \u2500\u2500
+      var fileInput = document.getElementById('file-input');
+      var fileList = document.getElementById('file-list');
+      var selectedFiles = [];
+
+      if (fileInput && fileList) {
+        fileInput.addEventListener('change', function() {
+          var newFiles = Array.from(fileInput.files);
+          newFiles.forEach(function(f) {
+            if (selectedFiles.length < 10 && !selectedFiles.find(function(x) { return x.name === f.name && x.size === f.size; })) {
+              selectedFiles.push(f);
+            }
+          });
+          fileInput.value = '';
+          renderFileList();
+        });
+      }
+
+      function renderFileList() {
+        if (!fileList) return;
+        fileList.innerHTML = '';
+        selectedFiles.forEach(function(f, i) {
+          var item = document.createElement('div');
+          item.className = 'file-selected-item';
+          var name = document.createElement('span');
+          name.textContent = f.name;
+          var rm = document.createElement('button');
+          rm.className = 'file-remove';
+          rm.type = 'button';
+          rm.textContent = '\u00d7';
+          rm.setAttribute('aria-label', 'Remove ' + f.name);
+          rm.addEventListener('click', function(e) {
+            e.stopPropagation();
+            selectedFiles.splice(i, 1);
+            renderFileList();
+          });
+          item.appendChild(name);
+          item.appendChild(rm);
+          fileList.appendChild(item);
+        });
+      }
+
+      // \u2500\u2500 FORM SUBMISSION \u2500\u2500
+      var form = document.getElementById('contact-form');
+      var submitBtn = form ? form.querySelector('.btn-submit') : null;
+      var errorMsg = form ? form.querySelector('.form-error-msg') : null;
+      var successBox = document.querySelector('.form-success');
+
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+
+          var name = form.querySelector('#name').value.trim();
+          var email = form.querySelector('#email').value.trim();
+          if (!name || !email) {
+            showError('Please fill in your name and email.');
+            return;
+          }
+
+          var fd = new FormData();
+          fd.append('name', name);
+          fd.append('company', form.querySelector('#company').value.trim());
+          fd.append('email', email);
+          fd.append('phone', form.querySelector('#phone').value.trim());
+          fd.append('message', form.querySelector('#message').value.trim());
+          selectedFiles.forEach(function(f) { fd.append('files', f); });
+
+          setLoading(true);
+          hideError();
+
+          try {
+            var res = await fetch('https://form.bibparts.com/contact', { method: 'POST', body: fd });
+            var data = await res.json();
+            if (data.ok) {
+              form.style.display = 'none';
+              if (successBox) successBox.classList.add('show');
+            } else {
+              showError(data.error || 'Something went wrong. Please try again.');
+            }
+          } catch (err) {
+            showError('Connection error. Please check your internet and try again.');
+          } finally {
+            setLoading(false);
+          }
+        });
+      }
+
+      function setLoading(on) {
+        if (!submitBtn) return;
+        submitBtn.disabled = on;
+        submitBtn.textContent = on ? 'Sending\u2026' : 'Send request';
+      }
+      function showError(msg) {
+        if (errorMsg) { errorMsg.textContent = msg; errorMsg.classList.add('show'); }
+      }
+      function hideError() {
+        if (errorMsg) errorMsg.classList.remove('show');
       }
 
     });
