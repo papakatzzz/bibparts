@@ -622,7 +622,7 @@
       document.documentElement.style.visibility = '';
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
+    (function() {
 
       // Burger menu
       var burgerBtn = document.getElementById('burger');
@@ -741,8 +741,13 @@
       var successBox = document.querySelector('.form-success');
 
       if (form) {
-        form.addEventListener('submit', async function(e) {
+        form.addEventListener('submit', function(e) {
           e.preventDefault();
+          submitForm();
+        });
+      }
+
+      async function submitForm() {
 
           var name = form.querySelector('#name').value.trim();
           var email = form.querySelector('#email').value.trim();
@@ -776,7 +781,6 @@
           } finally {
             setLoading(false);
           }
-        });
       }
 
       function setLoading(on) {
@@ -791,7 +795,7 @@
         if (errorMsg) errorMsg.classList.remove('show');
       }
 
-    });
+    })();
   </script>
 
 </body>
