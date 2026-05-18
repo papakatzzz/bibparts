@@ -1,21 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BIB Parts blog - insights on precision manufacturing, CNC machining, powder metallurgy, hydraulic cylinders and company news.">
+  <meta name="description" content="Blog BIB Parts – analyses sur la fabrication de précision, l'usinage CNC, la métallurgie des poudres, les vérins hydrauliques et les actualités de l'entreprise.">
   <meta property="og:title" content="Blog - BIB Parts">
-  <meta property="og:description" content="Manufacturing insights, technology guides and company news from BIB Parts.">
+  <meta property="og:description" content="Analyses sur la fabrication, conseils techniques et actualités de BIB Parts.">
   <meta property="og:site_name" content="BIB Parts">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:url" content="https://bibparts.com/en/blog/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://bibparts.com/fr/blog/">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:image" content="https://bibparts.com/assets/images/cnc-machining-tolerances.webp">
-  <link rel="canonical" href="https://bibparts.com/en/blog/">
-  <!-- Hreflang for multilingual -->
+  <link rel="canonical" href="https://bibparts.com/fr/blog/">
   <link rel="alternate" hreflang="en" href="https://bibparts.com/en/blog/"/>
   <link rel="alternate" hreflang="de" href="https://bibparts.com/de/blog/"/>
   <link rel="alternate" hreflang="es" href="https://bibparts.com/es/blog/"/>
@@ -23,7 +22,7 @@
   <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/blog/"/>
   <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/blog/"/>
 
-  <title>BIB Parts Blog: CNC Machining & Metal Parts Insights</title>
+  <title>Blog BIB Parts : Usinage CNC &amp; Fabrication de Précision</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,6 +42,7 @@
       color: #111111;
       background: #ffffff;
       -webkit-font-smoothing: antialiased;
+      font-size: 17px;
   overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
@@ -352,7 +352,6 @@
       .post-row { grid-template-columns: 1fr; min-height: unset; }
       .post-row-img { height: 180px; }
       .post-row-body { border-left: none; border-top: 0.5px solid var(--border); padding: 20px 24px; }
-      .post-featured-body { border-left: none; border-top: 0.5px solid var(--border); padding: 24px; }
       .footer { flex-direction: column; gap: 16px; padding: 24px; }
       .footer-right { flex-direction: column; gap: 12px; }
     }
@@ -361,13 +360,17 @@
   {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "@id": "https://bibparts.com/en/blog/",
-    "name": "BIB Parts Manufacturing Blog",
-    "description": "BIB Parts blog - insights on precision manufacturing, CNC machining, powder metallurgy, hydraulic cylinders and company news.",
-    "url": "https://bibparts.com/en/blog/",
-    "inLanguage": "en",
-    "publisher": { "@type": "Organization", "@id": "https://bibparts.com/#organization", "name": "BIB Parts" }
-  }
+    "@id": "https://bibparts.com/fr/blog/",
+    "name": "Blog Fabrication BIB Parts",
+    "description": "Blog BIB Parts : articles sur la fabrication de précision, l'usinage CNC, la métallurgie des poudres, les vérins hydrauliques et l'actualité de l'entreprise.",
+    "url": "https://bibparts.com/fr/blog/",
+    "inLanguage": "fr",
+    "publisher": {
+        "@type": "Organization",
+        "@id": "https://bibparts.com/#organization",
+        "name": "BIB Parts"
+    }
+}
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
@@ -382,8 +385,8 @@
 <body>
 
   <!-- ── NAV ── -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="/en/" class="nav-logo" aria-label="BIB Parts home">
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <a href="/fr/" class="nav-logo" aria-label="BIB Parts Accueil">
       <div class="logo">
         <div class="logo-mark" aria-hidden="true">
           <div class="logo-slash logo-slash-1"></div>
@@ -397,53 +400,53 @@
     </a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="/en/">Home</a></li>
-        <li><a href="/en/capabilities/">Capabilities</a></li>
-        <li><a href="/en/projects/">Projects</a></li>
-        <li><a href="/en/blog/" class="active" aria-current="page">Blog</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
+        
+        <li><a href="/fr/">Accueil</a></li>
+        <li><a href="/fr/capabilities/">Capacités</a></li>
+        <li><a href="/fr/projects/">Projets</a></li>
+        <li><a href="/fr/blog/" class="active" aria-current="page">Blog</a></li>
+        <li><a href="/fr/contact/">Contact</a></li>
       </ul>
       <div class="nav-actions">
         <div class="lang-wrap">
-          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language">
-            <span id="lang-code">EN</span>
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Choisir la langue">
+            <span id="lang-code">FR</span>
             <span class="lang-chevron" id="lang-chevron">▾</span>
           </button>
-          <div class="lang-dropdown" id="lang-dropdown">
-            <div class="lang-option active" onclick="selectLang('EN','/en/blog/',this)"><span class="lang-name">English</span><span class="lang-check">✓</span></div>
-            <div class="lang-option" onclick="selectLang('DE','/de/blog/',this)"><span class="lang-name">Deutsch</span></div>
-            <div class="lang-option" onclick="selectLang('ES','/es/blog/',this)"><span class="lang-name">Español</span></div>
-            <div class="lang-option" onclick="selectLang('FR','/fr/blog/',this)" role="option"><span class="lang-name">Français</span></div>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Langue">
+            <div class="lang-option" onclick="selectLang('EN','/en/blog/',this)" role="option"><span class="lang-name">English</span></div>
+            <div class="lang-option" onclick="selectLang('DE','/de/blog/',this)" role="option"><span class="lang-name">Deutsch</span></div>
+            <div class="lang-option" onclick="selectLang('ES','/es/blog/',this)" role="option"><span class="lang-name">Español</span></div>
+            <div class="lang-option active" onclick="selectLang('FR','/fr/blog/',this)" role="option"><span class="lang-name">Français</span><span class="lang-check" aria-label="sélectionné">✓</span></div>
             <div class="lang-option" onclick="selectLang('PL','/pl/blog/',this)" role="option"><span class="lang-name">Polski</span></div>
           </div>
         </div>
         <button class="burger" id="burger" aria-label="Menu" type="button">
           <span></span><span></span><span></span>
         </button>
-        <a href="/en/contact/" class="btn-cta">Get a quote</a>
+        <a href="/fr/contact/" class="btn-cta">Demander un devis</a>
       </div>
     </div>
-  
+
   </nav>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="/en/" class="mobile-menu-link">Home</a>
-    <a href="/en/capabilities/" class="mobile-menu-link">Capabilities</a>
-    <a href="/en/projects/" class="mobile-menu-link">Projects</a>
-    <a href="/en/blog/" class="mobile-menu-link">Blog</a>
-    <a href="/en/contact/" class="mobile-menu-link">Contact</a>
+    <a href="/fr/" class="mobile-menu-link">Accueil</a>
+    <a href="/fr/capabilities/" class="mobile-menu-link">Capacités</a>
+    <a href="/fr/projects/" class="mobile-menu-link">Projets</a>
+    <a href="/fr/blog/" class="mobile-menu-link active">Blog</a>
+    <a href="/fr/contact/" class="mobile-menu-link">Contact</a>
     <div class="mobile-menu-bottom">
-      <a href="/en/contact/" class="mobile-menu-cta">Get a quote</a>
+      <a href="/fr/contact/" class="mobile-menu-cta">Demander un devis</a>
       <div class="mobile-lang">
-        <button class="mobile-lang-btn active">EN</button>
+        <button class="mobile-lang-btn" onclick="location.href='/en/blog/'">EN</button>
         <button class="mobile-lang-btn" onclick="location.href='/de/blog/'">DE</button>
         <button class="mobile-lang-btn" onclick="location.href='/es/blog/'">ES</button>
-        <button class="mobile-lang-btn" onclick="location.href='/fr/blog/'">FR</button>
         <button class="mobile-lang-btn" onclick="location.href='/pl/blog/'">PL</button>
+        <button class="mobile-lang-btn active">FR</button>
       </div>
     </div>
-  </div>
   </div>
 
   <main role="main">
@@ -454,98 +457,88 @@
     <!-- LEFT PANEL -->
     <aside class="blog-left">
       <div>
-        <p class="page-tag">Insights & news</p>
-        <h1 class="page-h1">BIB Parts <em>blog</em></h1>
-        <p class="page-intro">Manufacturing technology, engineering guides and company updates. New articles added regularly.</p>
+        <p class="page-tag">Ressources techniques</p>
+        <h1 class="page-h1">BIB Parts <em>Blog</em></h1>
+        <p class="page-intro">Technologie de fabrication, conseils techniques et actualités de l'entreprise. Nouveaux articles régulièrement.</p>
       </div>
 
       <div class="category-list">
-        <div class="cat-label">Topics</div>
+        <div class="cat-label">Thèmes</div>
         <button class="cat-btn active" onclick="filterCat('all', this)">
-          All articles <span class="cat-count" id="count-all">0</span>
+          Tous les articles <span class="cat-count" id="count-all">0</span>
         </button>
         <button class="cat-btn" onclick="filterCat('technology', this)">
-          Technology <span class="cat-count" id="count-technology">0</span>
+          Technologie <span class="cat-count" id="count-technology">0</span>
         </button>
         <button class="cat-btn" onclick="filterCat('company', this)">
-          Company news <span class="cat-count" id="count-company">0</span>
+          Actualités <span class="cat-count" id="count-company">0</span>
         </button>
         <button class="cat-btn" onclick="filterCat('engineering', this)">
-          Engineering guides <span class="cat-count" id="count-engineering">0</span>
+          Conseils techniques <span class="cat-count" id="count-engineering">0</span>
         </button>
       </div>
 
       <div class="blog-left-cta">
-        <p>Have a project in mind? Send us your drawings and receive a quote within one business day.</p>
-        <a href="/en/contact/">Get a quote →</a>
+        <p>Vous avez un projet ? Envoyez-nous vos plans et recevez un devis en un jour ouvrable.</p>
+        <a href="/fr/contact/">Demander un devis →</a>
       </div>
     </aside>
 
     <!-- RIGHT: FEED -->
     <div class="blog-feed" id="blog-feed">
 
-      <!--
-        HOW TO ADD A NEW ARTICLE:
-        1. Copy one of the post blocks below
-        2. Update: href, data-cat, post-cat text, post-date, post-title, post-excerpt
-        3. Replace the placeholder image comment with a real <img loading="lazy"> tag
-        4. Create the article page: en/blog/your-article-slug/index.html
-           (use the article-template.html as a base)
-        5. The first post in the feed automatically gets the "featured" large layout
-      -->
-
       <!-- POST 1 - featured (first post = large layout) -->
-      <a href="/en/blog/cnc-machining-tolerances/" class="post-featured" data-cat="technology">
+      <a href="/fr/blog/cnc-machining-tolerances/" class="post-featured" data-cat="technology">
         <div class="post-featured-img">
-          <img loading="lazy" src="/assets/images/cnc-machining-tolerances.webp" alt="CNC machining tolerances guide">
+          <img loading="lazy" src="/assets/images/cnc-machining-tolerances.webp" alt="Guide sur les tolérances d'usinage CNC">
         </div>
         <div class="post-featured-body">
-          <span class="featured-badge">Latest</span>
+          <span class="featured-badge">À la une</span>
           <div class="post-meta">
-            <span class="post-cat">Engineering guide</span>
+            <span class="post-cat">Conseils techniques</span>
             <span class="post-sep">·</span>
-            <span class="post-date">April 2026</span>
+            <span class="post-date">Avril 2026</span>
           </div>
-          <div class="post-title">CNC Machining Tolerances Explained: What's Achievable and What Costs Extra</div>
-          <div class="post-excerpt">Tolerance is one of the most consequential decisions in part design - yet it is often set by habit rather than analysis. We explain what CNC machining tolerances mean, what ranges are realistic, and why tightening a tolerance by 0.01 mm can double the cost of a feature.</div>
-          <span class="post-read-more">Read article →</span>
+          <div class="post-title">Guide sur les tolérances d'usinage CNC : ce qui est réalisable et ce qui coûte plus cher</div>
+          <div class="post-excerpt">La tolérance est l'une des décisions les plus déterminantes lors de la conception d'une pièce, mais elle est souvent fixée par habitude plutôt que par analyse. Nous expliquons ce que signifient les tolérances d'usinage CNC, quelles plages sont réalistes et pourquoi réduire une tolérance de 0,01 mm peut doubler le coût d'un élément.</div>
+          <span class="post-read-more">Lire l'article →</span>
         </div>
       </a>
 
       <!-- POST 2 -->
-      <a href="/en/blog/aluminium-alloy-selection-cnc-machining/" class="post-row" data-cat="technology">
+      <a href="/fr/blog/aluminium-alloy-selection-cnc-machining/" class="post-row" data-cat="technology">
         <div class="post-row-img">
-          <img loading="lazy" src="/assets/images/aluminium-alloy-selection-cnc-machining.webp" alt="Aluminium alloy selection for CNC machined parts">
+          <img loading="lazy" src="/assets/images/aluminium-alloy-selection-cnc-machining.webp" alt="Sélection d'alliages d'aluminium pour pièces usinées CNC">
         </div>
         <div class="post-row-body">
           <div class="post-meta">
-            <span class="post-cat">Engineering guide</span>
+            <span class="post-cat">Conseils techniques</span>
             <span class="post-sep">·</span>
-            <span class="post-date">April 2026</span>
+            <span class="post-date">Avril 2026</span>
           </div>
-          <div class="post-row-title">Aluminium Alloy Selection for CNC Machined Parts: 6061, 7075 and 2024 Compared</div>
-          <div class="post-row-excerpt">Not all aluminium alloys behave the same way in the machine or in service. A practical comparison of 6061, 7075 and 2024 covering strength, machinability, corrosion resistance and anodising quality.</div>
+          <div class="post-row-title">Sélection d'alliages d'aluminium pour pièces usinées CNC : 6061, 7075 et 2024 comparés</div>
+          <div class="post-row-excerpt">Tous les alliages d'aluminium ne se comportent pas de la même façon en machine ou en service. Comparaison pratique de 6061, 7075 et 2024 en termes de résistance, d'usinabilité, de résistance à la corrosion et de qualité d'anodisation.</div>
         </div>
       </a>
 
       <!-- POST 3 -->
-      <a href="/en/blog/powder-metallurgy-vs-cnc-machining/" class="post-row" data-cat="technology">
+      <a href="/fr/blog/powder-metallurgy-vs-cnc-machining/" class="post-row" data-cat="technology">
         <div class="post-row-img">
-          <img loading="lazy" src="/assets/images/powder-metallurgy-vs-cnc-machining.webp" alt="Powder metallurgy vs CNC machining comparison">
+          <img loading="lazy" src="/assets/images/powder-metallurgy-vs-cnc-machining.webp" alt="Métallurgie des poudres vs usinage CNC – comparaison">
         </div>
         <div class="post-row-body">
           <div class="post-meta">
-            <span class="post-cat">Engineering guide</span>
+            <span class="post-cat">Conseils techniques</span>
             <span class="post-sep">·</span>
-            <span class="post-date">April 2026</span>
+            <span class="post-date">Avril 2026</span>
           </div>
-          <div class="post-row-title">Powder Metallurgy vs CNC Machining: How to Choose the Right Process for Your Part</div>
-          <div class="post-row-excerpt">Choosing the wrong process at the design stage can result in parts that cost five times more than necessary. A practical guide comparing both processes on cost, volume, geometry and tolerance.</div>
+          <div class="post-row-title">Métallurgie des poudres vs usinage CNC : comment choisir le bon procédé pour votre pièce</div>
+          <div class="post-row-excerpt">Choisir le mauvais procédé en phase de conception peut conduire à des pièces cinq fois plus chères que nécessaire. Guide pratique pour comparer les deux procédés selon le coût, la quantité, la géométrie et la tolérance.</div>
         </div>
       </a>
 
       <div class="feed-empty" id="feed-empty">
-        <p>No articles in this category yet.</p>
+        <p>Aucun article dans cette catégorie pour le moment.</p>
       </div>
 
     </div>
@@ -555,7 +548,7 @@
 
   <!-- ── FOOTER ── -->
   <footer class="footer" role="contentinfo">
-    <a href="/en/" aria-label="BIB Parts home">
+    <a href="/fr/" aria-label="BIB Parts Accueil">
       <div class="logo">
         <div class="logo-mark" aria-hidden="true">
           <div class="logo-slash logo-slash-1"></div>
@@ -569,14 +562,14 @@
     </a>
     <div class="footer-right">
       <ul class="footer-links">
-        <li><a href="/en/capabilities/">Capabilities</a></li>
-        <li><a href="/en/projects/">Projects</a></li>
-        <li><a href="/en/blog/">Blog</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/fr/capabilities/">Capacités</a></li>
+        <li><a href="/fr/projects/">Projets</a></li>
+        <li><a href="/fr/blog/">Blog</a></li>
+        <li><a href="/fr/contact/">Contact</a></li>
       </ul>
       <ul class="footer-links">
-        <li><a href="/en/privacy/">Privacy</a></li>
-        <li><a href="/en/cookies/">Cookies</a></li>
+        <li><a href="/fr/privacy/">Confidentialité</a></li>
+        <li><a href="/fr/cookies/">Cookies</a></li>
       </ul>
       <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
     </div>
@@ -677,5 +670,5 @@
   </script>
 
 <script src="/assets/cookie-consent.js" defer></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed9dd654b825424',t:'MTc3NjQxMjQ5OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9d2587bc7f3',t:'MTc3NzQzOTMwMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f52141ca8e9c7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f65968d3bd45426',t:'MTc3Nzg3NzYwMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def525eedc6b0',t:'MTc3ODEzMjg5Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c7126b798d37',t:'MTc3ODg1NDc2Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f6596a93d5e543a',t:'MTc3Nzg3NzYwNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def88d92fabf0',t:'MTc3ODEzMjkwNg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c7349c1c5435',t:'MTc3ODg1NDc3MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

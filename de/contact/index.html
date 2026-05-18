@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<!-- VERSION: v2026-04-13-contact -->
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt zu BIB Parts – senden Sie uns Ihre Zeichnungen oder Spezifikationen und erhalten Sie innerhalb eines Werktages ein Angebot. Präzisions-Metallteile, Hydraulikzylinder, Prototypen.">
+  <meta property="og:title" content="Kontakt - BIB Parts">
+  <meta property="og:description" content="Kontaktieren Sie BIB Parts. Zeichnungen einsenden, Angebot anfragen oder eine technische Frage stellen. Wir antworten innerhalb eines Werktages.">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://bibparts.com/de/contact/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://bibparts.com/assets/images/og-image.png">
+  <link rel="canonical" href="https://bibparts.com/de/contact/">
+  <!-- Hreflang for multilingual -->
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/contact/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/contact/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/contact/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/contact/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/contact/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/contact/"/>
+
+  <title>BIB Parts kontaktieren – Angebot für Metallteile</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      font-size: 17px;
+  overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --border: #e0deda;
+      --text-muted: #666666;
+      --text-faint: #999999;
+    }
+
+    /* ── LOGO ── */
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px; border-bottom: 0.5px solid var(--border);
+      background: #fff; position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .active { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #666;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 4px; padding: 6px 10px; cursor: pointer;
+    }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      background: #fff; border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 4px; min-width: 150px; z-index: 200; display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #444;
+      border-radius: 4px; cursor: pointer;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+    .btn-cta {
+      background: var(--green); color: #fff; font-size: 13px; font-weight: 500;
+      padding: 9px 20px; border: none; border-radius: 4px;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── MAIN LAYOUT ── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      min-height: calc(100vh - 61px);
+    }
+
+    /* ── LEFT PANEL ── */
+    .contact-left {
+      padding: 64px 48px;
+      border-right: 0.5px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .page-tag {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      letter-spacing: 0.1em; color: var(--green); text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .page-h1 {
+      font-family: 'DM Sans', sans-serif; font-size: 40px; font-weight: 500;
+      line-height: 1.1; letter-spacing: -0.02em; color: var(--black);
+      margin-bottom: 14px;
+    }
+    .page-h1 em { color: var(--green); font-style: normal; }
+    .page-intro {
+      font-size: 14px; color: #777; line-height: 1.75; font-weight: 300;
+    }
+
+    /* Contact details */
+    .contact-details { display: flex; flex-direction: column; gap: 20px; }
+    .contact-detail-group { display: flex; flex-direction: column; gap: 5px; }
+    .detail-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
+      color: var(--text-faint); text-transform: uppercase;
+    }
+    .detail-value {
+      font-size: 14px; color: var(--black); font-weight: 400;
+    }
+    .detail-value a:hover { color: var(--green); }
+    .detail-sub { font-size: 12px; color: var(--text-muted); font-weight: 300; margin-top: 2px; }
+
+    /* Response time badge */
+    .response-badge {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--green-light); border-radius: 6px;
+      padding: 12px 16px; border: 0.5px solid rgba(29,158,117,0.2);
+    }
+    .response-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+    .response-text { font-size: 13px; color: var(--green-dark); font-weight: 400; }
+
+    /* What to send */
+    .what-to-send { }
+    .what-title {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
+      color: var(--text-faint); text-transform: uppercase; margin-bottom: 12px;
+    }
+    .what-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .what-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13px; color: #666; line-height: 1.5; font-weight: 300;
+    }
+    .what-list li::before {
+      content: '';
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0; margin-top: 7px;
+    }
+
+    /* ── RIGHT PANEL - FORM ── */
+    .contact-right {
+      padding: 64px 56px;
+      background: var(--gray-bg);
+    }
+    .form-heading {
+      font-size: 18px; font-weight: 500; color: var(--black);
+      margin-bottom: 28px; letter-spacing: -0.01em;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+    /* Subject tabs */
+    .subject-tabs {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 4px;
+    }
+    .subject-tab {
+      font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em;
+      color: #888; background: #fff;
+      border: 0.5px solid var(--border); border-radius: 3px;
+      padding: 6px 12px; cursor: pointer; transition: all 0.15s;
+      text-transform: uppercase;
+    }
+    .subject-tab:hover { border-color: var(--green); color: var(--green); }
+    .subject-tab.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+    /* Form rows */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      color: var(--text-muted); text-transform: uppercase;
+    }
+    .inp, .txa, .sel {
+      border: 0.5px solid #d0cdc9; border-radius: 4px;
+      padding: 11px 14px; font-size: 14px;
+      font-family: 'DM Sans', sans-serif; color: var(--black);
+      background: #fff; transition: border-color 0.15s; width: 100%;
+    }
+    .inp:focus, .txa:focus, .sel:focus {
+      outline: none; border-color: var(--green);
+    }
+    .inp::placeholder, .txa::placeholder { color: #ccc; }
+    .txa { height: 120px; resize: none; }
+    .sel { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%23aaa' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+    /* File upload */
+    .file-upload {
+      border: 0.5px dashed #c8c4be; border-radius: 6px;
+      background: #fff; transition: border-color 0.15s; position: relative; cursor: pointer;
+    }
+    .file-upload:hover { border-color: var(--green); }
+    .file-upload-inner {
+      padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center;
+    }
+    .file-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--green-light); display: flex; align-items: center; justify-content: center;
+      border: 0.5px solid rgba(29,158,117,0.2);
+    }
+    .file-icon svg { width: 18px; height: 18px; }
+    .file-upload-title { font-size: 13px; font-weight: 500; color: var(--black); }
+    .file-upload-hint { font-size: 11px; color: var(--text-faint); font-weight: 300; line-height: 1.5; }
+    .file-upload-btn {
+      font-size: 12px; font-weight: 500; color: var(--green);
+      border: 0.5px solid var(--green); border-radius: 3px; padding: 5px 14px;
+      background: transparent; cursor: pointer; pointer-events: none;
+    }
+    .file-inp { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+    .file-selected-list { padding: 0 16px 12px; display: flex; flex-direction: column; gap: 4px; position: relative; z-index: 1; }
+    .file-selected-item {
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted);
+      background: var(--gray-bg); border-radius: 3px; padding: 5px 10px;
+    }
+    .file-remove { background: none; border: none; color: #ccc; cursor: pointer; font-size: 14px; line-height: 1; padding: 0 0 0 8px; pointer-events: all; position: relative; z-index: 2; }
+    .file-remove:hover { color: #e24b4a; }
+    .form-success { display: none; flex-direction: column; align-items: center; text-align: center; padding: 48px 24px; gap: 16px; }
+    .form-success.show { display: flex; }
+    .success-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--green-light); display: flex; align-items: center; justify-content: center; border: 0.5px solid rgba(29,158,117,0.3); }
+    .success-icon svg { width: 28px; height: 28px; }
+    .success-title { font-size: 20px; font-weight: 500; color: var(--black); letter-spacing: -0.01em; }
+    .success-text { font-size: 14px; color: #777; font-weight: 300; line-height: 1.7; max-width: 340px; }
+    .form-error-msg { font-size: 13px; color: #e24b4a; background: #fff5f5; border: 0.5px solid #f5c2c2; border-radius: 4px; padding: 10px 14px; display: none; }
+    .form-error-msg.show { display: block; }
+    .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+
+    /* Submit */
+    .form-submit { display: flex; align-items: center; gap: 16px; margin-top: 4px; }
+    .btn-submit {
+      background: var(--green); color: #fff; font-size: 14px; font-weight: 500;
+      padding: 13px 28px; border: none; border-radius: 4px;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .btn-submit:hover { background: var(--green-dark); }
+    .form-note {
+      font-size: 11px; color: var(--text-faint); font-weight: 300; line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px; border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; background: #fff;
+    }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-legal { display: flex; gap: 16px; font-size: 11px; color: var(--text-faint); list-style: none; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+
+    /* ── RESPONSIVE ── */
+    /* ── BURGER MENU ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 10px; cursor: pointer;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px;
+      transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 999;
+      padding: 32px 24px;
+      flex-direction: column; gap: 0;
+      border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border);
+      display: block;
+    }
+    .mobile-menu-link.active { color: var(--green); }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom {
+      margin-top: auto; padding-top: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff;
+      font-size: 15px; font-weight: 500; text-align: center;
+      padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-left { padding: 48px 24px; border-right: none; border-bottom: 0.5px solid var(--border); }
+      .contact-right { padding: 48px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://bibparts.com/de/contact/",
+    "name": "BIB Parts kontaktieren – Angebot anfragen",
+    "description": "Kontakt zu BIB Parts – Zeichnungen oder Spezifikationen einsenden und innerhalb eines Werktages ein Angebot erhalten.",
+    "url": "https://bibparts.com/de/contact/",
+    "inLanguage": "de",
+    "publisher": { "@type": "Organization", "@id": "https://bibparts.com/#organization", "name": "BIB Parts" }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQYL01TKEC');
+  </script>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/de/" class="nav-logo" aria-label="BIB Parts Startseite">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/de/">Startseite</a></li>
+        <li><a href="/de/capabilities/">Leistungen</a></li>
+        <li><a href="/de/projects/">Projekte</a></li>
+        <li><a href="/de/blog/">Blog</a></li>
+        <li><a href="/de/contact/" class="active" aria-current="page">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language" aria-expanded="false">
+            <span id="lang-code">DE</span>
+            <span class="lang-chevron" id="lang-chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+            <div class="lang-option" onclick="selectLang('EN','/en/contact/',this)" role="option">
+              <span class="lang-name">English</span>
+            </div>
+            <div class="lang-option active" onclick="selectLang('DE','/de/contact/',this)" role="option">
+              <span class="lang-name">Deutsch</span><span class="lang-check" aria-label="selected">✓</span>
+            </div>
+            <div class="lang-option" onclick="selectLang('ES','/es/contact/',this)" role="option"><span class="lang-name">Español</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/contact/',this)" role="option"><span class="lang-name">Français</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/contact/',this)" role="option"><span class="lang-name">Polski</span></div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/de/contact/" class="btn-cta active">Angebot anfordern</a>
+      </div>
+    </div>
+  
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/de/" class="mobile-menu-link">Startseite</a>
+    <a href="/de/capabilities/" class="mobile-menu-link">Leistungen</a>
+    <a href="/de/projects/" class="mobile-menu-link">Projekte</a>
+    <a href="/de/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/de/contact/" class="mobile-menu-link">Kontakt</a>
+    <div class="mobile-menu-bottom">
+      <a href="/de/contact/" class="mobile-menu-cta">Angebot anfordern</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn" onclick="location.href='/en/contact/'">EN</button>
+        <button class="mobile-lang-btn active">DE</button>
+        <button class="mobile-lang-btn" onclick="location.href='/es/contact/'">ES</button>
+        <button class="mobile-lang-btn" onclick="location.href='/fr/contact/'">FR</button>
+        <button class="mobile-lang-btn" onclick="location.href='/pl/contact/'">PL</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <main role="main">
+
+  <!-- ── MAIN LAYOUT ── -->
+  <div class="contact-layout">
+
+    <!-- LEFT: info -->
+    <aside class="contact-left">
+      <div>
+        <p class="page-tag">Kontakt aufnehmen</p>
+        <h1 class="page-h1">Sprechen wir über<br><em>Ihr Projekt</em></h1>
+        <p class="page-intro">Senden Sie uns Ihre Zeichnungen oder Spezifikationen – wir antworten innerhalb eines Werktages mit einem Angebot oder technischen Fragen.</p>
+      </div>
+
+      <div class="response-badge">
+        <div class="response-dot"></div>
+        <span class="response-text">Wir antworten innerhalb von <strong>1 Werktag</strong></span>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-detail-group">
+          <div class="detail-label">Email</div>
+          <div class="detail-value"><a href="mailto:info@bibparts.com">info@bibparts.com</a></div>
+          <div class="detail-sub">Für Angebote, technische Fragen und allgemeine Anfragen</div>
+        </div>
+        <div class="contact-detail-group">
+          <div class="detail-label">Standort</div>
+          <div class="detail-value">Baltikum · Europäische Union</div>
+          <div class="detail-sub">Lieferungen in Europa, GCC und weltweit</div>
+        </div>
+        <div class="contact-detail-group">
+          <div class="detail-label">Geschäftszeiten</div>
+          <div class="detail-value">Montag – Freitag, 08:00 – 17:00 EET</div>
+          <div class="detail-sub">UTC+2 (UTC+3 im Sommer)</div>
+        </div>
+      </div>
+
+      <div class="what-to-send">
+        <div class="what-title">Was Ihre Anfrage enthalten sollte</div>
+        <ul class="what-list">
+          <li>Technische Zeichnungen (DWG, DXF, PDF) oder 3D-Modelle (STEP, IGES, STL)</li>
+          <li>Werkstoffspezifikation oder -anforderungen</li>
+          <li>Erforderliche Toleranzen und Oberflächengüte</li>
+          <li>Menge – Prototyp, Kleinserie oder Serienproduktion</li>
+          <li>Ziellieferdatum oder Lieferzeitanforderung</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- RIGHT: form -->
+    <div class="contact-right">
+      <div class="form-heading">Anfrage senden</div>
+
+      <form class="contact-form" id="contact-form" novalidate onsubmit="return bibSub(event)">
+
+        <!-- Name + Company -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Ihr Name *</label>
+            <input class="inp" type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="company">Unternehmen *</label>
+            <input class="inp" type="text" id="company" name="company" placeholder="Acme Industries" required>
+          </div>
+        </div>
+
+        <!-- Email + Phone -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="email">Email *</label>
+            <input class="inp" type="email" id="email" name="email" placeholder="john@acme.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Telefon</label>
+            <input class="inp" type="tel" id="phone" name="phone" placeholder="+371 00 000 000">
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <label class="form-label" for="message">Projektbeschreibung *</label>
+          <textarea class="txa" id="message" name="message" placeholder="Beschreiben Sie Ihr Bauteil, Werkstoffanforderungen, Toleranzen, benötigte Menge, Liefertermin oder sonstige Details…" required></textarea>
+        </div>
+
+        <!-- File upload -->
+        <div class="form-group">
+          <div class="form-label">Anhänge</div>
+          <div class="file-upload" id="file-upload-area">
+            <div class="file-upload-inner">
+              <div class="file-icon">
+                <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 2v10M5 6l4-4 4 4" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 13v1a2 2 0 002 2h10a2 2 0 002-2v-1" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="file-upload-title">Hier ablegen oder klicken</div>
+              <div class="file-upload-hint">DWG, DXF, STEP, IGES, STL, PDF, XLSX, DOCX, ZIP...<br>Bis zu 50 MB pro Datei · Bis zu 10 Dateien</div>
+              <div class="file-upload-btn">Dateien auswählen</div>
+            </div>
+            <div class="file-selected-list" id="file-list"></div>
+            <input class="file-inp" type="file" name="files" id="file-input" multiple
+              accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.obj,.3mf,.xlsx,.xls,.docx,.doc,.txt,.csv,.zip,.rar,.7z,.tar,.gz,.png,.jpg,.jpeg,.gif,.webp,.tiff,.tif,.bmp,.svg"
+            >
+          </div>
+        </div>
+
+        <!-- Error -->
+        <div class="form-error-msg" role="alert"></div>
+
+        <!-- Submit -->
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Anfrage senden</button>
+          <p class="form-note">Mit dem Absenden stimmen Sie zu, dass wir Sie zu Ihrer Anfrage kontaktieren. Wir geben Ihre Daten nicht weiter.</p>
+        </div>
+
+      </form>
+
+      <!-- Success state -->
+      <div class="form-success" role="status" aria-live="polite">
+        <div class="success-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14l5 5 9-9" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="success-title">Anfrage gesendet!</div>
+        <div class="success-text">Vielen Dank — wir haben Ihre Anfrage erhalten und melden uns innerhalb eines Werktages.</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <a href="/de/" aria-label="BIB Parts Startseite">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/de/capabilities/">Leistungen</a></li>
+        <li><a href="/de/projects/">Projekte</a></li>
+        <li><a href="/de/blog/">Blog</a></li>
+        <li><a href="/de/contact/">Kontakt</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="/de/privacy/">Datenschutz</a></li>
+        <li><a href="/de/cookies/">Cookies</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() { document.documentElement.style.visibility = ''; });
+
+    // File upload - top level, runs immediately (script at end of body)
+    var _bF = [];
+    var _bFI = document.getElementById('file-input');
+    var _bFL = document.getElementById('file-list');
+    if (_bFI) {
+      _bFI.addEventListener('change', function() {
+        Array.from(_bFI.files).forEach(function(f) {
+          if (_bF.length < 10 && !_bF.find(function(x) { return x.name === f.name && x.size === f.size; })) _bF.push(f);
+        });
+        _bFI.value = '';
+        _bRFL();
+      });
+    }
+    function _bRFL() {
+      if (!_bFL) return;
+      _bFL.innerHTML = '';
+      _bF.forEach(function(f, i) {
+        var item = document.createElement('div'); item.className = 'file-selected-item';
+        var nm = document.createElement('span'); nm.textContent = f.name;
+        var rm = document.createElement('button'); rm.className = 'file-remove'; rm.type = 'button'; rm.textContent = '×';
+        rm.addEventListener('click', function(e) { e.stopPropagation(); _bF.splice(i, 1); _bRFL(); });
+        item.appendChild(nm); item.appendChild(rm);
+        if (_bFL) _bFL.appendChild(item);
+      });
+    }
+
+    // Form submit handler - global function called via onsubmit attribute
+    function bibSub(e) {
+      e.preventDefault();
+      var cf = document.getElementById('contact-form');
+      if (!cf) return false;
+      var nv = cf.querySelector('[name="name"]').value.trim();
+      var ev = cf.querySelector('[name="email"]').value.trim();
+      var eb = cf.querySelector('.form-error-msg');
+      var sb = cf.querySelector('.btn-submit');
+      var sc = document.querySelector('.form-success');
+      if (!nv || !ev) {
+        if (eb) { eb.textContent = 'Bitte füllen Sie Name und E-Mail-Adresse aus.'; eb.classList.add('show'); }
+        return false;
+      }
+      var fd = new FormData();
+      fd.append('name', nv);
+      fd.append('company', cf.querySelector('[name="company"]').value.trim());
+      fd.append('email', ev);
+      fd.append('phone', cf.querySelector('[name="phone"]').value.trim());
+      fd.append('message', cf.querySelector('[name="message"]').value.trim());
+      _bF.forEach(function(f) { fd.append('files', f); });
+      if (sb) { sb.disabled = true; sb.textContent = 'Wird gesendet…'; }
+      if (eb) eb.classList.remove('show');
+      fetch('https://form.bibparts.com/contact', { method: 'POST', body: fd })
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d.ok) {
+            cf.style.display = 'none';
+            if (sc) sc.classList.add('show');
+          } else {
+            if (eb) { eb.textContent = d.error || 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.'; eb.classList.add('show'); }
+            if (sb) { sb.disabled = false; sb.textContent = 'Anfrage senden'; }
+          }
+        })
+        .catch(function() {
+          if (eb) { eb.textContent = 'Verbindungsfehler. Bitte versuchen Sie es erneut.'; eb.classList.add('show'); }
+          if (sb) { sb.disabled = false; sb.textContent = 'Anfrage senden'; }
+        });
+      return false;
+    }
+
+    // Nav: burger + lang switcher + scroll shadow
+    document.addEventListener('DOMContentLoaded', function() {
+      var burger = document.getElementById('burger');
+      var menu = document.getElementById('mobile-menu');
+      if (burger && menu) {
+        burger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burger.classList.toggle('open');
+          menu.classList.toggle('open');
+          document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+      window.toggleLang = function() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        if (c) c.classList.toggle('open', open);
+      };
+      window.selectLang = function(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '✓';
+        el.appendChild(chk);
+        window.location.href = path;
+      };
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (menu && menu.classList.contains('open')) {
+          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+            menu.classList.remove('open');
+            if (burger) burger.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+    });
+  </script>
+
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed9dd7058d5a1aa',t:'MTc3NjQxMjUwMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9da49da4dd3',t:'MTc3NzQzOTMwMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f52141df955c7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f659691ef854dd3',t:'MTc3Nzg3NzYwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def67fad56386',t:'MTc3ODEzMjkwMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2a734dc39b1ed',t:'MTc3ODg1MzQ2MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

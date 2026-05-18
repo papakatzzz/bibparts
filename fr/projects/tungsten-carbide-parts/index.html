@@ -1,0 +1,592 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIB Parts - Étude de cas pièces en carbure de tungstène. Production complète par métallurgie des poudres : fabrication du moule, pressage, frittage et contrôle qualité.">
+  <meta property="og:title" content="Pièces en Carbure de Tungstène - BIB Parts">
+  <meta property="og:description" content="Production complète par métallurgie des poudres de pièces en carbure de tungstène : fabrication du moule, pressage, frittage et contrôle qualité.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://bibparts.com/assets/images/proj-tungsten-carbide.webp">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://bibparts.com/fr/projects/tungsten-carbide-parts/">
+  <link rel="canonical" href="https://bibparts.com/fr/projects/tungsten-carbide-parts/">
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/projects/tungsten-carbide-parts/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/projects/tungsten-carbide-parts/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/projects/tungsten-carbide-parts/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/projects/tungsten-carbide-parts/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/projects/tungsten-carbide-parts/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/projects/tungsten-carbide-parts/"/>
+
+  <title>Pièces en Carbure de Tungstène - BIB Parts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      font-size: 17px;
+  overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --border: #e0deda;
+      --text-muted: #666666;
+      --text-faint: #999999;
+      --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Cg transform='translate(10,20)'%3E%3Crect x='0' y='0' width='9' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.15'/%3E%3Crect x='13' y='0' width='6' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.07'/%3E%3Ctext x='23' y='20' font-family='Arial Black,sans-serif' font-size='14' font-weight='900' fill='%231D9E75' opacity='0.15' letter-spacing='0.5'%3EBIB%3C/text%3E%3Ctext x='23' y='31' font-family='Arial,sans-serif' font-size='6' font-weight='700' fill='%231D9E75' opacity='0.15' letter-spacing='3.5'%3EPARTS%3C/text%3E%3C/g%3E%3Cg transform='translate(110,80)'%3E%3Crect x='0' y='0' width='9' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.15'/%3E%3Crect x='13' y='0' width='6' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.07'/%3E%3Ctext x='23' y='20' font-family='Arial Black,sans-serif' font-size='14' font-weight='900' fill='%231D9E75' opacity='0.15' letter-spacing='0.5'%3EBIB%3C/text%3E%3Ctext x='23' y='31' font-family='Arial,sans-serif' font-size='6' font-weight='700' fill='%231D9E75' opacity='0.15' letter-spacing='3.5'%3EPARTS%3C/text%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* ── LOGO ── */
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px; border-bottom: 0.5px solid var(--border);
+      background: #fff; position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .active { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #666;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 4px; padding: 6px 10px;
+    }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      background: #fff; border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 4px; min-width: 150px; z-index: 200; display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #444;
+      border-radius: 4px; cursor: pointer;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); }
+    .btn-cta {
+      background: var(--green); color: #fff; font-size: 13px; font-weight: 500;
+      padding: 9px 20px; border: none; border-radius: 4px;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── BURGER ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 8px;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px; transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 999; padding: 32px 24px;
+      flex-direction: column; gap: 0; border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border); display: block;
+    }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff; font-size: 15px; font-weight: 500;
+      text-align: center; padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      padding: 12px 48px; border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-faint);
+    }
+    .breadcrumb a:hover { color: var(--green); }
+
+    /* ── PROJECT HERO ── */
+    .project-hero {
+      padding: 56px 80px 48px;
+      border-bottom: 0.5px solid var(--border);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .project-tag {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      letter-spacing: 0.1em; color: var(--green); text-transform: uppercase;
+      margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+    }
+    .project-tag-sep { color: var(--border); }
+    .project-h1 {
+      font-size: 42px; font-weight: 500; line-height: 1.1;
+      letter-spacing: -0.02em; color: var(--black); margin-bottom: 20px;
+    }
+    .project-lead {
+      font-size: 17px; color: #666; line-height: 1.8; font-weight: 300;
+      max-width: 720px;
+    }
+
+    /* ── CONTENT BLOCKS ── */
+    .project-body { max-width: 1280px; margin: 0 auto; }
+
+    .block-text {
+      padding: 56px 80px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .block-text p {
+      font-size: 15px; color: #444; line-height: 1.85;
+      font-weight: 300; max-width: 720px;
+    }
+
+    .block-img-left {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--border);
+      min-height: 420px;
+    }
+    .block-img-right {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--border);
+      min-height: 420px;
+    }
+
+    .block-image {
+      background-color: #fff;
+      background-image: var(--pattern);
+      background-repeat: repeat;
+      background-size: 200px 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .block-img-left .block-image { border-right: 0.5px solid var(--border); }
+    .block-img-right .block-image { border-left: 0.5px solid var(--border); }
+
+    .block-size-hint {
+      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+      font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.35); padding: 3px 8px; border-radius: 3px;
+      white-space: nowrap; z-index: 2; pointer-events: none;
+    }
+    .block-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+    }
+
+    .block-content {
+      padding: 48px 64px;
+      display: flex; flex-direction: column; justify-content: center; gap: 16px;
+    }
+    .block-label {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.12em; color: var(--text-faint); text-transform: uppercase;
+    }
+    .block-content p {
+      font-size: 15px; color: #444; line-height: 1.85; font-weight: 300;
+    }
+    .block-content p + p { margin-top: 14px; }
+
+    /* CTA banner */
+    .block-cta {
+      padding: 64px 48px;
+      background: var(--green-light);
+      border-top: 0.5px solid var(--border);
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 48px; align-items: center;
+    }
+    .block-cta-h {
+      font-size: 22px; font-weight: 500; color: var(--black);
+      margin-bottom: 6px; letter-spacing: -0.01em;
+    }
+    .block-cta-sub { font-size: 14px; color: #555; font-weight: 300; }
+    .block-cta-btn {
+      display: inline-block; background: var(--green); color: #fff;
+      font-size: 14px; font-weight: 500; padding: 14px 28px;
+      border: none; border-radius: 4px; white-space: nowrap; cursor: pointer;
+    }
+    .block-cta-btn:hover { background: var(--green-dark); }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px; border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-legal { display: flex; gap: 16px; font-size: 11px; color: var(--text-faint); list-style: none; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .breadcrumb { padding: 12px 24px; }
+      .project-hero { padding: 40px 24px 36px; }
+      .project-h1 { font-size: 30px; }
+      .block-text { padding: 40px 24px; }
+      .block-img-left,
+      .block-img-right { grid-template-columns: 1fr; }
+      .block-img-left .block-image,
+      .block-img-right .block-image { border-right: none; border-left: none; border-bottom: 0.5px solid var(--border); min-height: 260px; }
+      .block-img-right { direction: ltr; }
+      .block-img-right .block-content { order: 1; }
+      .block-img-right .block-image { order: 2; border-top: 0.5px solid var(--border); }
+      .block-content { padding: 32px 24px; }
+      .block-cta { grid-template-columns: 1fr; padding: 48px 24px; gap: 20px; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bibparts.com/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Projets", "item": "https://bibparts.com/fr/projects/" },
+      { "@type": "ListItem", "position": 3, "name": "Pièces en carbure de tungstène" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "@id": "https://bibparts.com/fr/projects/tungsten-carbide-parts/",
+    "name": "Pièces en carbure de tungstène",
+    "description": "Production complète par métallurgie des poudres de pièces en carbure de tungstène : fabrication du moule, pressage, frittage et contrôle qualité.",
+    "url": "https://bibparts.com/fr/projects/tungsten-carbide-parts/",
+    "inLanguage": "fr",
+    "image": "https://bibparts.com/assets/images/proj-tungsten-carbide.webp",
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://bibparts.com/#organization",
+      "name": "BIB Parts"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQYL01TKEC');
+  </script>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <a href="/fr/" class="nav-logo" aria-label="BIB Parts accueil">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        
+        <li><a href="/fr/">Accueil</a></li>
+        <li><a href="/fr/capabilities/">Capacités</a></li>
+        <li><a href="/fr/projects/" class="active" aria-current="page">Projets</a></li>
+        <li><a href="/fr/blog/">Blog</a></li>
+        <li><a href="/fr/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Choisir la langue">
+            <span id="lang-code">FR</span>
+            <span class="lang-chevron" id="lang-chevron">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <div class="lang-option" onclick="selectLang('EN','/en/projects/tungsten-carbide-parts/',this)" role="option"><span class="lang-name">English</span></div>
+            <div class="lang-option" onclick="selectLang('DE','/de/projects/tungsten-carbide-parts/',this)" role="option"><span class="lang-name">Deutsch</span></div>
+            <div class="lang-option" onclick="selectLang('ES','/es/projects/tungsten-carbide-parts/',this)" role="option"><span class="lang-name">Español</span></div>
+            <div class="lang-option active" onclick="selectLang('FR','/fr/projects/tungsten-carbide-parts/',this)" role="option"><span class="lang-name">Français</span><span class="lang-check" aria-label="sélectionné">✓</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/projects/tungsten-carbide-parts/',this)" role="option"><span class="lang-name">Polski</span></div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/fr/contact/" class="btn-cta">Demander un devis</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/fr/" class="mobile-menu-link">Accueil</a>
+    <a href="/fr/capabilities/" class="mobile-menu-link">Capacités</a>
+    <a href="/fr/projects/" class="mobile-menu-link">Projets</a>
+    <a href="/fr/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/fr/contact/" class="mobile-menu-link">Contact</a>
+    <div class="mobile-menu-bottom">
+      <a href="/fr/contact/" class="mobile-menu-cta">Demander un devis</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn" onclick="location.href='/en/projects/tungsten-carbide-parts/'">EN</button>
+        <button class="mobile-lang-btn" onclick="location.href='/de/projects/tungsten-carbide-parts/'">DE</button>
+        <button class="mobile-lang-btn" onclick="location.href='/es/projects/tungsten-carbide-parts/'">ES</button>
+        <button class="mobile-lang-btn" onclick="location.href='/pl/projects/tungsten-carbide-parts/'">PL</button>
+        <button class="mobile-lang-btn active">FR</button>
+      </div>
+    </div>
+  </div>
+
+  <main role="main">
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <a href="/fr/">Accueil</a>
+    <span>›</span>
+    <a href="/fr/projects/">Projets</a>
+    <span>›</span>
+    <span>Pièces en carbure de tungstène</span>
+  </div>
+
+  <!-- ── PROJECT HERO ── -->
+  <header class="project-hero">
+    <div class="project-tag">
+      <span>Études de cas</span>
+      <span class="project-tag-sep">·</span>
+      <span>Métallurgie des poudres</span>
+      <span class="project-tag-sep">·</span>
+      <span>Industriel</span>
+    </div>
+    <h1 class="project-h1">Pièces en carbure de tungstène</h1>
+    <p class="project-lead">Nous produisons des composants en carbure de tungstène pour les industries automobile, outillage, médical, minier et pétrole &amp; gaz. Par métallurgie des poudres, nous gérons le cycle de production complet en interne – de la fabrication du moule de pressage au frittage jusqu'au contrôle final et à la livraison.</p>
+  </header>
+
+  <!-- ── BODY ── -->
+  <div class="project-body">
+
+    <!-- BLOCK 1: image left + material & applications right -->
+    <div class="block-img-left">
+      <div class="block-image">
+        <img loading="lazy" src="/assets/images/tungsten-carbide-1.webp" alt="Pièces en carbure de tungstène pour applications industrielles">
+      </div>
+      <div class="block-content">
+        <div class="block-label">Matériau et applications</div>
+        <p>Le carbure de tungstène a remplacé les matériaux moins résistants à l'usure dans de nombreuses applications exigeantes, grâce à une dureté que seul le diamant dépasse. Sa combinaison de dureté, de ténacité, de résistance à la chaleur et à la corrosion en fait le matériau de choix là où l'acier conventionnel n'atteint pas la durée de vie requise.</p>
+        <p>Les pièces en carbure de tungstène étant fabriquées par métallurgie des poudres, nous pouvons produire des composants quasi-nets dans un large éventail de géométries et de quantités – y compris des formes complexes qu'il serait impossible ou non rentable d'usiner à partir du plein. Nous travaillons avec les nuances WC-Co traditionnelles et le carbure de silicium, sélectionnés selon les exigences techniques du client.</p>
+      </div>
+    </div>
+
+    <!-- BLOCK 2: mould & mixing text left + image right -->
+    <div class="block-img-right">
+      <div class="block-content">
+        <div class="block-label">Fabrication du moule et mélange des matériaux</div>
+        <p>L'outillage de pressage est le fondement de toute pièce en métallurgie des poudres. Nous fabriquons les outillages en interne grâce à nos capacités d'usinage, ce qui nous donne un contrôle direct sur la précision dimensionnelle et nous permet de produire des outillages pour des pièces de toute complexité géométrique – y compris des formes impraticables à réaliser autrement.</p>
+        <p>Une fois l'outillage prêt, les composants du matériau sont sélectionnés selon les spécifications du client et mélangés dans un processus de mélange contrôlé. La composition et les paramètres de mélange déterminent les propriétés chimiques et mécaniques – dureté, densité, résistance à la rupture en flexion – que la pièce atteindra après le frittage.</p>
+      </div>
+      <div class="block-image">
+        <img loading="lazy" src="/assets/images/tungsten-carbide-2.webp" alt="Moule de pressage et mélange de poudre pour production de carbure de tungstène">
+      </div>
+    </div>
+
+    <!-- BLOCK 3: image left + pressing & sintering right -->
+    <div class="block-img-left">
+      <div class="block-image">
+        <img loading="lazy" src="/assets/images/tungsten-carbide-3.webp" alt="Pressage et frittage de pièces en carbure de tungstène">
+      </div>
+      <div class="block-content">
+        <div class="block-label">Pressage et frittage</div>
+        <p>Les ébauches crues sont pressées dans l'outillage sous une pression contrôlée. Les cotes sont surveillées et enregistrées tout au long du pressage – ces résultats déterminent directement la géométrie atteinte après frittage, permettant de détecter et corriger les dérives avant que les pièces ne soient placées dans le four.</p>
+        <p>Les pièces sont ensuite frittées dans un four sous vide à 1350–1450 °C. C'est l'étape la plus critique du processus : lors du frittage, la poudre compactée se transforme en un composant entièrement dense et à haute résistance. Le cycle de frittage – température, temps de maintien et vitesse de refroidissement – est contrôlé avec précision pour atteindre les propriétés matériaux cibles.</p>
+      </div>
+    </div>
+
+    <!-- BLOCK 4: quality control text left + image right -->
+    <div class="block-img-right">
+      <div class="block-content">
+        <div class="block-label">Contrôle qualité et livraison</div>
+        <p>Après le frittage, chaque pièce passe un contrôle final couvrant à la fois les paramètres géométriques et les propriétés matériaux. La dureté, la densité et les cotes clés sont vérifiées et consignées dans un rapport de contrôle émis avec chaque lot.</p>
+        <p>Les pièces sont ensuite emballées et expédiées selon les exigences du client. Notre équipe d'ingénieurs peut proposer des solutions jusqu'à 30% plus rentables que les offres comparables du marché – sans compromis sur la précision dimensionnelle ni sur la qualité matériaux qu'exigent les applications les plus exigeantes.</p>
+      </div>
+      <div class="block-image">
+        <img loading="lazy" src="/assets/images/tungsten-carbide-4.webp" alt="Contrôle qualité de pièces finies en carbure de tungstène">
+      </div>
+    </div>
+
+    <!-- BLOCK 5: CTA -->
+    <div class="block-cta">
+      <div>
+        <h2 class="block-cta-h">Vous avez un projet similaire ?</h2>
+        <p class="block-cta-sub">Nous prenons en charge le cycle de production complet des pièces en carbure de tungstène – de la conception de l'outillage à la livraison. Envoyez-nous vos plans ou spécifications et nous répondons en un jour ouvré.</p>
+      </div>
+      <a href="/fr/contact/" class="block-cta-btn">Demander un devis →</a>
+    </div>
+
+  </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <a href="/fr/" aria-label="BIB Parts accueil">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/fr/capabilities/">Capacités</a></li>
+        <li><a href="/fr/projects/">Projets</a></li>
+        <li><a href="/fr/blog/">Blog</a></li>
+        <li><a href="/fr/contact/">Contact</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="/fr/privacy/">Confidentialité</a></li>
+        <li><a href="/fr/cookies/">Cookies</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+
+      window.toggleLang = function() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        if (c) c.classList.toggle('open', open);
+      };
+      window.selectLang = function(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '✓';
+        el.appendChild(chk);
+        window.location.href = path;
+      };
+
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c2 = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c2) c2.classList.remove('open');
+        }
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+
+    });
+  </script>
+
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f6596a898fc5c27',t:'MTc3Nzg3NzYwNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def878ebd542c',t:'MTc3ODEzMjkwNg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c733bf5a8d37',t:'MTc3ODg1NDc3MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,635 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIB Parts – Fallstudie Stoßdämpferteile. Design, Prototyping und CNC-Fertigung eines Aluminiumkolbens für die Rallye-Fahrzeugaufhängung.">
+  <meta property="og:title" content="Stoßdämpferteile - BIB Parts">
+  <meta property="og:description" content="Design, Prototyping und Fertigung eines Aluminium-Kolbens für die Rallye-Fahrzeugaufhängung. Vollständige Fallstudie mit Prozessdetails.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://bibparts.com/assets/images/proj-shock-absorber.webp">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bibparts.com/de/projects/shock-absorber-parts/">
+  <meta property="og:locale" content="de_DE">
+  <link rel="canonical" href="https://bibparts.com/de/projects/shock-absorber-parts/">
+  <!-- Hreflang for multilingual -->
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/projects/shock-absorber-parts/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/projects/shock-absorber-parts/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/projects/shock-absorber-parts/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/projects/shock-absorber-parts/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/projects/shock-absorber-parts/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/projects/shock-absorber-parts/"/>
+
+  <title>Stoßdämpferteile – BIB Parts Projekte</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --border: #e0deda;
+      --text-muted: #666666;
+      --text-faint: #999999;
+      --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Cg transform='translate(10,20)'%3E%3Crect x='0' y='0' width='9' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.15'/%3E%3Crect x='13' y='0' width='6' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.07'/%3E%3Ctext x='23' y='20' font-family='Arial Black,sans-serif' font-size='14' font-weight='900' fill='%231D9E75' opacity='0.15' letter-spacing='0.5'%3EBIB%3C/text%3E%3Ctext x='23' y='31' font-family='Arial,sans-serif' font-size='6' font-weight='700' fill='%231D9E75' opacity='0.15' letter-spacing='3.5'%3EPARTS%3C/text%3E%3C/g%3E%3Cg transform='translate(110,80)'%3E%3Crect x='0' y='0' width='9' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.15'/%3E%3Crect x='13' y='0' width='6' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.07'/%3E%3Ctext x='23' y='20' font-family='Arial Black,sans-serif' font-size='14' font-weight='900' fill='%231D9E75' opacity='0.15' letter-spacing='0.5'%3EBIB%3C/text%3E%3Ctext x='23' y='31' font-family='Arial,sans-serif' font-size='6' font-weight='700' fill='%231D9E75' opacity='0.15' letter-spacing='3.5'%3EPARTS%3C/text%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* ── LOGO ── */
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px; border-bottom: 0.5px solid var(--border);
+      background: #fff; position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .active { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #666;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 4px; padding: 6px 10px;
+    }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      background: #fff; border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 4px; min-width: 150px; z-index: 200; display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #444;
+      border-radius: 4px; cursor: pointer;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); }
+    .btn-cta {
+      background: var(--green); color: #fff; font-size: 13px; font-weight: 500;
+      padding: 9px 20px; border: none; border-radius: 4px;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── BURGER ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 8px;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px; transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 999; padding: 32px 24px;
+      flex-direction: column; gap: 0; border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border); display: block;
+    }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff; font-size: 15px; font-weight: 500;
+      text-align: center; padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      padding: 12px 48px; border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-faint);
+    }
+    .breadcrumb a:hover { color: var(--green); }
+
+    /* ── PROJECT HERO ── */
+    .project-hero {
+      padding: 56px 80px 48px;
+      border-bottom: 0.5px solid var(--border);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .project-tag {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      letter-spacing: 0.1em; color: var(--green); text-transform: uppercase;
+      margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+    }
+    .project-tag-sep { color: var(--border); }
+    .project-h1 {
+      font-size: 42px; font-weight: 500; line-height: 1.1;
+      letter-spacing: -0.02em; color: var(--black); margin-bottom: 20px;
+    }
+    .project-lead {
+      font-size: 17px; color: #666; line-height: 1.8; font-weight: 300;
+      max-width: 720px;
+    }
+
+    /* ── CONTENT BLOCKS ── */
+    .project-body { max-width: 1280px; margin: 0 auto; }
+
+    /* Text-only block */
+    .block-text {
+      padding: 56px 80px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .block-text p {
+      font-size: 15px; color: #444; line-height: 1.85;
+      font-weight: 300; max-width: 720px;
+    }
+
+    /* Image left + text right */
+    .block-img-left {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--border);
+      min-height: 420px;
+    }
+    .block-img-right {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--border);
+      min-height: 420px;
+    }
+
+    .block-image {
+      background-color: #fff;
+      background-image: var(--pattern);
+      background-repeat: repeat;
+      background-size: 200px 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .block-img-left .block-image { border-right: 0.5px solid var(--border); }
+    .block-img-right .block-image { border-left: 0.5px solid var(--border); }
+
+    .block-size-hint {
+      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+      font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.35); padding: 3px 8px; border-radius: 3px;
+      white-space: nowrap; z-index: 2; pointer-events: none;
+    }
+    .block-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+    }
+
+    .block-content {
+      padding: 48px 64px;
+      display: flex; flex-direction: column; justify-content: center; gap: 16px;
+    }
+    .block-label {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.12em; color: var(--text-faint); text-transform: uppercase;
+    }
+    .block-content p {
+      font-size: 15px; color: #444; line-height: 1.85; font-weight: 300;
+    }
+    .block-content p + p { margin-top: 14px; }
+
+    /* 3 stacked images right */
+    .block-3images {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .block-3images .block-content { border-right: 0.5px solid var(--border); }
+    .block-3images-stack {
+      display: grid; grid-template-rows: 1fr 1fr 1fr;
+      border-left: 0.5px solid var(--border);
+    }
+    .stack-img {
+      background-color: #fff;
+      background-image: var(--pattern);
+      background-repeat: repeat;
+      background-size: 200px 120px;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px; min-height: 140px; position: relative;
+    }
+    .stack-img + .stack-img { border-top: 0.5px solid var(--border); }
+    .stack-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* CTA banner */
+    .block-cta {
+      padding: 64px 48px;
+      background: var(--green-light);
+      border-top: 0.5px solid var(--border);
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 48px; align-items: center;
+    }
+    .block-cta-h {
+      font-size: 22px; font-weight: 500; color: var(--black);
+      margin-bottom: 6px; letter-spacing: -0.01em;
+    }
+    .block-cta-sub { font-size: 14px; color: #555; font-weight: 300; }
+    .block-cta-btn {
+      display: inline-block; background: var(--green); color: #fff;
+      font-size: 14px; font-weight: 500; padding: 14px 28px;
+      border: none; border-radius: 4px; white-space: nowrap; cursor: pointer;
+    }
+    .block-cta-btn:hover { background: var(--green-dark); }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px; border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-legal { display: flex; gap: 16px; font-size: 11px; color: var(--text-faint); list-style: none; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .breadcrumb { padding: 12px 24px; }
+      .project-hero { padding: 40px 24px 36px; }
+      .project-h1 { font-size: 30px; }
+      .block-text { padding: 40px 24px; }
+      .block-img-left,
+      .block-img-right,
+      .block-3images { grid-template-columns: 1fr; }
+      .block-img-left .block-image,
+      .block-img-right .block-image { border-right: none; border-left: none; border-bottom: 0.5px solid var(--border); }
+      .block-img-right { direction: ltr; }
+      .block-img-right .block-content { order: 1; }
+      .block-img-right .block-image { order: 2; border-top: 0.5px solid var(--border); }
+      .block-content { padding: 32px 24px; }
+      .block-3images .block-content { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .block-3images-stack { grid-template-rows: auto; grid-template-columns: 1fr 1fr 1fr; border-left: none; border-top: 0.5px solid var(--border); }
+      .stack-img { min-height: 120px; }
+      .stack-img + .stack-img { border-top: none; border-left: 0.5px solid var(--border); }
+      .block-cta { grid-template-columns: 1fr; padding: 48px 24px; gap: 20px; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://bibparts.com/de/" },
+      { "@type": "ListItem", "position": 2, "name": "Projekte", "item": "https://bibparts.com/de/projects/" },
+      { "@type": "ListItem", "position": 3, "name": "Stoßdämpferteile" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "@id": "https://bibparts.com/de/projects/shock-absorber-parts/",
+    "name": "Stoßdämpferteile",
+    "description": "Design, Prototyping und Fertigung eines Aluminium-Kolbens für die Rallye-Fahrzeugaufhängung.",
+    "url": "https://bibparts.com/de/projects/shock-absorber-parts/",
+    "inLanguage": "de",
+    "image": "https://bibparts.com/assets/images/proj-shock-absorber.webp",
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://bibparts.com/#organization",
+      "name": "BIB Parts"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQYL01TKEC');
+  </script>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/de/" class="nav-logo" aria-label="BIB Parts Startseite">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/de/">Startseite</a></li>
+        <li><a href="/de/capabilities/">Leistungen</a></li>
+        <li><a href="/de/projects/" class="active" aria-current="page">Projekte</a></li>
+        <li><a href="/de/blog/">Blog</a></li>
+        <li><a href="/de/contact/">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language">
+            <span id="lang-code">DE</span>
+            <span class="lang-chevron" id="lang-chevron">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <div class="lang-option" onclick="selectLang('EN','/en/projects/shock-absorber-parts/',this)"><span class="lang-name">English</span></div>
+            <div class="lang-option active" onclick="selectLang('DE','/de/projects/shock-absorber-parts/',this)"><span class="lang-name">Deutsch</span><span class="lang-check">✓</span></div>
+            <div class="lang-option" onclick="selectLang('ES','/es/projects/shock-absorber-parts/',this)"><span class="lang-name">Español</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/projects/shock-absorber-parts/',this)" role="option"><span class="lang-name">Français</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/projects/shock-absorber-parts/',this)" role="option"><span class="lang-name">Polski</span></div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/de/contact/" class="btn-cta">Angebot anfordern</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/de/" class="mobile-menu-link">Startseite</a>
+    <a href="/de/capabilities/" class="mobile-menu-link">Leistungen</a>
+    <a href="/de/projects/" class="mobile-menu-link">Projekte</a>
+    <a href="/de/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/de/contact/" class="mobile-menu-link">Kontakt</a>
+    <div class="mobile-menu-bottom">
+      <a href="/de/contact/" class="mobile-menu-cta">Angebot anfordern</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn" onclick="location.href='/en/projects/shock-absorber-parts/'">EN</button>
+        <button class="mobile-lang-btn active">DE</button>
+        <button class="mobile-lang-btn" onclick="location.href='/es/projects/shock-absorber-parts/'">ES</button>
+        <button class="mobile-lang-btn" onclick="location.href='/fr/projects/shock-absorber-parts/'">FR</button>
+        <button class="mobile-lang-btn" onclick="location.href='/pl/projects/shock-absorber-parts/'">PL</button>
+      </div>
+    </div>
+  </div>
+
+  <main role="main">
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <a href="/de/">Startseite</a>
+    <span>›</span>
+    <a href="/de/projects/">Projekte</a>
+    <span>›</span>
+    <span>Stoßdämpferteile</span>
+  </div>
+
+  <!-- ── PROJECT HERO ── -->
+  <header class="project-hero">
+    <div class="project-tag">
+      <span>Case study</span>
+      <span class="project-tag-sep">·</span>
+      <span>CNC machining</span>
+      <span class="project-tag-sep">·</span>
+      <span>Motorsport</span>
+    </div>
+    <h1 class="project-h1">Stoßdämpferteile</h1>
+    <p class="project-lead">Wir fertigen präzise CNC-bearbeitete Komponenten für Stoßdämpfer und Fahrwerksysteme nach Kundenzeichnungen und Spezifikationen – vom Einzelprototyp bis zur Serienproduktion.</p>
+  </header>
+
+  <!-- ── BODY ── -->
+  <div class="project-body">
+
+    <!-- BLOCK 2: 3D model left + case intro right -->
+    <div class="block-img-left">
+      <div class="block-image">
+        <img loading="lazy" src="/assets/images/shock-absorber-1.webp" alt="3D model of shock absorber piston">
+
+      </div>
+      <div class="block-content">
+        <div class="block-label">Projekthintergrund</div>
+        <p>Als Beispiel für eines unserer aktuellen Projekte möchten wir unseren Prozess bei der Entwicklung und Fertigung von Prototypen für ein neues Produkt vorstellen.</p>
+        <p>Einer unserer langjährigen Kunden beauftragte uns mit der Entwicklung und Prototypenfertigung eines Stoßdämpferkolbens für ein Rallye-Fahrwerk. Eine zentrale Anforderung war das Erreichen der Zielleistungseigenschaften innerhalb der definierten Gewichtsgrenzen. Unser Ingenieursteam begann mit den erforderlichen Berechnungen sowie der 3D-Modellierung und Zeichnungsarbeit für die Prototypenfertigung.</p>
+      </div>
+    </div>
+
+    <!-- BLOCK 3: machining text left + 1 photo right -->
+    <div class="block-img-right">
+      <div class="block-content">
+        <div class="block-label">Material selection & machining</div>
+        <p>Da der Stoßdämpfer unter anspruchsvollen Bedingungen mit hohen Belastungen über seine gesamte Lebensdauer arbeitet, war die Werkstoffauswahl entscheidend. Gewicht war ebenfalls eine wesentliche Konstruktionsbeschränkung, die die Optionen weiter einschränkte.</p>
+        <p>Basierend auf diesen Anforderungen wählten wir eine feste und verschleißfeste Aluminiumlegierung – Güte 6061-T6 – mit bewährter Leistung in anspruchsvollen Anwendungen. Nach Eingang des Rohmaterials in unserer Fertigung richteten wir die Ausrüstung ein und begannen mit dem CNC-Drehen der Rohteile. Aufgrund der komplexen Geometrie des Teils optimierten wir das Bearbeitungsprogramm während des Prozesses, um die Zykluszeit ohne Qualitätseinbußen zu reduzieren.</p>
+        <p>Während der Produktion wurde jedes Maß sorgfältig in jedem Schritt kontrolliert und die Ergebnisse für die Analyse bei der Vorbereitung auf die Serienproduktion erfasst. Wir stießen auf keine unvorhergesehenen Schwierigkeiten im Bearbeitungsprozess.</p>
+      </div>
+      <div class="block-image">
+        <img loading="lazy" src="/assets/images/shock-absorber-2.webp" alt="Finished machined parts">
+
+      </div>
+    </div>
+
+    <!-- BLOCK 4: anodizing image left + inspection text right -->
+    <div class="block-img-left">
+      <div class="block-image">
+        <img loading="lazy" src="/assets/images/shock-absorber-3.webp" alt="Parts with different anodizing thickness options">
+
+      </div>
+      <div class="block-content">
+        <div class="block-label">Inspection & surface treatment</div>
+        <p>Nach der Bearbeitung prüften wir die Teile auf Maßübereinstimmung mit den Fertigungszeichnungen und kontrollierten auch auf scharfe Kanten und Grate. Die Ergebnisse entsprachen vollständig den technischen Anforderungen.</p>
+        <p>Die Teile wurden dann zur Eloxierung an unsere Partner geschickt. Da es sich um Prototypen handelte, entschieden wir nach Absprache mit dem Kunden, Teile mit zwei verschiedenen Eloxierungsoptionen herzustellen – 15 und 40 Mikrometer Schichtdicke. Das Foto zeigt Beispiele beider Oberflächen.</p>
+      </div>
+    </div>
+
+    <!-- BLOCK 5: PTFE text left + finished parts image right -->
+    <div class="block-img-right">
+      <div class="block-content">
+        <div class="block-label">PTFE film installation & final inspection</div>
+        <p>Nach der Kontrolle der Eloxierbeschichtung und Bestätigung der Qualitätsanforderungen installierten wir die PTFE-Folie auf der Außenseite des Kolbens. Eine 1,5 mm breite Folie wurde gewählt, wärmegeschrumpft und auf jedem Kolben installiert. Dies wurde in der Konstruktionsphase bei der Berechnung der Kolbenmaße berücksichtigt.</p>
+        <p>Nach einer Endkontrolle aller Parameter – Teilemaße, Oberfläche, Beschichtung und PTFE-Folienposition – wurden die Ergebnisse in den Endkontrollbericht eingetragen. Die Teile wurden verpackt und an den Kunden zur internen Kontrolle geschickt, die die vollständige Übereinstimmung mit den Anforderungen bestätigte.</p>
+      </div>
+      <div class="block-image">
+        <img loading="lazy" src="/assets/images/shock-absorber-4.webp" alt="Finished pistons with PTFE film installed">
+
+      </div>
+    </div>
+
+    <!-- BLOCK 6: CTA -->
+    <div class="block-cta">
+      <div>
+        <h2 class="block-cta-h">Haben Sie ein ähnliches Projekt?</h2>
+        <p class="block-cta-sub">Wir helfen jederzeit bei der Entwicklung, Prototypenfertigung und Serienproduktion von Teilen jeder Komplexität. Senden Sie uns Ihre Zeichnungen – wir antworten innerhalb eines Werktages.</p>
+      </div>
+      <a href="/de/contact/" class="block-cta-btn">Angebot anfordern →</a>
+    </div>
+
+  </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <a href="/de/" aria-label="BIB Parts Startseite">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/de/capabilities/">Leistungen</a></li>
+        <li><a href="/de/projects/">Projekte</a></li>
+        <li><a href="/de/blog/">Blog</a></li>
+        <li><a href="/de/contact/">Kontakt</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="/de/privacy/">Datenschutz</a></li>
+        <li><a href="/de/cookies/">Cookies</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Burger menu
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+
+      // Lang switcher
+      window.toggleLang = function() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        if (c) c.classList.toggle('open', open);
+      };
+      window.selectLang = function(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '✓';
+        el.appendChild(chk);
+        window.location.href = path;
+      };
+
+      // Close on outside click
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      // Nav shadow
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+
+    });
+  </script>
+
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed9dd616e456386',t:'MTc3NjQxMjQ5OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9ce29777121',t:'MTc3NzQzOTMwMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f52141e796fc7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f65969499ff542d',t:'MTc3Nzg3NzYwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def5f8f614dd3',t:'MTc3ODEzMjg5OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c71bddebc7eb',t:'MTc3ODg1NDc2Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

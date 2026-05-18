@@ -1,0 +1,739 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Métallurgie des poudres ou usinage CNC ? Un guide pratique comparant les deux procédés selon le coût, la quantité, la complexité géométrique et la tolérance — pour choisir la bonne approche.">
+  <meta property="og:title" content="Métallurgie des Poudres vs Usinage CNC : Comment Choisir - BIB Parts Blog">
+  <meta property="og:description" content="Métallurgie des poudres ou usinage CNC ? Un guide pratique comparant les deux procédés selon le coût, la quantité, la complexité géométrique et la tolérance — pour choisir la bonne approche.">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://bibparts.com/fr/blog/powder-metallurgy-vs-cnc-machining/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://bibparts.com/assets/images/powder-metallurgy-vs-cnc-machining.webp">
+  <meta property="article:published_time" content="2026-04-14">
+  <meta property="article:author" content="BIB Parts">
+  <link rel="canonical" href="https://bibparts.com/fr/blog/powder-metallurgy-vs-cnc-machining/">
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/blog/powder-metallurgy-vs-cnc-machining/"/>
+
+  <title>Métallurgie des Poudres vs Usinage CNC - BIB Parts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --border: #e0deda;
+      --text-muted: #666666;
+      --text-faint: #999999;
+      --content-width: 680px;
+    }
+
+    /* ── LOGO ── */
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px; border-bottom: 0.5px solid var(--border);
+      background: #fff; position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .active { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #666;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 4px; padding: 6px 10px; cursor: pointer;
+    }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      background: #fff; border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 4px; min-width: 150px; z-index: 200; display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #444;
+      border-radius: 4px; cursor: pointer;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+    .btn-cta {
+      background: var(--green); color: #fff; font-size: 13px; font-weight: 500;
+      padding: 9px 20px; border: none; border-radius: 4px;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      padding: 14px 48px;
+      border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-faint);
+    }
+    .breadcrumb a:hover { color: var(--green); }
+    .breadcrumb-sep { color: var(--text-faint); }
+
+    /* ── ARTICLE LAYOUT ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr min(var(--content-width), 100%) 1fr;
+      padding: 0;
+    }
+    .article-layout > * { grid-column: 2; }
+    .article-layout > .full-width { grid-column: 1 / -1; }
+
+    /* ── ARTICLE HEADER ── */
+    .article-header {
+      padding: 56px 48px 40px;
+      border-bottom: 0.5px solid var(--border);
+      max-width: calc(var(--content-width) + 96px);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .article-meta {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+    }
+    .article-cat {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      color: var(--green); text-transform: uppercase;
+    }
+    .article-date {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .meta-sep { color: var(--text-faint); font-size: 10px; }
+    .article-read-time {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .article-author {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .article-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 36px; font-weight: 500;
+      line-height: 1.2; letter-spacing: -0.02em;
+      color: var(--black); margin-bottom: 16px;
+    }
+    .article-lead {
+      font-size: 17px; color: #555; line-height: 1.75; font-weight: 300;
+    }
+
+    /* ── COVER IMAGE ── */
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16/5;
+      max-height: 280px;
+      background: #EEF2F0;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 6px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .article-cover img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      padding: 48px 48px 64px;
+      max-width: calc(var(--content-width) + 96px);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .article-body h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px; font-weight: 500;
+      color: var(--black); margin: 40px 0 14px;
+      letter-spacing: -0.01em; line-height: 1.3;
+    }
+    .article-body h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px; font-weight: 500;
+      color: var(--black); margin: 28px 0 10px;
+    }
+    .article-body p {
+      font-size: 15px; color: #444; line-height: 1.85;
+      font-weight: 300; margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol { margin: 0 0 20px 20px; }
+    .article-body li {
+      font-size: 15px; color: #444; line-height: 1.8;
+      font-weight: 300; margin-bottom: 6px;
+    }
+    .article-body strong { font-weight: 500; color: var(--black); }
+    .article-body em { font-style: italic; color: #666; }
+    .article-body a { color: var(--green); border-bottom: 0.5px solid rgba(29,158,117,0.3); }
+    .article-body a:hover { border-bottom-color: var(--green); }
+
+    .article-body code {
+      font-family: 'DM Mono', monospace; font-size: 13px;
+      background: var(--gray-bg); color: var(--black);
+      padding: 2px 6px; border-radius: 3px;
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid var(--green);
+      padding: 16px 24px; margin: 32px 0;
+      background: var(--green-light); border-radius: 0 6px 6px 0;
+    }
+    .article-body blockquote p {
+      font-size: 17px; color: var(--green-dark); font-weight: 400;
+      font-style: italic; margin: 0;
+    }
+
+    .article-body table {
+      width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13px;
+    }
+    .article-body th {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-faint);
+      border-bottom: 0.5px solid var(--border); padding: 8px 12px;
+      text-align: left; font-weight: 400;
+    }
+    .article-body td {
+      padding: 10px 12px; border-bottom: 0.5px solid var(--border);
+      color: #444; font-weight: 300; line-height: 1.5;
+    }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body hr { border: none; border-top: 0.5px solid var(--border); margin: 40px 0; }
+
+    /* ── ARTICLE FOOTER ── */
+    .article-footer {
+      border-top: 0.5px solid var(--border);
+      padding: 40px 48px;
+      max-width: calc(var(--content-width) + 96px);
+      margin: 0 auto; width: 100%;
+      display: flex; flex-direction: column; gap: 32px;
+    }
+
+    .article-tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .tag-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      color: var(--text-faint); text-transform: uppercase;
+    }
+    .tag {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em;
+      color: #777; background: var(--gray-bg);
+      border: 0.5px solid var(--border); border-radius: 2px;
+      padding: 4px 10px; text-transform: uppercase;
+    }
+
+    .article-cta {
+      background: var(--green-light); border-radius: 8px;
+      padding: 28px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      border: 0.5px solid rgba(29,158,117,0.2);
+    }
+    .article-cta-text h3 { font-size: 17px; font-weight: 500; color: var(--black); margin-bottom: 4px; }
+    .article-cta-text p { font-size: 13px; color: #666; font-weight: 300; margin: 0; }
+    .article-cta-btn {
+      display: inline-block; background: var(--green); color: #fff;
+      font-size: 13px; font-weight: 500; padding: 10px 22px;
+      border-radius: 4px; white-space: nowrap; flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .article-cta-btn:hover { background: var(--green-dark); }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--text-muted); transition: color 0.12s;
+    }
+    .back-link:hover { color: var(--green); }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px; border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; background: #fff;
+    }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-legal { display: flex; gap: 16px; font-size: 11px; color: var(--text-faint); list-style: none; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+
+    @media (max-width: 768px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .breadcrumb { padding: 12px 24px; }
+      .article-header { padding: 40px 24px 28px; }
+      .article-title { font-size: 26px; }
+      .article-body { padding: 32px 24px 48px; }
+      .article-footer { padding: 28px 24px; }
+      .article-cta { flex-direction: column; align-items: flex-start; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 10px; cursor: pointer;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px; transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 999; padding: 32px 24px;
+      flex-direction: column; gap: 0; border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border); display: block;
+    }
+    .mobile-menu-link.active { color: var(--green); }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff;
+      font-size: 15px; font-weight: 500; text-align: center;
+      padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    @media (max-width: 768px) { .burger { display: flex; } }
+  </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Métallurgie des poudres vs usinage CNC : comment choisir le bon procédé pour votre pièce",
+    "description": "Métallurgie des poudres ou usinage CNC ? Un guide pratique comparant les deux procédés selon le coût, la quantité, la complexité géométrique et la tolérance — pour choisir la bonne approche.",
+    "author": { "@type": "Organization", "name": "BIB Parts" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BIB Parts",
+      "url": "https://bibparts.com"
+    },
+    "image": "https://bibparts.com/assets/images/powder-metallurgy-vs-cnc-machining.webp",
+    "datePublished": "2026-04-14",
+    "inLanguage": "fr",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://bibparts.com/fr/blog/powder-metallurgy-vs-cnc-machining/" },
+    "url": "https://bibparts.com/fr/blog/powder-metallurgy-vs-cnc-machining/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bibparts.com/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bibparts.com/fr/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Métallurgie des poudres vs usinage CNC" }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQYL01TKEC');
+  </script>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <a href="/fr/" class="nav-logo" aria-label="BIB Parts Accueil">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        
+        <li><a href="/fr/">Accueil</a></li>
+        <li><a href="/fr/capabilities/">Capacités</a></li>
+        <li><a href="/fr/projects/">Projets</a></li>
+        <li><a href="/fr/blog/" class="active" aria-current="page">Blog</a></li>
+        <li><a href="/fr/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Choisir la langue">
+            <span id="lang-code">FR</span>
+            <span class="lang-chevron" id="lang-chevron">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Langue">
+            <div class="lang-option" onclick="selectLang('EN','/en/blog/powder-metallurgy-vs-cnc-machining/',this)" role="option"><span class="lang-name">English</span></div>
+            <div class="lang-option" onclick="selectLang('DE','/de/blog/powder-metallurgy-vs-cnc-machining/',this)" role="option"><span class="lang-name">Deutsch</span></div>
+            <div class="lang-option" onclick="selectLang('ES','/es/blog/powder-metallurgy-vs-cnc-machining/',this)" role="option"><span class="lang-name">Español</span></div>
+            <div class="lang-option active" onclick="selectLang('FR','/fr/blog/powder-metallurgy-vs-cnc-machining/',this)" role="option"><span class="lang-name">Français</span><span class="lang-check" aria-label="sélectionné">✓</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/blog/powder-metallurgy-vs-cnc-machining/',this)" role="option"><span class="lang-name">Polski</span></div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/fr/contact/" class="btn-cta">Demander un devis</a>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/fr/" class="mobile-menu-link">Accueil</a>
+    <a href="/fr/capabilities/" class="mobile-menu-link">Capacités</a>
+    <a href="/fr/projects/" class="mobile-menu-link">Projets</a>
+    <a href="/fr/blog/" class="mobile-menu-link active">Blog</a>
+    <a href="/fr/contact/" class="mobile-menu-link">Contact</a>
+    <div class="mobile-menu-bottom">
+      <a href="/fr/contact/" class="mobile-menu-cta">Demander un devis</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn" onclick="location.href='/en/blog/powder-metallurgy-vs-cnc-machining/'">EN</button>
+        <button class="mobile-lang-btn" onclick="location.href='/de/blog/powder-metallurgy-vs-cnc-machining/'">DE</button>
+        <button class="mobile-lang-btn" onclick="location.href='/es/blog/powder-metallurgy-vs-cnc-machining/'">ES</button>
+        <button class="mobile-lang-btn" onclick="location.href='/pl/blog/powder-metallurgy-vs-cnc-machining/'">PL</button>
+        <button class="mobile-lang-btn active">FR</button>
+      </div>
+    </div>
+  </div>
+
+  <main role="main">
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/fr/">Accueil</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="/fr/blog/">Blog</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Métallurgie des poudres vs usinage CNC</span>
+  </div>
+
+  <!-- ── COVER IMAGE ── -->
+  <div class="article-cover full-width">
+    <img src="/assets/images/powder-metallurgy-vs-cnc-machining.webp" alt="Métallurgie des poudres vs usinage CNC – comparaison">
+  </div>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="article-cat">Conseils techniques</span>
+      <span class="meta-sep">·</span>
+      <span class="article-date">Avril 2026</span>
+      <span class="meta-sep">·</span>
+      <span class="article-read-time">6 min de lecture</span>
+      <span class="meta-sep">·</span>
+      <span class="article-author">BIB Parts</span>
+    </div>
+    <h1 class="article-title">
+      Métallurgie des poudres vs usinage CNC : comment choisir le bon procédé pour votre pièce
+    </h1>
+    <p class="article-lead">
+      Deux des procédés les plus répandus pour la fabrication de pièces métalliques de précision — l'usinage CNC et la métallurgie des poudres — couvrent des domaines d'application qui se recoupent mais restent distincts. Choisir le mauvais procédé en phase de conception peut conduire à des pièces cinq fois plus chères que nécessaire ou ne respectant pas les spécifications. Ce guide explique quand chaque procédé est le bon choix et quels facteurs guident cette décision.
+    </p>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="article-body">
+
+    <h2>Comment les procédés se distinguent</h2>
+
+    <p>L'usinage CNC enlève de la matière d'un brut massif à l'aide d'outils coupants pour obtenir la forme finale. C'est un procédé soustractif — flexible, avec des tolérances très serrées, applicable des prototypes unitaires aux séries de plusieurs milliers de pièces.</p>
+
+    <p>La métallurgie des poudres (MP) comprime de la poudre métallique sous haute pression dans une matrice, puis fritte le comprimé dans un four pour lier les particules. C'est un procédé quasi sans enlèvement de matière — les pièces sortent de la matrice presque aux dimensions finales, avec un minimum de perte matière et sans usinage pour la plupart des éléments. L'économie de la MP est entièrement déterminée par la quantité : les coûts d'outillage sont élevés, mais le coût unitaire est très bas en grandes séries.</p>
+
+    <h2>Quand l'usinage CNC est le bon choix</h2>
+
+    <ul>
+      <li><strong>Petites à moyennes séries</strong> (1 à environ 5 000 pièces/an). L'usinage n'entraîne pas de coûts d'outillage — vous payez à la pièce et à l'heure-machine.</li>
+      <li><strong>Géométries extérieures complexes,</strong> contre-dépouilles ou éléments qu'une matrice ne peut pas réaliser.</li>
+      <li><strong>Tolérances dimensionnelles serrées.</strong> Le CNC atteint couramment <code>±0,01–0,05 mm</code>. Les tolérances des pièces frittées en MP sont de IT8–IT10 ; le calibrage peut les améliorer à IT6 mais nécessite une opération supplémentaire.</li>
+      <li><strong>Large gamme de matériaux.</strong> Le CNC usine pratiquement tout matériau de construction — acier, aluminium, titane, laiton, cuivre, plastiques techniques. La MP est principalement limitée au fer et à l'acier, avec quelques nuances inoxydables, laiton et cuivre.</li>
+      <li><strong>Prototypage et phases précoces de développement.</strong> Une pièce CNC peut être fabriquée à partir d'un plan en quelques jours. Les outillages MP nécessitent des semaines.</li>
+      <li><strong>Pièces nécessitant le soudage,</strong> des filets dans des parois minces ou des éléments qui ne fonctionnent qu'en matériaux corroyés.</li>
+    </ul>
+
+    <h2>Quand la métallurgie des poudres est le bon choix</h2>
+
+    <ul>
+      <li><strong>Grandes séries</strong> (typiquement 10 000+ pièces/an). À quantités suffisantes, les coûts de pièces MP sont nettement inférieurs à l'usinage — souvent de 50 à 80 %.</li>
+      <li><strong>Géométrie intérieure complexe.</strong> Des éléments comme les cannelures intérieures, les clavettes en fond d'alésage et les profils de cames nécessitant plusieurs bridages peuvent être directement formés dans la matrice.</li>
+      <li><strong>Paliers autolubrifiants.</strong> Les paliers MP imprégnés d'huile (bronze fritté, fer fritté) sont un produit MP établi aux propriétés non reproductibles par usinage.</li>
+      <li><strong>Efficacité quasi sans enlèvement de matière.</strong> La MP génère pratiquement aucun déchet matière. Pour les alliages coûteux ou la production en grande série, c'est un facteur de coût majeur.</li>
+      <li><strong>Répétabilité pièce à pièce constante.</strong> Comme chaque pièce est pressée dans la même matrice, la dispersion dimensionnelle entre pièces est très faible.</li>
+    </ul>
+
+    <h2>Comparaison des coûts par quantité</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Quantité (pcs/an)</th>
+          <th>Usinage CNC</th>
+          <th>Métallurgie des poudres</th>
+          <th>Procédé recommandé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>1–100</code></td>
+          <td>Faible–moyen</td>
+          <td>Non rentable (coûts d'outillage)</td>
+          <td>Usinage CNC</td>
+        </tr>
+        <tr>
+          <td><code>100–1 000</code></td>
+          <td>Moyen</td>
+          <td>Élevé (amortissement outillage)</td>
+          <td>Usinage CNC</td>
+        </tr>
+        <tr>
+          <td><code>1 000–5 000</code></td>
+          <td>Élevé</td>
+          <td>Moyen</td>
+          <td>Selon la géométrie</td>
+        </tr>
+        <tr>
+          <td><code>5 000–20 000</code></td>
+          <td>Très élevé</td>
+          <td>Faible–moyen</td>
+          <td>Métallurgie des poudres</td>
+        </tr>
+        <tr>
+          <td><code>20 000+</code></td>
+          <td>Non compétitif</td>
+          <td>Très faible</td>
+          <td>Métallurgie des poudres</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Le point de croisement dépend fortement de la complexité de la pièce, du matériau et de la géométrie spécifique. Pour une simple douille en acier, la MP peut être rentable dès 2 000 pcs/an. Pour une pièce en aluminium complexe, le CNC reste compétitif même à des quantités bien supérieures.</p>
+
+    <h2>Tolérance et état de surface</h2>
+
+    <p>L'usinage CNC a ici un avantage clair. Les pièces MP frittées sortent du four avec des tolérances IT8–IT10 sur la plupart des cotes. Le calibrage (un processus de pressage à froid après frittage) peut améliorer les alésages et diamètres extérieurs critiques à IT6, mais augmente les coûts et est limité à certains éléments.</p>
+
+    <p>L'usinage CNC atteint couramment IT6–IT7 sur l'ensemble de la pièce, avec IT5 ou mieux sur des éléments individuels par rectification ou rodage.</p>
+
+    <blockquote>
+      <p>Si votre pièce nécessite des tolérances serrées sur plusieurs éléments — portées de roulements, alésages de précision, arbres ajustés avec serrage — l'usinage CNC est presque toujours le meilleur procédé, quelle que soit la quantité.</p>
+    </blockquote>
+
+    <h2>Propriétés des matériaux</h2>
+
+    <p>Les pièces MP ont une densité d'environ <code>85–95 %</code> du matériau corroyé, selon l'alliage et le processus de frittage. Cela implique une résistance à la traction et une tenue en fatigue légèrement inférieures à la pièce usinée équivalente. Pour la plupart des applications structurales, ce n'est pas un problème — les pièces MP sont utilisées dans le monde entier dans les boîtes de vitesses automobiles, les outils électriques et les machines industrielles — mais pour les applications aéronautiques ou motorsport critiques en fatigue, le matériau corroyé est généralement préféré.</p>
+
+    <h2>Les procédés peuvent-ils être combinés ?</h2>
+
+    <p>Oui — et c'est souvent la solution optimale. Un brut MP peut être usiné après frittage pour atteindre des tolérances serrées sur les éléments critiques, tandis que le procédé MP fournit la forme quasi finale et maintient le coût global bas. Cette approche hybride est une pratique standard pour les composants automobiles tels que les bielles, pignons et sièges de soupapes.</p>
+
+    <h2>Résumé</h2>
+
+    <ul>
+      <li>Choisir l'usinage CNC pour les petites à moyennes séries, la géométrie complexe, les tolérances serrées, la large gamme de matériaux ou le prototypage.</li>
+      <li>Choisir la métallurgie des poudres pour les grandes séries, la géométrie simple à modérée, les applications autolubrifiantes ou lorsque la minimisation des déchets matière est primordiale.</li>
+      <li>Le point de croisement des coûts se situe typiquement entre 1 000 et 10 000 pcs/an, selon la complexité de la pièce.</li>
+      <li>Tolérances MP : IT8–IT10 fritté ; le calibrage améliore les éléments critiques à IT6.</li>
+      <li>Envisager une approche hybride — forme quasi finale MP avec usinage post-frittage — pour les pièces en grande série avec peu d'éléments à tolérance serrée.</li>
+    </ul>
+
+  </article>
+
+  <!-- ── ARTICLE FOOTER ── -->
+  <footer class="article-footer">
+
+    <a href="/fr/blog/" class="back-link">← Retour à tous les articles</a>
+
+    <div class="article-tags">
+      <span class="tag-label">Tags :</span>
+      <span class="tag">Métallurgie des poudres</span>
+      <span class="tag">Usinage CNC</span>
+      <span class="tag">Procédés de fabrication</span>
+      <span class="tag">Conseils techniques</span>
+    </div>
+
+    <div class="article-cta">
+      <div class="article-cta-text">
+        <h3>Vous hésitez sur le procédé adapté à votre pièce ?</h3>
+        <p>Envoyez-nous votre plan et vos exigences de quantité — nos ingénieurs recommandent la voie de fabrication la plus rentable et établissent un devis.</p>
+      </div>
+      <a href="/fr/contact/" class="article-cta-btn">Demander un devis →</a>
+    </div>
+
+  </footer>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <a href="/fr/" aria-label="BIB Parts Accueil">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/fr/capabilities/">Capacités</a></li>
+        <li><a href="/fr/projects/">Projets</a></li>
+        <li><a href="/fr/blog/">Blog</a></li>
+        <li><a href="/fr/contact/">Contact</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="/fr/privacy/">Confidentialité</a></li>
+        <li><a href="/fr/cookies/">Cookies</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+
+      window.toggleLang = function() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        if (c) c.classList.toggle('open', open);
+      };
+      window.selectLang = function(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '✓';
+        el.appendChild(chk);
+        window.location.href = path;
+      };
+
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+
+    });
+  </script>
+
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f6596ab1f80a1aa',t:'MTc3Nzg3NzYwOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def8c2e8c7122',t:'MTc3ODEzMjkwNg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c7367b535434',t:'MTc3ODg1NDc3Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

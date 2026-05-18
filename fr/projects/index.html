@@ -1,22 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- VERSION: v2026-03-27-1420-projects -->
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BIB Parts project case studies - precision metal components delivered to aerospace, hydraulics, OEM and industrial clients across Europe and beyond.">
-  <meta property="og:title" content="Projects - BIB Parts">
-  <meta property="og:description" content="Selected case studies: CNC machined parts, hydraulic cylinders, powder metal components and castings delivered to clients worldwide.">
+  <meta name="description" content="Références projets BIB Parts – composants métalliques de précision pour aérospatiale, hydraulique, OEM et clients industriels en Europe et dans le monde.">
+  <meta property="og:title" content="Projets - BIB Parts">
+  <meta property="og:description" content="Études de cas sélectionnées : pièces usinées CNC, vérins hydrauliques, composants en métal fritté et pièces de fonderie pour des clients dans le monde entier.">
   <meta property="og:site_name" content="BIB Parts">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:url" content="https://bibparts.com/en/projects/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://bibparts.com/fr/projects/">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:image" content="https://bibparts.com/assets/images/proj-hydraulic-cylinder.webp">
-  <link rel="canonical" href="https://bibparts.com/en/projects/">
-  <!-- Hreflang for multilingual -->
+  <link rel="canonical" href="https://bibparts.com/fr/projects/">
   <link rel="alternate" hreflang="en" href="https://bibparts.com/en/projects/"/>
   <link rel="alternate" hreflang="de" href="https://bibparts.com/de/projects/"/>
   <link rel="alternate" hreflang="es" href="https://bibparts.com/es/projects/"/>
@@ -24,7 +23,7 @@
   <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/projects/"/>
   <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/projects/"/>
 
-  <title>Precision Metal Parts: Projects & Case Studies – BIB</title>
+  <title>Projets &amp; Études de Cas - BIB Parts</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -167,7 +166,7 @@
     }
 
     /* ── PROJECT CARD ── */
-    .proj-card { position: relative;
+    .proj-card {
       border: 0.5px solid var(--border); border-radius: 8px;
       overflow: hidden; background: #fff;
       transition: border-color 0.15s, transform 0.15s;
@@ -177,9 +176,8 @@
     }
     .proj-card:hover { border-color: var(--green); transform: translateY(-2px); }
     .proj-card.hidden { display: none; }
-    /* Make entire card clickable via stretched link */
     .proj-card-link {
-      position: absolute; inset: 0; z-index: 2;
+      position: absolute; inset: 0; z-index: 1;
     }
 
     .proj-img {
@@ -203,7 +201,6 @@
     }
     .proj-img-sub { font-size: 11px; color: #b5ccc6; }
 
-    /* Technology badge on image */
     .proj-tech-badge {
       position: absolute; top: 12px; right: 12px;
       font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500;
@@ -226,7 +223,6 @@
       font-size: 15px; font-weight: 500; color: var(--black); line-height: 1.3;
     }
 
-    /* Specs grid inside card */
     .proj-specs {
       display: grid; grid-template-columns: 1fr 1fr; gap: 0;
       border: 0.5px solid var(--border); border-radius: 6px;
@@ -245,7 +241,6 @@
     }
     .proj-spec-val { font-size: 12px; font-weight: 500; color: var(--black); }
 
-    /* Large card - spans 2 columns */
     .proj-card.large { grid-column: span 2; }
     .proj-card.large .proj-img { height: 280px; }
     .proj-card.large .proj-body { flex-direction: row; gap: 24px; align-items: flex-start; }
@@ -360,13 +355,17 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "@id": "https://bibparts.com/en/projects/",
-    "name": "Projects & Case Studies - BIB Parts",
-    "description": "BIB Parts project case studies - precision metal components for aerospace, hydraulics, OEM and industrial clients.",
-    "url": "https://bibparts.com/en/projects/",
-    "inLanguage": "en",
-    "publisher": { "@type": "Organization", "@id": "https://bibparts.com/#organization", "name": "BIB Parts" }
-  }
+    "@id": "https://bibparts.com/fr/projects/",
+    "name": "Projets de Pièces Métalliques de Précision - BIB Parts",
+    "description": "Études de cas BIB Parts : composants métalliques de précision pour l'aérospatiale, l'hydraulique, les OEM et l'industrie.",
+    "url": "https://bibparts.com/fr/projects/",
+    "inLanguage": "fr",
+    "publisher": {
+        "@type": "Organization",
+        "@id": "https://bibparts.com/#organization",
+        "name": "BIB Parts"
+    }
+}
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
@@ -381,8 +380,8 @@
 <body>
 
   <!-- ── NAV ── -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="/en/" class="nav-logo" aria-label="BIB Parts home">
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <a href="/fr/" class="nav-logo" aria-label="BIB Parts accueil">
       <div class="logo">
         <div class="logo-mark" aria-hidden="true">
           <div class="logo-slash logo-slash-1"></div>
@@ -397,54 +396,59 @@
 
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="/en/">Home</a></li>
-        <li><a href="/en/capabilities/">Capabilities</a></li>
-        <li><a href="/en/projects/" class="active" aria-current="page">Projects</a></li>
-        <li><a href="/en/blog/">Blog</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
+        
+        <li><a href="/fr/">Accueil</a></li>
+        <li><a href="/fr/capabilities/">Capacités</a></li>
+        <li><a href="/fr/projects/" class="active" aria-current="page">Projets</a></li>
+        <li><a href="/fr/blog/">Blog</a></li>
+        <li><a href="/fr/contact/">Contact</a></li>
       </ul>
       <div class="nav-actions">
         <div class="lang-wrap">
-          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language" aria-expanded="false">
-            <span id="lang-code">EN</span>
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Choisir la langue" aria-expanded="false">
+            <span id="lang-code">FR</span>
             <span class="lang-chevron" id="lang-chevron" aria-hidden="true">▾</span>
           </button>
           <div class="lang-dropdown" id="lang-dropdown" role="listbox">
-            <div class="lang-option active" onclick="selectLang('EN','/en/projects/',this)" role="option">
-              <span class="lang-name">English</span><span class="lang-check" aria-label="selected">✓</span>
+            <div class="lang-option" onclick="selectLang('EN','/en/projects/',this)" role="option">
+              <span class="lang-name">English</span>
             </div>
             <div class="lang-option" onclick="selectLang('DE','/de/projects/',this)" role="option">
               <span class="lang-name">Deutsch</span>
             </div>
-            <div class="lang-option" onclick="selectLang('ES','/es/projects/',this)" role="option"><span class="lang-name">Español</span></div>
-            <div class="lang-option" onclick="selectLang('FR','/fr/projects/',this)" role="option"><span class="lang-name">Français</span></div>
+            <div class="lang-option" onclick="selectLang('ES','/es/projects/',this)" role="option">
+              <span class="lang-name">Español</span>
+            </div>
+            <div class="lang-option active" onclick="selectLang('FR','/fr/projects/',this)" role="option">
+              <span class="lang-name">Français</span><span class="lang-check" aria-label="sélectionné">✓</span>
+            </div>
             <div class="lang-option" onclick="selectLang('PL','/pl/projects/',this)" role="option"><span class="lang-name">Polski</span></div>
           </div>
         </div>
         <button class="burger" id="burger" aria-label="Menu" type="button">
           <span></span><span></span><span></span>
         </button>
-        <a href="/en/contact/" class="btn-cta">Get a quote</a>
+        <a href="/fr/contact/" class="btn-cta">Demander un devis</a>
       </div>
     </div>
-  
+
   </nav>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="/en/" class="mobile-menu-link">Home</a>
-    <a href="/en/capabilities/" class="mobile-menu-link">Capabilities</a>
-    <a href="/en/projects/" class="mobile-menu-link">Projects</a>
-    <a href="/en/blog/" class="mobile-menu-link">Blog</a>
-    <a href="/en/contact/" class="mobile-menu-link">Contact</a>
+    <a href="/fr/" class="mobile-menu-link">Accueil</a>
+    <a href="/fr/capabilities/" class="mobile-menu-link">Capacités</a>
+    <a href="/fr/projects/" class="mobile-menu-link active">Projets</a>
+    <a href="/fr/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/fr/contact/" class="mobile-menu-link">Contact</a>
     <div class="mobile-menu-bottom">
-      <a href="/en/contact/" class="mobile-menu-cta">Get a quote</a>
+      <a href="/fr/contact/" class="mobile-menu-cta">Demander un devis</a>
       <div class="mobile-lang">
-        <button class="mobile-lang-btn active">EN</button>
+        <button class="mobile-lang-btn" onclick="location.href='/en/projects/'">EN</button>
         <button class="mobile-lang-btn" onclick="location.href='/de/projects/'">DE</button>
         <button class="mobile-lang-btn" onclick="location.href='/es/projects/'">ES</button>
-        <button class="mobile-lang-btn" onclick="location.href='/fr/projects/'">FR</button>
         <button class="mobile-lang-btn" onclick="location.href='/pl/projects/'">PL</button>
+        <button class="mobile-lang-btn active">FR</button>
       </div>
     </div>
   </div>
@@ -453,54 +457,54 @@
 
   <!-- ── PAGE HERO ── -->
   <section class="page-hero">
-    <p class="page-tag">Case studies</p>
-    <h1 class="page-h1">Selected <em>projects</em></h1>
-    <p class="page-intro">A selection of parts and assemblies we have engineered and manufactured for clients across aerospace, mobile equipment, oil & gas, medical and industrial machinery sectors.</p>
+    <p class="page-tag">Études de cas</p>
+    <h1 class="page-h1">Projets<br><em>sélectionnés</em></h1>
+    <p class="page-intro">Pièces et ensembles livrés pour les industries aérospatiale, automobile, hydraulique et médicale dans le monde entier.</p>
   </section>
 
   <!-- ── FILTER BAR ── -->
-  <div class="filter-bar" role="navigation" aria-label="Filter projects">
-    <span class="filter-label">Filter:</span>
-    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
-    <button class="filter-btn" onclick="filterProjects('cnc', this)">CNC machining</button>
-    <button class="filter-btn" onclick="filterProjects('hydraulics', this)">Hydraulics</button>
-    <button class="filter-btn" onclick="filterProjects('powder', this)">Powder metal</button>
-    <button class="filter-btn" onclick="filterProjects('casting', this)">Casting</button>
+  <div class="filter-bar" role="navigation" aria-label="Filtrer les projets">
+    <span class="filter-label">Filtrer :</span>
+    <button class="filter-btn active" onclick="filterProjects('all', this)">Tous</button>
+    <button class="filter-btn" onclick="filterProjects('cnc', this)">Usinage CNC</button>
+    <button class="filter-btn" onclick="filterProjects('hydraulics', this)">Hydraulique</button>
+    <button class="filter-btn" onclick="filterProjects('powder', this)">Métal fritté</button>
+    <button class="filter-btn" onclick="filterProjects('casting', this)">Fonderie</button>
   </div>
 
   <!-- ── PROJECTS GRID ── -->
-  <section class="projects-section" aria-label="Projects">
+  <section class="projects-section" aria-label="Projets">
     <div class="projects-grid" id="projects-grid">
 
       <!-- PROJECT 1 - Shock absorber, Motorsport -->
       <article class="proj-card large" data-tech="cnc">
-        <a href="/en/projects/shock-absorber-parts/" class="proj-card-link" aria-label="View shock absorber parts project"></a>
+        <a href="/fr/projects/shock-absorber-parts/" class="proj-card-link" aria-label="Voir le projet pièces d'amortisseur"></a>
         <div class="proj-img">
-          <img loading="lazy" src="/assets/images/proj-shock-absorber.webp" alt="Shock absorber piston parts">
-          <span class="proj-tech-badge">CNC machining</span>
+          <img loading="lazy" src="/assets/images/proj-shock-absorber.webp" alt="Pièces pistons d'amortisseur">
+          <span class="proj-tech-badge">Usinage CNC</span>
         </div>
         <div class="proj-body">
           <div class="proj-body-left">
             <p class="proj-industry">Motorsport</p>
-            <h2 class="proj-title">Shock absorber parts</h2>
-            <p style="font-size:13px;color:#888;line-height:1.65;font-weight:300;">Design, prototyping and manufacturing of aluminium pistons for rally car suspension. Material: Al 6061-T6. Two anodizing options produced for prototype validation, followed by PTFE film installation.</p>
-            <a href="/en/projects/shock-absorber-parts/" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;font-weight:500;color:var(--green);">View project →</a>
+            <h2 class="proj-title">Pièces d'amortisseur</h2>
+            <p style="font-size:13px;color:#888;line-height:1.65;font-weight:300;">Pistons Al 6061-T6 usinés CNC pour suspension de voiture de rallye. Anodisés + film PTFE.</p>
+            <a href="/fr/projects/shock-absorber-parts/" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;font-weight:500;color:var(--green);">Voir le projet →</a>
           </div>
           <div class="proj-specs">
             <div class="proj-spec">
-              <div class="proj-spec-key">Material</div>
+              <div class="proj-spec-key">Matériau</div>
               <div class="proj-spec-val">Al 6061-T6</div>
             </div>
             <div class="proj-spec">
-              <div class="proj-spec-key">Process</div>
-              <div class="proj-spec-val">CNC turning</div>
+              <div class="proj-spec-key">Procédé</div>
+              <div class="proj-spec-val">Tournage CNC</div>
             </div>
             <div class="proj-spec">
               <div class="proj-spec-key">Surface</div>
-              <div class="proj-spec-val">Anodised + PTFE</div>
+              <div class="proj-spec-val">Anodisé + PTFE</div>
             </div>
             <div class="proj-spec">
-              <div class="proj-spec-key">Stage</div>
+              <div class="proj-spec-key">Phase</div>
               <div class="proj-spec-val">Prototype</div>
             </div>
           </div>
@@ -509,30 +513,31 @@
 
       <!-- PROJECT 2 - Hydraulic cylinder -->
       <article class="proj-card" data-tech="hydraulics">
-        <a href="/en/projects/hydraulic-cylinder-parts/" class="proj-card-link" aria-label="View hydraulic cylinder parts project"></a>
+        <a href="/fr/projects/hydraulic-cylinder-parts/" class="proj-card-link" aria-label="Voir le projet pièces de vérin hydraulique"></a>
         <div class="proj-img">
-          <img loading="lazy" src="/assets/images/proj-hydraulic-cylinder.webp" alt="Hydraulic cylinder parts">
-          <span class="proj-tech-badge">Hydraulics</span>
+          <img loading="lazy" src="/assets/images/proj-hydraulic-cylinder.webp" alt="Pièces de vérin hydraulique">
+          <span class="proj-tech-badge">Hydraulique</span>
         </div>
         <div class="proj-body">
-          <p class="proj-industry">Mobile equipment</p>
-          <h2 class="proj-title">Hydraulic cylinder parts</h2>
-          <a href="/en/projects/hydraulic-cylinder-parts/" style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;font-weight:500;color:var(--green);">View project →</a>
+          <p class="proj-industry">Équipement mobile</p>
+          <h2 class="proj-title">Pièces de vérin hydraulique</h2>
+          <p style="font-size:13px;color:#888;line-height:1.65;font-weight:300;">Gorges et pistons usinés avec précision pour vérins hydrauliques. Acier C45, tolérances H7/h6.</p>
+          <a href="/fr/projects/hydraulic-cylinder-parts/" style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;font-weight:500;color:var(--green);">Voir le projet →</a>
           <div class="proj-specs">
             <div class="proj-spec">
               <div class="proj-spec-key">Type</div>
-              <div class="proj-spec-val">Custom cylinder</div>
+              <div class="proj-spec-val">Vérin sur mesure</div>
             </div>
             <div class="proj-spec">
-              <div class="proj-spec-key">Process</div>
-              <div class="proj-spec-val">CNC + assembly</div>
+              <div class="proj-spec-key">Procédé</div>
+              <div class="proj-spec-val">CNC + assemblage</div>
             </div>
             <div class="proj-spec">
-              <div class="proj-spec-key">Material</div>
-              <div class="proj-spec-val">C45 steel</div>
+              <div class="proj-spec-key">Matériau</div>
+              <div class="proj-spec-val">Acier C45</div>
             </div>
             <div class="proj-spec">
-              <div class="proj-spec-key">Tolerance</div>
+              <div class="proj-spec-key">Tolérance</div>
               <div class="proj-spec-val">H7 / h6</div>
             </div>
           </div>
@@ -541,54 +546,54 @@
 
       <!-- PROJECT 3 - Tungsten carbide -->
       <article class="proj-card" data-tech="powder">
-        <a href="/en/projects/tungsten-carbide-parts/" class="proj-card-link" aria-label="View tungsten carbide parts project"></a>
+        <a href="/fr/projects/tungsten-carbide-parts/" class="proj-card-link" aria-label="Voir le projet pièces en carbure de tungstène"></a>
         <div class="proj-img">
-          <img loading="lazy" src="/assets/images/proj-tungsten-carbide.webp" alt="Tungsten carbide parts">
-          <span class="proj-tech-badge">Powder metal</span>
+          <img loading="lazy" src="/assets/images/proj-tungsten-carbide.webp" alt="Pièces en carbure de tungstène">
+          <span class="proj-tech-badge">Métal fritté</span>
         </div>
         <div class="proj-body">
-          <p class="proj-industry">Industrial</p>
-          <h2 class="proj-title">Tungsten carbide parts</h2>
-          <a href="/en/projects/tungsten-carbide-parts/" style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;font-weight:500;color:var(--green);">View project →</a>
+          <p class="proj-industry">Industriel</p>
+          <h2 class="proj-title">Pièces en carbure de tungstène</h2>
+          <p style="font-size:13px;color:#888;line-height:1.65;font-weight:300;">Pièces frittées WC-Co, dureté 88–92 HRA, rectifiées à ±0,01 mm de tolérance.</p>
+          <a href="/fr/projects/tungsten-carbide-parts/" style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;font-weight:500;color:var(--green);">Voir le projet →</a>
           <div class="proj-specs">
             <div class="proj-spec">
-              <div class="proj-spec-key">Material</div>
+              <div class="proj-spec-key">Matériau</div>
               <div class="proj-spec-val">WC-Co</div>
             </div>
             <div class="proj-spec">
-              <div class="proj-spec-key">Hardness</div>
+              <div class="proj-spec-key">Dureté</div>
               <div class="proj-spec-val">88-92 HRA</div>
             </div>
             <div class="proj-spec">
-              <div class="proj-spec-key">Process</div>
-              <div class="proj-spec-val">Sintering + grind</div>
+              <div class="proj-spec-key">Procédé</div>
+              <div class="proj-spec-val">Frittage + rectif.</div>
             </div>
             <div class="proj-spec">
-              <div class="proj-spec-key">Tolerance</div>
-              <div class="proj-spec-val">±0.01 mm</div>
+              <div class="proj-spec-key">Tolérance</div>
+              <div class="proj-spec-val">±0,01 mm</div>
             </div>
           </div>
         </div>
       </article>
 
-
     </div>
   </section>
 
   <!-- ── CTA BANNER ── -->
-  <section class="cta-banner" aria-label="Contact call to action">
+  <section class="cta-banner" aria-label="Appel à l'action contact">
     <div>
-      <h2 class="cta-banner-h">Have a similar project in mind?</h2>
-      <p class="cta-banner-sub">Send us your drawings or specifications - we respond within one business day.</p>
+      <h2 class="cta-banner-h">Vous avez un projet similaire ?</h2>
+      <p class="cta-banner-sub">Envoyez-nous vos plans ou spécifications – nous répondons en un jour ouvré.</p>
     </div>
-    <a href="/en/contact/" class="cta-banner-btn">Get a quote →</a>
+    <a href="/fr/contact/" class="cta-banner-btn">Demander un devis →</a>
   </section>
 
   </main>
 
   <!-- ── FOOTER ── -->
   <footer class="footer" role="contentinfo">
-    <a href="/en/" aria-label="BIB Parts home">
+    <a href="/fr/" aria-label="BIB Parts accueil">
       <div class="logo">
         <div class="logo-mark" aria-hidden="true">
           <div class="logo-slash logo-slash-1"></div>
@@ -602,14 +607,14 @@
     </a>
     <div class="footer-right">
       <ul class="footer-links">
-        <li><a href="/en/capabilities/">Capabilities</a></li>
-        <li><a href="/en/projects/">Projects</a></li>
-        <li><a href="/en/blog/">Blog</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/fr/capabilities/">Capacités</a></li>
+        <li><a href="/fr/projects/">Projets</a></li>
+        <li><a href="/fr/blog/">Blog</a></li>
+        <li><a href="/fr/contact/">Contact</a></li>
       </ul>
       <ul class="footer-links">
-        <li><a href="/en/privacy/">Privacy</a></li>
-        <li><a href="/en/cookies/">Cookies</a></li>
+        <li><a href="/fr/privacy/">Confidentialité</a></li>
+        <li><a href="/fr/cookies/">Cookies</a></li>
       </ul>
       <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
     </div>
@@ -702,5 +707,5 @@
   </script>
 
 <script src="/assets/cookie-consent.js" defer></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed9dd5bcc386386',t:'MTc3NjQxMjQ5Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9cb58e75438',t:'MTc3NzQzOTMwMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f52141c08c7c7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f65968ab9547121',t:'MTc3Nzg3NzYwMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def4dcfffc7f3',t:'MTc3ODEzMjg5Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c70e5dd57124',t:'MTc3ODg1NDc2NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f6596a69b0f3469',t:'MTc3Nzg3NzYwNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def8359235435',t:'MTc3ODEzMjkwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c730efe732d6',t:'MTc3ODg1NDc3MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

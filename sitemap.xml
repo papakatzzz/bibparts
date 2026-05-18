@@ -2,94 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- ── ENGLISH (primary) ── -->
-  <url>
-    <loc>https://www.bibparts.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bibparts.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://www.bibparts.com/pl/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.bibparts.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.bibparts.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.bibparts.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.bibparts.com/en/"/>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <!-- English -->
+  <url><loc>https://bibparts.com/en/</loc></url>
+  <url><loc>https://bibparts.com/en/capabilities/</loc></url>
+  <url><loc>https://bibparts.com/en/projects/</loc></url>
+  <url><loc>https://bibparts.com/en/projects/hydraulic-cylinder-parts/</loc></url>
+  <url><loc>https://bibparts.com/en/projects/shock-absorber-parts/</loc></url>
+  <url><loc>https://bibparts.com/en/projects/tungsten-carbide-parts/</loc></url>
+  <url><loc>https://bibparts.com/en/blog/</loc></url>
+  <url><loc>https://bibparts.com/en/blog/cnc-machining-tolerances/</loc></url>
+  <url><loc>https://bibparts.com/en/blog/powder-metallurgy-vs-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/en/blog/aluminium-alloy-selection-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/en/contact/</loc></url>
+  <url><loc>https://bibparts.com/en/cookies/</loc></url>
+  <url><loc>https://bibparts.com/en/privacy/</loc></url>
 
-  <url>
-    <loc>https://www.bibparts.com/en/capabilities/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bibparts.com/en/capabilities/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://www.bibparts.com/pl/capabilities/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.bibparts.com/de/capabilities/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.bibparts.com/es/capabilities/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.bibparts.com/fr/capabilities/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- German -->
+  <url><loc>https://bibparts.com/de/</loc></url>
+  <url><loc>https://bibparts.com/de/capabilities/</loc></url>
+  <url><loc>https://bibparts.com/de/projects/</loc></url>
+  <url><loc>https://bibparts.com/de/projects/hydraulic-cylinder-parts/</loc></url>
+  <url><loc>https://bibparts.com/de/projects/shock-absorber-parts/</loc></url>
+  <url><loc>https://bibparts.com/de/projects/tungsten-carbide-parts/</loc></url>
+  <url><loc>https://bibparts.com/de/blog/</loc></url>
+  <url><loc>https://bibparts.com/de/blog/cnc-machining-tolerances/</loc></url>
+  <url><loc>https://bibparts.com/de/blog/powder-metallurgy-vs-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/de/blog/aluminium-alloy-selection-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/de/contact/</loc></url>
+  <url><loc>https://bibparts.com/de/cookies/</loc></url>
+  <url><loc>https://bibparts.com/de/privacy/</loc></url>
 
-  <url>
-    <loc>https://www.bibparts.com/en/projects/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bibparts.com/en/projects/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://www.bibparts.com/pl/projects/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.bibparts.com/de/projects/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.bibparts.com/es/projects/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.bibparts.com/fr/projects/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Spanish -->
+  <url><loc>https://bibparts.com/es/</loc></url>
+  <url><loc>https://bibparts.com/es/capabilities/</loc></url>
+  <url><loc>https://bibparts.com/es/projects/</loc></url>
+  <url><loc>https://bibparts.com/es/projects/hydraulic-cylinder-parts/</loc></url>
+  <url><loc>https://bibparts.com/es/projects/shock-absorber-parts/</loc></url>
+  <url><loc>https://bibparts.com/es/projects/tungsten-carbide-parts/</loc></url>
+  <url><loc>https://bibparts.com/es/blog/</loc></url>
+  <url><loc>https://bibparts.com/es/blog/cnc-machining-tolerances/</loc></url>
+  <url><loc>https://bibparts.com/es/blog/powder-metallurgy-vs-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/es/blog/aluminium-alloy-selection-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/es/contact/</loc></url>
+  <url><loc>https://bibparts.com/es/cookies/</loc></url>
+  <url><loc>https://bibparts.com/es/privacy/</loc></url>
 
-  <url>
-    <loc>https://www.bibparts.com/en/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bibparts.com/en/blog/"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- French -->
+  <url><loc>https://bibparts.com/fr/</loc></url>
+  <url><loc>https://bibparts.com/fr/capabilities/</loc></url>
+  <url><loc>https://bibparts.com/fr/projects/</loc></url>
+  <url><loc>https://bibparts.com/fr/projects/hydraulic-cylinder-parts/</loc></url>
+  <url><loc>https://bibparts.com/fr/projects/shock-absorber-parts/</loc></url>
+  <url><loc>https://bibparts.com/fr/projects/tungsten-carbide-parts/</loc></url>
+  <url><loc>https://bibparts.com/fr/blog/</loc></url>
+  <url><loc>https://bibparts.com/fr/blog/cnc-machining-tolerances/</loc></url>
+  <url><loc>https://bibparts.com/fr/blog/powder-metallurgy-vs-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/fr/blog/aluminium-alloy-selection-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/fr/contact/</loc></url>
+  <url><loc>https://bibparts.com/fr/cookies/</loc></url>
+  <url><loc>https://bibparts.com/fr/privacy/</loc></url>
 
-  <url>
-    <loc>https://www.bibparts.com/en/contact/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.bibparts.com/en/contact/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://www.bibparts.com/pl/contact/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.bibparts.com/de/contact/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.bibparts.com/es/contact/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.bibparts.com/fr/contact/"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!--
-    ══════════════════════════════════════════════
-    BLOG ARTICLES — add a new <url> block for every
-    new article you publish. Copy the block below,
-    update <loc>, <lastmod> and <priority>.
-
-    Example:
-    <url>
-      <loc>https://www.bibparts.com/en/blog/cnc-machining-tolerances-guide/</loc>
-      <lastmod>2026-03-01</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    ══════════════════════════════════════════════
-  -->
-
-  <url>
-    <loc>https://www.bibparts.com/en/blog/cnc-machining-tolerances-guide/</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bibparts.com/en/blog/powder-metallurgy-vs-cnc/</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bibparts.com/en/blog/hydraulic-cylinder-seal-selection/</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Polish -->
+  <url><loc>https://bibparts.com/pl/</loc></url>
+  <url><loc>https://bibparts.com/pl/capabilities/</loc></url>
+  <url><loc>https://bibparts.com/pl/projects/</loc></url>
+  <url><loc>https://bibparts.com/pl/projects/hydraulic-cylinder-parts/</loc></url>
+  <url><loc>https://bibparts.com/pl/projects/shock-absorber-parts/</loc></url>
+  <url><loc>https://bibparts.com/pl/projects/tungsten-carbide-parts/</loc></url>
+  <url><loc>https://bibparts.com/pl/blog/</loc></url>
+  <url><loc>https://bibparts.com/pl/blog/cnc-machining-tolerances/</loc></url>
+  <url><loc>https://bibparts.com/pl/blog/powder-metallurgy-vs-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/pl/blog/aluminium-alloy-selection-cnc-machining/</loc></url>
+  <url><loc>https://bibparts.com/pl/contact/</loc></url>
+  <url><loc>https://bibparts.com/pl/cookies/</loc></url>
+  <url><loc>https://bibparts.com/pl/privacy/</loc></url>
 
 </urlset>

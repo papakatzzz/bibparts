@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Datenschutzerklärung von BIB Parts – wie wir Ihre personenbezogenen Daten gemäß DSGVO erheben, verwenden und schützen.">
+  <meta property="og:title" content="Datenschutzerklarung - BIB Parts">
+  <meta property="og:description" content="Wie BIB Parts Ihre personenbezogenen Daten erhebt, verwendet und schuetzt.">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://bibparts.com/de/privacy/">
+  <link rel="canonical" href="https://bibparts.com/de/privacy/">
+  <!-- Hreflang for multilingual -->
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/privacy/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/privacy/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/privacy/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/privacy/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/privacy/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/privacy/"/>
+  <title>Datenschutzerklärung – BIB Parts Präzisionsfertigung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: #111; background: #fff; font-size: 17px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+    :root {
+      --green: #1D9E75; --green-dark: #0F6E56; --green-light: #E1F5EE;
+      --black: #111111; --gray-bg: #F5F4F2; --border: #e0deda;
+      --text-muted: #666666; --text-faint: #999999;
+      --content-width: 680px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 48px; border-bottom: 0.5px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 1000; }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn { display: flex; align-items: center; gap: 5px; font-family: 'DM Mono', monospace; font-size: 12px; color: #666; background: transparent; border: 0.5px solid var(--border); border-radius: 4px; padding: 6px 10px; cursor: pointer; }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown { position: absolute; top: calc(100% + 6px); right: 0; background: #fff; border: 0.5px solid var(--border); border-radius: 6px; padding: 4px; min-width: 150px; z-index: 200; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .lang-dropdown.show { display: block; }
+    .lang-option { display: flex; align-items: center; gap: 8px; padding: 8px 10px; font-family: 'DM Mono', monospace; font-size: 12px; color: #444; border-radius: 4px; cursor: pointer; }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+    .btn-cta { background: var(--green); color: #fff; font-size: 13px; font-weight: 500; padding: 9px 20px; border: none; border-radius: 4px; }
+    .btn-cta:hover { background: var(--green-dark); }
+    .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; background: transparent; border: 0.5px solid var(--border); border-radius: 6px; padding: 10px; cursor: pointer; }
+    .burger span { display: block; width: 100%; height: 1.5px; background: #111; border-radius: 1px; transition: all 0.2s; }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: 61px; background: #fff; z-index: 999; padding: 32px 24px; flex-direction: column; gap: 0; border-top: 0.5px solid var(--border); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link { font-size: 22px; font-weight: 500; color: #111; padding: 16px 0; border-bottom: 0.5px solid var(--border); display: block; }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .mobile-menu-cta { background: var(--green); color: #fff; font-size: 15px; font-weight: 500; text-align: center; padding: 14px; border-radius: 4px; display: block; }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn { font-family: 'DM Mono', monospace; font-size: 12px; color: #888; background: transparent; border: 0.5px solid var(--border); border-radius: 3px; padding: 5px 10px; cursor: pointer; }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    .legal-layout { display: grid; grid-template-columns: 1fr min(var(--content-width), 100%) 1fr; padding: 64px 24px 96px; }
+    .legal-layout > * { grid-column: 2; }
+    .legal-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 14px; }
+    .legal-title { font-family: 'DM Sans', sans-serif; font-size: 38px; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 8px; }
+    .legal-updated { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-faint); margin-bottom: 48px; }
+    .legal-body h2 { font-size: 18px; font-weight: 500; color: var(--black); margin: 36px 0 12px; }
+    .legal-body p { font-size: 15px; color: #444; line-height: 1.8; font-weight: 300; margin-bottom: 14px; }
+    .legal-body ul { font-size: 15px; color: #444; line-height: 1.8; font-weight: 300; margin-bottom: 14px; padding-left: 20px; }
+    .legal-body ul li { margin-bottom: 6px; }
+    .legal-body a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-body a:hover { color: var(--green-dark); }
+    .footer { padding: 24px 48px; border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: #fff; }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .legal-layout { padding: 48px 0 72px; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQYL01TKEC');</script>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/de/" class="nav-logo" aria-label="BIB Parts Startseite">
+    <div class="logo">
+      <div class="logo-mark" aria-hidden="true">
+        <div class="logo-slash logo-slash-1"></div>
+        <div class="logo-slash logo-slash-2"></div>
+      </div>
+      <div class="logo-text">
+        <span class="logo-bib">BIB</span>
+        <span class="logo-parts">PARTS</span>
+      </div>
+    </div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/de/">Startseite</a></li>
+      <li><a href="/de/capabilities/">Leistungen</a></li>
+      <li><a href="/de/projects/">Projekte</a></li>
+      <li><a href="/de/blog/">Blog</a></li>
+      <li><a href="/de/contact/">Kontakt</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-wrap">
+        <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Sprache wechseln" aria-expanded="false">
+          <span id="lang-code">DE</span>
+          <span class="lang-chevron" id="lang-chevron" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+          <div class="lang-option" onclick="selectLang('EN','/en/privacy/',this)" role="option">
+            <span class="lang-name">English</span>
+          </div>
+          <div class="lang-option active" onclick="selectLang('DE','/de/privacy/',this)" role="option">
+            <span class="lang-name">Deutsch</span><span class="lang-check" aria-label="ausgewahlt">&#10003;</span>
+          </div>
+            <div class="lang-option" onclick="selectLang('ES','/es/privacy/',this)" role="option"><span class="lang-name">Español</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/privacy/',this)" role="option"><span class="lang-name">Français</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/privacy/',this)" role="option"><span class="lang-name">Polski</span></div>
+        </div>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="/de/contact/" class="btn-cta">Anfrage senden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/de/" class="mobile-menu-link">Start</a>
+  <a href="/de/capabilities/" class="mobile-menu-link">Leistungen</a>
+  <a href="/de/projects/" class="mobile-menu-link">Projekte</a>
+  <a href="/de/blog/" class="mobile-menu-link">Blog</a>
+  <a href="/de/contact/" class="mobile-menu-link">Kontakt</a>
+  <div class="mobile-menu-bottom">
+    <a href="/de/contact/" class="mobile-menu-cta">Anfrage senden</a>
+    <div class="mobile-lang">
+      <button class="mobile-lang-btn" onclick="location.href='/en/privacy/'">EN</button>
+      <button class="mobile-lang-btn active">DE</button>
+        <button class="mobile-lang-btn" onclick="location.href='/es/privacy/'">ES</button>
+        <button class="mobile-lang-btn" onclick="location.href='/fr/privacy/'">FR</button>
+        <button class="mobile-lang-btn" onclick="location.href='/pl/privacy/'">PL</button>
+    </div>
+  </div>
+</div>
+
+<main role="main">
+  <div class="legal-layout">
+    <p class="legal-tag">Rechtliches</p>
+    <h1 class="legal-title">Datenschutzerkl&auml;rung</h1>
+    <p class="legal-updated">Zuletzt aktualisiert: April 2026</p>
+    <div class="legal-body">
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>Verantwortlicher im Sinne der DSGVO ist <strong>BIB Parts (Baltijas Inzenieru Birojs)</strong> mit Sitz in der Europ&auml;ischen Union (Baltikum). F&uuml;r datenschutzrechtliche Anfragen wenden Sie sich bitte an: <a href="mailto:info@bibparts.com">info@bibparts.com</a>.</p>
+
+      <h2>2. Erhobene Daten</h2>
+      <p>Wir erheben personenbezogene Daten nur, wenn Sie diese aktiv bereitstellen:</p>
+      <ul>
+        <li><strong>Kontaktformular:</strong> Name, Firmenname, E-Mail-Adresse, Telefonnummer (optional) und Projektbeschreibung.</li>
+        <li><strong>Nutzungsdaten:</strong> anonymisierte Website-Analysen &uuml;ber Google Analytics (besuchte Seiten, Sitzungsdauer, allgemeine geografische Region). Es werden keine personenbezogenen Daten &uuml;bermittelt.</li>
+      </ul>
+      <p>Wir erheben keine besonderen Kategorien personenbezogener Daten (Gesundheit, Finanzen, Biometrie etc.).</p>
+
+      <h2>3. Zwecke und Rechtsgrundlagen der Verarbeitung</h2>
+      <p>Wir verarbeiten Ihre Daten zu folgenden Zwecken:</p>
+      <ul>
+        <li><strong>Beantwortung von Anfragen</strong> &mdash; Rechtsgrundlage: berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO). Wir haben ein berechtigtes Interesse daran, von Ihnen initiierte Gesch&auml;ftsanfragen zu beantworten.</li>
+        <li><strong>Website-Analyse</strong> &mdash; Rechtsgrundlage: Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Analyse-Cookies werden nur gesetzt, nachdem Sie &uuml;ber unser Cookie-Banner zugestimmt haben.</li>
+      </ul>
+
+      <h2>4. Empf&auml;nger der Daten</h2>
+      <p>Ihre Daten k&ouml;nnen an folgende Drittanbieter als Auftragsverarbeiter weitergegeben werden:</p>
+      <ul>
+        <li><strong>Web3Forms</strong> &mdash; verarbeitet Kontaktformulareinsendungen und leitet diese an unsere E-Mail weiter. Daten werden von Web3Forms nicht dauerhaft gespeichert.</li>
+        <li><strong>Google LLC</strong> &mdash; stellt Website-Analysen bereit (Google Analytics 4). Daten werden anonymisiert und aggregiert.</li>
+        <li><strong>Cloudflare, Inc.</strong> &mdash; stellt Website-Hosting, Content Delivery und Sicherheit (Bot-Schutz) bereit.</li>
+      </ul>
+      <p>Wir verkaufen, vermieten oder teilen Ihre personenbezogenen Daten nicht zu Marketingzwecken an Dritte.</p>
+
+      <h2>5. Internationale Daten&uuml;bermittlungen</h2>
+      <p>Einige unserer Dienstleister (Google Analytics, Web3Forms) k&ouml;nnen Daten au&szlig;erhalb des Europ&auml;ischen Wirtschaftsraums (EWR) verarbeiten. Solche &Uuml;bermittlungen erfolgen auf Grundlage geeigneter Schutzma&szlig;nahmen, insbesondere der von der Europ&auml;ischen Kommission genehmigten Standardvertragsklauseln (SCC), die ein dem EWR-Niveau entsprechendes Schutzniveau gew&auml;hrleisten.</p>
+
+      <h2>6. Speicherdauer</h2>
+      <ul>
+        <li><strong>Kontaktformulardaten:</strong> werden so lange aufbewahrt, wie es zur Bearbeitung Ihrer Anfrage erforderlich ist, in der Regel bis zu 3 Jahre, sofern keine l&auml;ngere Aufbewahrungspflicht gesetzlich vorgeschrieben ist.</li>
+        <li><strong>Analysedaten:</strong> gem&auml;&szlig; den Aufbewahrungseinstellungen von Google Analytics (Standard: 14 Monate).</li>
+      </ul>
+
+      <h2>7. Ihre Rechte gem&auml;&szlig; DSGVO</h2>
+      <p>Als betroffene Person in der Europ&auml;ischen Union stehen Ihnen folgende Rechte zu:</p>
+      <ul>
+        <li><strong>Auskunftsrecht</strong> &mdash; Kopie der von uns gespeicherten personenbezogenen Daten erhalten.</li>
+        <li><strong>Recht auf Berichtigung</strong> &mdash; unrichtige oder unvollst&auml;ndige Daten korrigieren lassen.</li>
+        <li><strong>Recht auf L&ouml;schung</strong> &mdash; L&ouml;schung Ihrer personenbezogenen Daten verlangen (&bdquo;Recht auf Vergessenwerden&ldquo;), vorbehaltlich bestimmter Bedingungen.</li>
+        <li><strong>Recht auf Einschr&auml;nkung der Verarbeitung</strong> &mdash; Einschr&auml;nkung der Art und Weise verlangen, wie wir Ihre Daten nutzen.</li>
+        <li><strong>Recht auf Daten&uuml;bertragbarkeit</strong> &mdash; Ihre Daten in einem strukturierten, maschinenlesbaren Format erhalten.</li>
+        <li><strong>Widerspruchsrecht</strong> &mdash; der auf berechtigten Interessen basierenden Verarbeitung widersprechen.</li>
+        <li><strong>Recht auf Widerruf der Einwilligung</strong> &mdash; soweit die Verarbeitung auf Einwilligung beruht, k&ouml;nnen Sie diese jederzeit widerrufen, ohne dass die Rechtm&auml;&szlig;igkeit der vorherigen Verarbeitung ber&uuml;hrt wird.</li>
+        <li><strong>Beschwerderecht</strong> &mdash; Beschwerde bei der zust&auml;ndigen Datenschutzbeh&ouml;rde einreichen (z.&nbsp;B. der Datenschutzinspektion in Lettland oder der Beh&ouml;rde in Ihrem Wohnsitzland).</li>
+      </ul>
+      <p>Zur Aus&uuml;bung dieser Rechte wenden Sie sich an: <a href="mailto:info@bibparts.com">info@bibparts.com</a>. Wir antworten innerhalb von 30 Tagen.</p>
+
+      <h2>8. Automatisierte Entscheidungsfindung</h2>
+      <p>Wir verwenden keine automatisierte Entscheidungsfindung oder Profilerstellung, die rechtliche oder &auml;hnlich bedeutsame Auswirkungen auf Personen h&auml;tte.</p>
+
+      <h2>9. Cookies</h2>
+      <p>Detaillierte Informationen zu den von uns verwendeten Cookies, deren Zwecken und der Verwaltungsm&ouml;glichkeiten finden Sie in unserer <a href="/de/cookies/">Cookie-Richtlinie</a>.</p>
+
+      <h2>10. &Auml;nderungen dieser Erkl&auml;rung</h2>
+      <p>Wir k&ouml;nnen diese Datenschutzerkl&auml;rung von Zeit zu Zeit aktualisieren, um &Auml;nderungen unserer Praktiken oder rechtlicher Anforderungen widerzuspiegeln. Das Datum &bdquo;Zuletzt aktualisiert&ldquo; oben auf dieser Seite gibt an, wann die Erkl&auml;rung zuletzt &uuml;berarbeitet wurde. Wir empfehlen, diese Seite regelm&auml;&szlig;ig zu &uuml;berpr&uuml;fen. Die weitere Nutzung der Website nach &Auml;nderungen gilt als Zustimmung zur aktualisierten Erkl&auml;rung.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <a href="/de/" aria-label="BIB Parts Startseite">
+    <div class="logo">
+      <div class="logo-mark" aria-hidden="true">
+        <div class="logo-slash logo-slash-1"></div>
+        <div class="logo-slash logo-slash-2"></div>
+      </div>
+      <div class="logo-text">
+        <span class="logo-bib">BIB</span>
+        <span class="logo-parts">PARTS</span>
+      </div>
+    </div>
+  </a>
+  <div class="footer-right">
+    <ul class="footer-links">
+      <li><a href="/de/capabilities/">Leistungen</a></li>
+      <li><a href="/de/projects/">Projekte</a></li>
+      <li><a href="/de/blog/">Blog</a></li>
+      <li><a href="/de/contact/">Kontakt</a></li>
+    </ul>
+    <ul class="footer-links">
+      <li><a href="/de/privacy/">Datenschutz</a></li>
+      <li><a href="/de/cookies/">Cookies</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.style.visibility = 'hidden';
+  document.fonts.ready.then(function() { document.documentElement.style.visibility = ''; });
+  document.addEventListener('DOMContentLoaded', function() {
+    var burgerBtn = document.getElementById('burger');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (burgerBtn && mobileMenu) {
+      burgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        burgerBtn.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      });
+    }
+    window.toggleLang = function() {
+      var d = document.getElementById('lang-dropdown');
+      var c = document.getElementById('lang-chevron');
+      if (!d) return;
+      var open = d.classList.toggle('show');
+      if (c) c.classList.toggle('open', open);
+    };
+    window.selectLang = function(code, path, el) {
+      var codeEl = document.getElementById('lang-code');
+      var d = document.getElementById('lang-dropdown');
+      var c = document.getElementById('lang-chevron');
+      if (codeEl) codeEl.textContent = code;
+      if (d) d.classList.remove('show');
+      if (c) c.classList.remove('open');
+      document.querySelectorAll('.lang-option').forEach(function(o) {
+        o.classList.remove('active');
+        var chk = o.querySelector('.lang-check');
+        if (chk) chk.remove();
+      });
+      el.classList.add('active');
+      var chk = document.createElement('span');
+      chk.className = 'lang-check'; chk.textContent = String.fromCharCode(10003);
+      el.appendChild(chk);
+      window.location.href = path;
+    };
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.lang-wrap')) {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+      }
+      if (mobileMenu && mobileMenu.classList.contains('open')) {
+        if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+          mobileMenu.classList.remove('open');
+          if (burgerBtn) burgerBtn.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+    var nav = document.querySelector('.nav');
+    if (nav) {
+      window.addEventListener('scroll', function() {
+        nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+      });
+    }
+  });
+</script>
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9dc8ef35435',t:'MTc3NzQzOTMwMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f52141f99bac7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f6596930b565439',t:'MTc3Nzg3NzYwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def6b1fe26386',t:'MTc3ODEzMjkwMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c7232ee88d37',t:'MTc3ODg1NDc2OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de privacidad de BIB Parts: cómo recopilamos, usamos y protegemos sus datos personales conforme al RGPD.">
+  <meta property="og:title" content="Política de Privacidad - BIB Parts">
+  <meta property="og:description" content="Cómo BIB Parts recopila, usa y protege sus datos personales.">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://bibparts.com/es/privacy/">
+  <link rel="canonical" href="https://bibparts.com/es/privacy/">
+  <!-- Hreflang for multilingual -->
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/privacy/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/privacy/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/privacy/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/privacy/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/privacy/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/privacy/"/>
+  <title>Política de Privacidad – BIB Parts Fabricación de Precisión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: #111; background: #fff; font-size: 17px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+    :root {
+      --green: #1D9E75; --green-dark: #0F6E56; --green-light: #E1F5EE;
+      --black: #111111; --gray-bg: #F5F4F2; --border: #e0deda;
+      --text-muted: #666666; --text-faint: #999999;
+      --content-width: 680px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 48px; border-bottom: 0.5px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 1000; }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn { display: flex; align-items: center; gap: 5px; font-family: 'DM Mono', monospace; font-size: 12px; color: #666; background: transparent; border: 0.5px solid var(--border); border-radius: 4px; padding: 6px 10px; cursor: pointer; }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown { position: absolute; top: calc(100% + 6px); right: 0; background: #fff; border: 0.5px solid var(--border); border-radius: 6px; padding: 4px; min-width: 150px; z-index: 200; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .lang-dropdown.show { display: block; }
+    .lang-option { display: flex; align-items: center; gap: 8px; padding: 8px 10px; font-family: 'DM Mono', monospace; font-size: 12px; color: #444; border-radius: 4px; cursor: pointer; }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+    .btn-cta { background: var(--green); color: #fff; font-size: 13px; font-weight: 500; padding: 9px 20px; border: none; border-radius: 4px; }
+    .btn-cta:hover { background: var(--green-dark); }
+    .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; background: transparent; border: 0.5px solid var(--border); border-radius: 6px; padding: 10px; cursor: pointer; }
+    .burger span { display: block; width: 100%; height: 1.5px; background: #111; border-radius: 1px; transition: all 0.2s; }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: 61px; background: #fff; z-index: 999; padding: 32px 24px; flex-direction: column; gap: 0; border-top: 0.5px solid var(--border); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link { font-size: 22px; font-weight: 500; color: #111; padding: 16px 0; border-bottom: 0.5px solid var(--border); display: block; }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .mobile-menu-cta { background: var(--green); color: #fff; font-size: 15px; font-weight: 500; text-align: center; padding: 14px; border-radius: 4px; display: block; }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn { font-family: 'DM Mono', monospace; font-size: 12px; color: #888; background: transparent; border: 0.5px solid var(--border); border-radius: 3px; padding: 5px 10px; cursor: pointer; }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    .legal-layout { display: grid; grid-template-columns: 1fr min(var(--content-width), 100%) 1fr; padding: 64px 24px 96px; }
+    .legal-layout > * { grid-column: 2; }
+    .legal-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 14px; }
+    .legal-title { font-family: 'DM Sans', sans-serif; font-size: 38px; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 8px; }
+    .legal-updated { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-faint); margin-bottom: 48px; }
+    .legal-body h2 { font-size: 18px; font-weight: 500; color: var(--black); margin: 36px 0 12px; }
+    .legal-body p { font-size: 15px; color: #444; line-height: 1.8; font-weight: 300; margin-bottom: 14px; }
+    .legal-body ul { font-size: 15px; color: #444; line-height: 1.8; font-weight: 300; margin-bottom: 14px; padding-left: 20px; }
+    .legal-body ul li { margin-bottom: 6px; }
+    .legal-body a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-body a:hover { color: var(--green-dark); }
+    .footer { padding: 24px 48px; border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: #fff; }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .legal-layout { padding: 48px 0 72px; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQYL01TKEC');</script>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/es/" class="nav-logo" aria-label="BIB Parts home">
+    <div class="logo">
+      <div class="logo-mark" aria-hidden="true">
+        <div class="logo-slash logo-slash-1"></div>
+        <div class="logo-slash logo-slash-2"></div>
+      </div>
+      <div class="logo-text">
+        <span class="logo-bib">BIB</span>
+        <span class="logo-parts">PARTS</span>
+      </div>
+    </div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/es/capabilities/">Capacidades</a></li>
+      <li><a href="/es/projects/">Proyectos</a></li>
+      <li><a href="/es/blog/">Blog</a></li>
+      <li><a href="/es/contact/">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-wrap">
+        <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language" aria-expanded="false">
+          <span id="lang-code">ES</span>
+          <span class="lang-chevron" id="lang-chevron" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+          <div class="lang-option" onclick="selectLang('EN','/en/privacy/',this)" role="option">
+              <span class="lang-name">English</span>
+            </div>
+          <div class="lang-option" onclick="selectLang('DE','/de/privacy/',this)" role="option">
+            <span class="lang-name">Deutsch</span>
+          </div>
+            <div class="lang-option active" onclick="selectLang('ES','/es/privacy/',this)" role="option"><span class="lang-name">Español</span><span class="lang-check">&#x2713;</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/privacy/',this)"><span class="lang-name">Français</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/privacy/',this)" role="option"><span class="lang-name">Polski</span></div>
+        </div>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="/es/contact/" class="btn-cta">Solicitar presupuesto</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/es/" class="mobile-menu-link">Inicio</a>
+  <a href="/es/capabilities/" class="mobile-menu-link">Capacidades</a>
+  <a href="/es/projects/" class="mobile-menu-link">Proyectos</a>
+  <a href="/es/blog/" class="mobile-menu-link">Blog</a>
+  <a href="/es/contact/" class="mobile-menu-link">Contacto</a>
+  <div class="mobile-menu-bottom">
+    <a href="/es/contact/" class="mobile-menu-cta">Solicitar presupuesto</a>
+    <div class="mobile-lang">
+      <button class="mobile-lang-btn" onclick="location.href='/en/privacy/'">EN</button>
+      <button class="mobile-lang-btn" onclick="location.href='/de/privacy/'">DE</button>
+        <button class="mobile-lang-btn active">ES</button>
+        <button class="mobile-lang-btn" onclick="location.href='/fr/privacy/'">FR</button>
+        <button class="mobile-lang-btn" onclick="location.href='/pl/privacy/'">PL</button>
+    </div>
+  </div>
+</div>
+
+<main role="main">
+  <div class="legal-layout">
+    <p class="legal-tag">Legal</p>
+    <h1 class="legal-title">Política de Privacidad</h1>
+    <p class="legal-updated">Última actualización: abril de 2026</p>
+    <div class="legal-body">
+      <h2>1. Responsable del tratamiento</h2>
+      <p>El responsable del tratamiento de sus datos personales es <strong>BIB Parts (Baltijas Inzenieru Birojs)</strong>, con sede en la Unión Europea (Países Bálticos). Para cualquier consulta o solicitud relacionada con la privacidad, contáctenos en <a href="mailto:info@bibparts.com">info@bibparts.com</a>.</p>
+
+      <h2>2. Datos que recopilamos</h2>
+      <p>Recopilamos datos personales únicamente cuando usted los proporciona activamente:</p>
+      <ul>
+        <li><strong>Formulario de contacto:</strong> nombre, nombre de empresa, dirección de correo electrónico, número de teléfono (opcional) y descripción del proyecto.</li>
+        <li><strong>Datos de uso:</strong> análisis anónimo del sitio web a través de Google Analytics (páginas visitadas, duración de la sesión, región geográfica general). No se incluye información de identificación personal.</li>
+      </ul>
+      <p>No recopilamos datos personales sensibles (salud, financieros, biométricos, etc.).</p>
+
+      <h2>3. Finalidades y base jurídica del tratamiento</h2>
+      <p>Tratamos sus datos para las siguientes finalidades:</p>
+      <ul>
+        <li><strong>Respuesta a consultas</strong> &mdash; base jurídica: interés legítimo (Art. 6(1)(f) RGPD). Tenemos un interés legítimo en responder a las consultas comerciales que usted ha iniciado.</li>
+        <li><strong>Analítica web</strong> &mdash; base jurídica: consentimiento (Art. 6(1)(a) RGPD). Las cookies analíticas solo se activan después de que acepte las cookies a través de nuestro banner de consentimiento.</li>
+      </ul>
+
+      <h2>4. Destinatarios de los datos</h2>
+      <p>Sus datos podrán compartirse con los siguientes proveedores de servicios externos que actúan como encargados del tratamiento:</p>
+      <ul>
+        <li><strong>Web3Forms</strong> &mdash; procesa los envíos del formulario de contacto y los reenvía a nuestro correo electrónico. Web3Forms no almacena los datos de forma permanente.</li>
+        <li><strong>Google LLC</strong> &mdash; proporciona análisis del sitio web (Google Analytics 4). Los datos son anonimizados y agregados.</li>
+        <li><strong>Cloudflare, Inc.</strong> &mdash; proporciona alojamiento web, entrega de contenido y seguridad (protección contra bots).</li>
+      </ul>
+      <p>No vendemos, alquilamos ni compartimos sus datos personales con terceros con fines comerciales.</p>
+
+      <h2>5. Transferencias internacionales de datos</h2>
+      <p>Algunos de nuestros proveedores de servicios (Google Analytics, Web3Forms) pueden tratar datos fuera del Espacio Económico Europeo (EEE). Dichas transferencias están sujetas a salvaguardas adecuadas, incluidas las Cláusulas Contractuales Estándar (CCE) aprobadas por la Comisión Europea, que garantizan que sus datos estén protegidos conforme a los estándares del EEE.</p>
+
+      <h2>6. Conservación de datos</h2>
+      <ul>
+        <li><strong>Datos del formulario de contacto:</strong> conservados durante el tiempo necesario para gestionar su consulta, normalmente hasta 3 años, salvo que la ley exija o permita un período más largo.</li>
+        <li><strong>Datos analíticos:</strong> conservados según la configuración de retención de Google Analytics (predeterminado: 14 meses).</li>
+      </ul>
+
+      <h2>7. Sus derechos en virtud del RGPD</h2>
+      <p>Como interesado en la Unión Europea, tiene los siguientes derechos:</p>
+      <ul>
+        <li><strong>Derecho de acceso</strong> &mdash; obtener una copia de los datos personales que conservamos sobre usted.</li>
+        <li><strong>Derecho de rectificación</strong> &mdash; solicitar la corrección de datos inexactos o incompletos.</li>
+        <li><strong>Derecho de supresión</strong> &mdash; solicitar la eliminación de sus datos personales («recho al olvido»), sujeto a determinadas condiciones.</li>
+        <li><strong>Derecho a la limitación del tratamiento</strong> &mdash; solicitar que limitemos el uso de sus datos.</li>
+        <li><strong>Derecho a la portabilidad de los datos</strong> &mdash; recibir sus datos en un formato estructurado y legible por máquina.</li>
+        <li><strong>Derecho de oposición</strong> &mdash; oponerse al tratamiento basado en intereses legítimos.</li>
+        <li><strong>Derecho a retirar el consentimiento</strong> &mdash; cuando el tratamiento esté basado en el consentimiento, puede retirarlo en cualquier momento sin afectar a la licitud del tratamiento anterior.</li>
+        <li><strong>Derecho a presentar una reclamación</strong> &mdash; presentar una reclamación ante su autoridad nacional de protección de datos (p. ej., la Inspección de Datos del Estado en Letonia, o la autoridad supervisora de su país de residencia).</li>
+      </ul>
+      <p>Para ejercer cualquiera de estos derechos, contáctenos en <a href="mailto:info@bibparts.com">info@bibparts.com</a>. Responderemos en un plazo de 30 días.</p>
+
+      <h2>8. Decisiones automatizadas</h2>
+      <p>No utilizamos toma de decisiones automatizada ni elaboración de perfiles que produzcan efectos jurídicos o igualmente significativos sobre las personas.</p>
+
+      <h2>9. Cookies</h2>
+      <p>Para obtener información detallada sobre las cookies que usamos, sus finalidades y cómo gestionarlas, consulte nuestra <a href="/es/cookies/">Política de Cookies</a>.</p>
+
+      <h2>10. Cambios en esta política</h2>
+      <p>Podemos actualizar esta Política de Privacidad periódicamente para reflejar cambios en nuestras prácticas o en los requisitos legales. La fecha de "Última actualización" al inicio de esta página indica cuándo se revisó por última vez. Le recomendamos revisar esta página periódicamente. El uso continuado del sitio web tras los cambios implica la aceptación de la política actualizada.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <a href="/es/" aria-label="BIB Parts home">
+    <div class="logo">
+      <div class="logo-mark" aria-hidden="true">
+        <div class="logo-slash logo-slash-1"></div>
+        <div class="logo-slash logo-slash-2"></div>
+      </div>
+      <div class="logo-text">
+        <span class="logo-bib">BIB</span>
+        <span class="logo-parts">PARTS</span>
+      </div>
+    </div>
+  </a>
+  <div class="footer-right">
+    <ul class="footer-links">
+      <li><a href="/es/capabilities/">Capacidades</a></li>
+      <li><a href="/es/projects/">Proyectos</a></li>
+      <li><a href="/es/blog/">Blog</a></li>
+      <li><a href="/es/contact/">Contacto</a></li>
+    </ul>
+    <ul class="footer-links">
+      <li><a href="/es/privacy/">Privacidad</a></li>
+      <li><a href="/es/cookies/">Cookies</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.style.visibility = 'hidden';
+  document.fonts.ready.then(function() { document.documentElement.style.visibility = ''; });
+  document.addEventListener('DOMContentLoaded', function() {
+    var burgerBtn = document.getElementById('burger');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (burgerBtn && mobileMenu) {
+      burgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        burgerBtn.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      });
+    }
+    window.toggleLang = function() {
+      var d = document.getElementById('lang-dropdown');
+      var c = document.getElementById('lang-chevron');
+      if (!d) return;
+      var open = d.classList.toggle('show');
+      if (c) c.classList.toggle('open', open);
+    };
+    window.selectLang = function(code, path, el) {
+      var codeEl = document.getElementById('lang-code');
+      var d = document.getElementById('lang-dropdown');
+      var c = document.getElementById('lang-chevron');
+      if (codeEl) codeEl.textContent = code;
+      if (d) d.classList.remove('show');
+      if (c) c.classList.remove('open');
+      document.querySelectorAll('.lang-option').forEach(function(o) {
+        o.classList.remove('active');
+        var chk = o.querySelector('.lang-check');
+        if (chk) chk.remove();
+      });
+      el.classList.add('active');
+      var chk = document.createElement('span');
+      chk.className = 'lang-check'; chk.textContent = String.fromCharCode(10003);
+      el.appendChild(chk);
+      window.location.href = path;
+    };
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.lang-wrap')) {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+      }
+      if (mobileMenu && mobileMenu.classList.contains('open')) {
+        if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+          mobileMenu.classList.remove('open');
+          if (burgerBtn) burgerBtn.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+    var nav = document.querySelector('.nav');
+    if (nav) {
+      window.addEventListener('scroll', function() {
+        nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+      });
+    }
+  });
+</script>
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9db2fd35427',t:'MTc3NzQzOTMwMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f521421aa48c7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f65969c7fa0542f',t:'MTc3Nzg3NzYwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def7ee9445432',t:'MTc3ODEzMjkwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c72e0d263469',t:'MTc3ODg1NDc3MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

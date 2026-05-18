@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="¿6061, 7075 o 2024? Una guía práctica para elegir la aleación de aluminio correcta para piezas mecanizadas CNC: resistencia, maquinabilidad, anodizado y coste comparados.">
+  <meta property="og:title" content="Aleaciones de Aluminio para Piezas CNC - Blog BIB Parts">
+  <meta property="og:description" content="¿6061, 7075 o 2024? Una guía práctica para elegir la aleación de aluminio correcta para piezas mecanizadas CNC: resistencia, maquinabilidad, anodizado y coste comparados.">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bibparts.com/es/blog/aluminium-alloy-selection-cnc-machining/">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://bibparts.com/assets/images/aluminium-alloy-selection-cnc-machining.webp">
+  <meta property="article:published_time" content="2026-04-07">
+  <meta property="article:author" content="BIB Parts">
+  <link rel="canonical" href="https://bibparts.com/es/blog/aluminium-alloy-selection-cnc-machining/">
+  <!-- Hreflang for multilingual -->
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/blog/aluminium-alloy-selection-cnc-machining/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/blog/aluminium-alloy-selection-cnc-machining/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/blog/aluminium-alloy-selection-cnc-machining/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/blog/aluminium-alloy-selection-cnc-machining/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/blog/aluminium-alloy-selection-cnc-machining/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/blog/aluminium-alloy-selection-cnc-machining/"/>
+
+  <title>Aleaciones de Aluminio para Piezas CNC - Blog BIB Parts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --border: #e0deda;
+      --text-muted: #666666;
+      --text-faint: #999999;
+      --content-width: 680px;
+    }
+
+    /* ── LOGO ── */
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px; border-bottom: 0.5px solid var(--border);
+      background: #fff; position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .active { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #666;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 4px; padding: 6px 10px; cursor: pointer;
+    }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      background: #fff; border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 4px; min-width: 150px; z-index: 200; display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #444;
+      border-radius: 4px; cursor: pointer;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+    .btn-cta {
+      background: var(--green); color: #fff; font-size: 13px; font-weight: 500;
+      padding: 9px 20px; border: none; border-radius: 4px;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      padding: 14px 48px;
+      border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-faint);
+    }
+    .breadcrumb a:hover { color: var(--green); }
+    .breadcrumb-sep { color: var(--text-faint); }
+
+    /* ── ARTICLE LAYOUT ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr min(var(--content-width), 100%) 1fr;
+      padding: 0;
+    }
+    .article-layout > * { grid-column: 2; }
+    .article-layout > .full-width { grid-column: 1 / -1; }
+
+    /* ── ARTICLE HEADER ── */
+    .article-header {
+      padding: 56px 48px 40px;
+      border-bottom: 0.5px solid var(--border);
+      max-width: calc(var(--content-width) + 96px);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .article-meta {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+    }
+    .article-cat {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      color: var(--green); text-transform: uppercase;
+    }
+    .article-date {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .meta-sep { color: var(--text-faint); font-size: 10px; }
+    .article-read-time {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .article-author {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .article-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 36px; font-weight: 500;
+      line-height: 1.2; letter-spacing: -0.02em;
+      color: var(--black); margin-bottom: 16px;
+    }
+    .article-lead {
+      font-size: 17px; color: #555; line-height: 1.75; font-weight: 300;
+    }
+
+    /* ── COVER IMAGE ── */
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16/5;
+      max-height: 280px;
+      background: #EEF2F0;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 6px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .article-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .cover-placeholder { font-family: 'DM Mono', monospace; font-size: 12px; color: #9ab5ac; }
+    .cover-hint { font-size: 11px; color: #b5ccc6; }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      padding: 48px 48px 64px;
+      max-width: calc(var(--content-width) + 96px);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Typography */
+    .article-body h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px; font-weight: 500;
+      color: var(--black); margin: 40px 0 14px;
+      letter-spacing: -0.01em; line-height: 1.3;
+    }
+    .article-body h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px; font-weight: 500;
+      color: var(--black); margin: 28px 0 10px;
+    }
+    .article-body p {
+      font-size: 15px; color: #444; line-height: 1.85;
+      font-weight: 300; margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 20px;
+    }
+    .article-body li {
+      font-size: 15px; color: #444; line-height: 1.8;
+      font-weight: 300; margin-bottom: 6px;
+    }
+    .article-body strong { font-weight: 500; color: var(--black); }
+    .article-body em { font-style: italic; color: #666; }
+    .article-body a { color: var(--green); border-bottom: 0.5px solid rgba(29,158,117,0.3); }
+    .article-body a:hover { border-bottom-color: var(--green); }
+
+    /* Inline code / technical values */
+    .article-body code {
+      font-family: 'DM Mono', monospace; font-size: 13px;
+      background: var(--gray-bg); color: var(--black);
+      padding: 2px 6px; border-radius: 3px;
+    }
+
+    /* Pull quote */
+    .article-body blockquote {
+      border-left: 3px solid var(--green);
+      padding: 16px 24px; margin: 32px 0;
+      background: var(--green-light); border-radius: 0 6px 6px 0;
+    }
+    .article-body blockquote p {
+      font-size: 17px; color: var(--green-dark); font-weight: 400;
+      font-style: italic; margin: 0;
+    }
+
+    /* Spec table inside article */
+    .article-body table {
+      width: 100%; border-collapse: collapse; margin: 24px 0;
+      font-size: 13px;
+    }
+    .article-body th {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-faint);
+      border-bottom: 0.5px solid var(--border); padding: 8px 12px;
+      text-align: left; font-weight: 400;
+    }
+    .article-body td {
+      padding: 10px 12px; border-bottom: 0.5px solid var(--border);
+      color: #444; font-weight: 300; line-height: 1.5;
+    }
+    .article-body tr:last-child td { border-bottom: none; }
+
+    /* Article image */
+    .article-body figure {
+      margin: 32px 0;
+    }
+    .article-body figure img {
+      width: 100%; border-radius: 6px;
+      border: 0.5px solid var(--border);
+    }
+    .article-body figcaption {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      color: var(--text-faint); margin-top: 8px; text-align: center;
+    }
+
+    /* Divider */
+    .article-body hr {
+      border: none; border-top: 0.5px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ── ARTICLE FOOTER ── */
+    .article-footer {
+      border-top: 0.5px solid var(--border);
+      padding: 40px 48px;
+      max-width: calc(var(--content-width) + 96px);
+      margin: 0 auto; width: 100%;
+      display: flex; flex-direction: column; gap: 32px;
+    }
+
+    /* Tags */
+    .article-tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .tag-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      color: var(--text-faint); text-transform: uppercase;
+    }
+    .tag {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em;
+      color: #777; background: var(--gray-bg);
+      border: 0.5px solid var(--border); border-radius: 2px;
+      padding: 4px 10px; text-transform: uppercase;
+    }
+
+    /* CTA box */
+    .article-cta {
+      background: var(--green-light); border-radius: 8px;
+      padding: 28px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      border: 0.5px solid rgba(29,158,117,0.2);
+    }
+    .article-cta-text h3 {
+      font-size: 17px; font-weight: 500; color: var(--black); margin-bottom: 4px;
+    }
+    .article-cta-text p {
+      font-size: 13px; color: #666; font-weight: 300; margin: 0;
+    }
+    .article-cta-btn {
+      display: inline-block; background: var(--green); color: #fff;
+      font-size: 13px; font-weight: 500; padding: 10px 22px;
+      border-radius: 4px; white-space: nowrap; flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .article-cta-btn:hover { background: var(--green-dark); }
+
+    /* Back to blog */
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--text-muted);
+      transition: color 0.12s;
+    }
+    .back-link:hover { color: var(--green); }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px; border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; background: #fff;
+    }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-legal { display: flex; gap: 16px; font-size: 11px; color: var(--text-faint); list-style: none; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .breadcrumb { padding: 12px 24px; }
+      .article-header { padding: 40px 24px 28px; }
+      .article-title { font-size: 26px; }
+      .article-body { padding: 32px 24px 48px; }
+      .article-footer { padding: 28px 24px; }
+      .article-cta { flex-direction: column; align-items: flex-start; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+    /* ── BURGER MENU ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 10px; cursor: pointer;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px;
+      transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 999;
+      padding: 32px 24px;
+      flex-direction: column; gap: 0;
+      border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border);
+      display: block;
+    }
+    .mobile-menu-link.active { color: var(--green); }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom {
+      margin-top: auto; padding-top: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff;
+      font-size: 15px; font-weight: 500; text-align: center;
+      padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    @media (max-width: 768px) { .burger { display: flex; } }
+  </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Selección de Aleaciones de Aluminio para Piezas Mecanizadas CNC: 6061, 7075 y 2024 Comparadas",
+    "description": "¿6061, 7075 o 2024? Una guía práctica para elegir la aleación de aluminio correcta para piezas mecanizadas CNC: resistencia, maquinabilidad, anodizado y coste comparados.",
+    "author": { "@type": "Organization", "name": "BIB Parts" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BIB Parts",
+      "url": "https://bibparts.com"
+    },
+    "image": "https://bibparts.com/assets/images/aluminium-alloy-selection-cnc-machining.webp",
+    "datePublished": "2026-04-07",
+    "inLanguage": "es",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://bibparts.com/es/blog/aluminium-alloy-selection-cnc-machining/" },
+    "url": "https://bibparts.com/es/blog/aluminium-alloy-selection-cnc-machining/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://bibparts.com/es/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bibparts.com/es/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Selección de Aleaciones de Aluminio" }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQYL01TKEC');
+  </script>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/es/" class="nav-logo" aria-label="BIB Parts home">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/es/">Inicio</a></li>
+        <li><a href="/es/capabilities/">Capacidades</a></li>
+        <li><a href="/es/projects/">Proyectos</a></li>
+        <li><a href="/es/blog/" class="active" aria-current="page">Blog</a></li>
+        <li><a href="/es/contact/">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language">
+            <span id="lang-code">ES</span>
+            <span class="lang-chevron" id="lang-chevron">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <div class="lang-option" onclick="selectLang('EN','/en/blog/aluminium-alloy-selection-cnc-machining/',this)"><span class="lang-name">English</span></div>
+            <div class="lang-option" onclick="selectLang('DE','/de/blog/aluminium-alloy-selection-cnc-machining/',this)"><span class="lang-name">Deutsch</span></div>
+            <div class="lang-option active" onclick="selectLang('ES','/es/blog/aluminium-alloy-selection-cnc-machining/',this)"><span class="lang-name">Español</span><span class="lang-check">&#x2713;</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/blog/aluminium-alloy-selection-cnc-machining/',this)"><span class="lang-name">Français</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/blog/aluminium-alloy-selection-cnc-machining/',this)" role="option"><span class="lang-name">Polski</span></div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/es/contact/" class="btn-cta">Solicitar presupuesto</a>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/es/" class="mobile-menu-link">Inicio</a>
+    <a href="/es/capabilities/" class="mobile-menu-link">Capacidades</a>
+    <a href="/es/projects/" class="mobile-menu-link">Proyectos</a>
+    <a href="/es/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/es/contact/" class="mobile-menu-link">Contacto</a>
+    <div class="mobile-menu-bottom">
+      <a href="/es/contact/" class="mobile-menu-cta">Solicitar presupuesto</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn" onclick="location.href='/en/blog/aluminium-alloy-selection-cnc-machining/'">EN</button>
+        <button class="mobile-lang-btn" onclick="location.href='/de/blog/aluminium-alloy-selection-cnc-machining/'">DE</button>
+        <button class="mobile-lang-btn active">ES</button>
+        <button class="mobile-lang-btn" onclick="location.href='/fr/blog/aluminium-alloy-selection-cnc-machining/'">FR</button>
+        <button class="mobile-lang-btn" onclick="location.href='/pl/blog/aluminium-alloy-selection-cnc-machining/'">PL</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <main role="main">
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/es/">Inicio</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="/es/blog/">Blog</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Selección de Aleaciones de Aluminio</span>
+  </div>
+
+  <!-- ── COVER IMAGE ── -->
+  <div class="article-cover full-width">
+    <img src="/assets/images/aluminium-alloy-selection-cnc-machining.webp" alt="Selección de aleaciones de aluminio para piezas mecanizadas CNC">
+  </div>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="article-cat">Guía de ingeniería</span>
+      <span class="meta-sep">·</span>
+      <span class="article-date">Abril 2026</span>
+      <span class="meta-sep">·</span>
+      <span class="article-read-time">5 min de lectura</span>
+      <span class="meta-sep">·</span>
+      <span class="article-author">BIB Parts</span>
+    </div>
+    <h1 class="article-title">
+      Selección de Aleaciones de Aluminio para Piezas Mecanizadas CNC: 6061, 7075 y 2024 Comparadas
+    </h1>
+    <p class="article-lead">
+      El aluminio es el metal no ferroso más mecanizado, pero no todas las aleaciones de aluminio se comportan igual en la máquina, en servicio o bajo un tratamiento superficial. Elegir el grado incorrecto puede significar mala maquinabilidad, corrosión inesperada o una pieza que falla a una fracción de su resistencia teórica. Esta guía compara las tres aleaciones estructurales más comunes: 6061, 7075 y 2024.
+    </p>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="article-body">
+
+    <h2>Por qué la selección de aleación importa más de lo que cree</h2>
+
+    <p>Las tres aleaciones - 6061, 7075 y 2024 - son aleaciones de aluminio tratables térmicamente con densidad broadly similar (<code>~2,7 g/cm³</code>) y buena maquinabilidad. Sin embargo, sus propiedades mecánicas, resistencia a la corrosión, soldabilidad y compatibilidad con tratamientos superficiales difieren significativamente. Una pieza diseñada para 6061-T6 y luego cambiada a 7075-T6 a mitad del proyecto puede requerir un análisis completo de concentraciones de tensión, valores de par de sujeción y especificaciones de tratamiento superficial.</p>
+
+    <h2>6061-T6: la aleación de uso general</h2>
+
+    <p>6061-T6 es la aleación de aluminio estructural más utilizada en el mecanizado CNC. Su combinación de resistencia, resistencia a la corrosión, soldabilidad y maquinabilidad la convierte en la opción por defecto para una amplia gama de aplicaciones.</p>
+
+    <p>Resistencia a la tracción <code>~310 MPa</code>, límite elástico <code>~276 MPa</code>, elongación <code>~12%</code>. Mecaniza limpiamente con buena formación de viruta. Se anodiza bien: tanto el anodizado estándar (<code>15-25 µm</code>) como el anodizado duro (<code>25-75 µm</code>) adhieren uniformemente y dan un color consistente. Puede soldarse con técnicas estándar.</p>
+
+    <p>Use 6061-T6 cuando: necesite una aleación fiable y bien caracterizada para piezas estructurales o semiestructurales; cuando se requiere anodizado o anodizado duro; o cuando la soldabilidad es importante.</p>
+
+    <h2>7075-T6: resistencia máxima</h2>
+
+    <p>7075-T6 ofrece la mayor resistencia de las tres aleaciones - resistencia a la tracción <code>~570 MPa</code>, límite elástico <code>~503 MPa</code> - lo que la convierte en la opción para aplicaciones aeroespaciales, de automovilismo y estructurales de alta carga donde el peso debe minimizarse.</p>
+
+    <p>7075 es significativamente menos resistente a la corrosión que 6061. Debe protegerse con anodizado o revestimiento de conversión de cromato en la mayoría de las aplicaciones. No puede soldarse de manera confiable por fusión. El anodizado estándar es posible, pero la consistencia de color y la uniformidad del revestimiento son inferiores a 6061. También es más cara, típicamente 2-3 veces el coste material de 6061.</p>
+
+    <blockquote>
+      <p>7075-T6 vale el coste y la complejidad cuando la relación resistencia-peso es realmente el factor determinante del diseño. Para la mayoría de las piezas estructurales donde 6061 es adecuado, el coste adicional y la gestión de la corrosión de 7075 son difíciles de justificar.</p>
+    </blockquote>
+
+    <h2>2024-T3: resistencia a la fatiga</h2>
+
+    <p>2024-T3 es la aleación preferida cuando la vida a fatiga es el criterio de diseño principal. Resistencia a la tracción <code>~483 MPa</code> con elongación <code>~18%</code>, lo que significa que se deforma significativamente antes de fracturarse, una propiedad valiosa en aplicaciones de carga cíclica.</p>
+
+    <p>2024 es la aleación estándar para revestimientos de fuselaje de aeronaves y miembros estructurales de la célula precisamente por su rendimiento a la fatiga. Sin embargo, tiene poca resistencia a la corrosión y debe protegerse siempre - la chapa chapada (Alclad) o el anodizado son estándar en aplicaciones aeroespaciales. Mecaniza bien, aunque ligeramente menos libremente que 6061.</p>
+
+    <h2>Tabla comparativa</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Propiedad</th>
+          <th>6061-T6</th>
+          <th>7075-T6</th>
+          <th>2024-T3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Resistencia a la tracción</td>
+          <td><code>~310 MPa</code></td>
+          <td><code>~570 MPa</code></td>
+          <td><code>~483 MPa</code></td>
+        </tr>
+        <tr>
+          <td>Límite elástico</td>
+          <td><code>~276 MPa</code></td>
+          <td><code>~503 MPa</code></td>
+          <td><code>~345 MPa</code></td>
+        </tr>
+        <tr>
+          <td>Resistencia a la corrosión</td>
+          <td>Buena</td>
+          <td>Deficiente</td>
+          <td>Deficiente</td>
+        </tr>
+        <tr>
+          <td>Soldabilidad</td>
+          <td>Buena</td>
+          <td>Deficiente</td>
+          <td>Deficiente</td>
+        </tr>
+        <tr>
+          <td>Calidad del anodizado</td>
+          <td>Excelente</td>
+          <td>Moderada</td>
+          <td>Moderada</td>
+        </tr>
+        <tr>
+          <td>Coste relativo</td>
+          <td>Bajo</td>
+          <td>Alto</td>
+          <td>Medio</td>
+        </tr>
+        <tr>
+          <td>Ideal para</td>
+          <td>Piezas estructurales generales y anodizadas</td>
+          <td>Alta carga, crítico en peso</td>
+          <td>Crítico en fatiga, aeroespacial</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Nota sobre las designaciones de temple</h2>
+
+    <p>El sufijo de temple importa tanto como el número de aleación. T6 significa tratado térmicamente en solución y envejecido artificialmente: la condición estándar de alta resistencia. T3 significa tratado térmicamente en solución y trabajado en frío. T4 es tratado térmicamente en solución y envejecido de forma natural. Pedir 6061 sin especificar el temple puede resultar en recibir material T4 con una resistencia significativamente inferior a T6.</p>
+
+    <p>Especifique siempre tanto la aleación como el temple en su plano: "Aleación de aluminio 6061-T6 según BS EN 573" o equivalente.</p>
+
+    <h2>Resumen</h2>
+
+    <ul>
+      <li>Use 6061-T6 como opción predeterminada para la mayoría de las piezas estructurales mecanizadas CNC. Ofrece una combinación equilibrada de resistencia, maquinabilidad, resistencia a la corrosión y calidad del anodizado.</li>
+      <li>Elija 7075-T6 solo cuando la relación resistencia-peso sea el factor principal y pueda gestionar el requisito de protección contra la corrosión.</li>
+      <li>Use 2024-T3 para aplicaciones críticas en fatiga, especialmente en contextos aeroespaciales y de defensa.</li>
+      <li>Especifique siempre tanto el número de aleación como la designación de temple en el plano.</li>
+      <li>Consulte la selección de material con su fabricante pronto: el plazo de entrega y el coste del material pueden variar significativamente entre grados.</li>
+    </ul>
+
+  </article>
+
+  <!-- ── ARTICLE FOOTER ── -->
+  <footer class="article-footer">
+
+    <a href="/es/blog/" class="back-link">← Volver a todos los artículos</a>
+
+    <div class="article-tags">
+      <span class="tag-label">Etiquetas:</span>
+      <span class="tag">Mecanizado CNC</span>
+      <span class="tag">Aleaciones de aluminio</span>
+      <span class="tag">Materiales</span>
+      <span class="tag">Guía de ingeniería</span>
+    </div>
+
+    <div class="article-cta">
+      <div class="article-cta-text">
+        <h3>¿Trabaja en una pieza que requiere una aleación de aluminio específica?</h3>
+        <p>Nuestro equipo de ingeniería revisa la selección de material como parte de cada presupuesto. Envíenos sus planos y señalaremos cualquier problema antes de que comience la producción.</p>
+      </div>
+      <a href="/es/contact/" class="article-cta-btn">Solicitar presupuesto →</a>
+    </div>
+
+  </footer>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <a href="/es/" aria-label="BIB Parts home">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/es/capabilities/">Capacidades</a></li>
+        <li><a href="/es/projects/">Proyectos</a></li>
+        <li><a href="/es/blog/">Blog</a></li>
+        <li><a href="/es/contact/">Contacto</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="/es/privacy/">Privacidad</a></li>
+        <li><a href="/es/cookies/">Cookies</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Burger menu
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+
+      // Lang switcher
+      window.toggleLang = function() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        if (c) c.classList.toggle('open', open);
+      };
+      window.selectLang = function(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '✓';
+        el.appendChild(chk);
+        window.location.href = path;
+      };
+
+      // Close on outside click
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      // Nav shadow
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+
+    });
+  </script>
+
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed9dd6caeea7123',t:'MTc3NjQxMjQ5OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9d79ea48d37',t:'MTc3NzQzOTMwMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f5214215a33c7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f6596a15d335436',t:'MTc3Nzg3NzYwNg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def7a2e641e1b',t:'MTc3ODEzMjkwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c72c3b65c7da',t:'MTc3ODg1NDc3MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

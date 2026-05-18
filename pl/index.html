@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIB Parts - producent precyzyjnych elementów metalowych. Obróbka CNC, odlewanie, kucie, metalurgia proszków i siłowniki hydrauliczne. Pełny cykl od prototypu do serii. Łotwa, UE.">
+  <meta name="keywords" content="obróbka CNC, części metalowe, siłowniki hydrauliczne, metalurgia proszków, odlewanie, kucie, producent OEM, Łotwa, Europa">
+  <meta property="og:title" content="BIB Parts - Precyzyjna produkcja metalowa">
+  <meta property="og:description" content="Niestandardowe elementy metalowe. Pełny cykl od prototypu do serii. Obróbka CNC, odlewanie, kucie, metalurgia proszków, siłowniki hydrauliczne.">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:url" content="https://bibparts.com/pl/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://bibparts.com/assets/images/og-image.png">
+  <link rel="canonical" href="https://bibparts.com/pl/"/>
+
+  <!-- Hreflang for multilingual -->
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/"/>
+
+  <title>BIB Parts - Precyzyjna produkcja metalowa | Od prototypu do serii</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Force font load before paint */
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ── CSS Variables ── */
+    :root {
+      --green: #1D9E75;
+      --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Cg transform='translate(10,20)'%3E%3Crect x='0' y='0' width='9' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.15'/%3E%3Crect x='13' y='0' width='6' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.07'/%3E%3Ctext x='23' y='20' font-family='Arial Black,sans-serif' font-size='14' font-weight='900' fill='%231D9E75' opacity='0.15' letter-spacing='0.5'%3EBIB%3C/text%3E%3Ctext x='23' y='31' font-family='Arial,sans-serif' font-size='6' font-weight='700' fill='%231D9E75' opacity='0.15' letter-spacing='3.5'%3EPARTS%3C/text%3E%3C/g%3E%3Cg transform='translate(110,80)'%3E%3Crect x='0' y='0' width='9' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.15'/%3E%3Crect x='13' y='0' width='6' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.07'/%3E%3Ctext x='23' y='20' font-family='Arial Black,sans-serif' font-size='14' font-weight='900' fill='%231D9E75' opacity='0.15' letter-spacing='0.5'%3EBIB%3C/text%3E%3Ctext x='23' y='31' font-family='Arial,sans-serif' font-size='6' font-weight='700' fill='%231D9E75' opacity='0.15' letter-spacing='3.5'%3EPARTS%3C/text%3E%3C/g%3E%3C/svg%3E");
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --gray-hero: #EEF2F0;
+      --border: #e0deda;
+      --text-muted: #666666;
+      --text-faint: #999999;
+    }
+
+    /* ── LOGO ── */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-mark {
+      display: flex;
+      align-items: stretch;
+      gap: 3px;
+      height: 32px;
+    }
+    .logo-slash {
+      border-radius: 2px;
+      transform: skewX(-8deg);
+    }
+    .logo-slash-1 {
+      width: 10px;
+      background: #1D9E75;
+    }
+    .logo-slash-2 {
+      width: 6px;
+      background: #1D9E75;
+      opacity: 0.28;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      line-height: 1;
+    }
+    .logo-bib {
+      font-family: 'Anton', sans-serif;
+      font-size: 22px;
+      color: #111111;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+    }
+    .logo-parts {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      color: #1D9E75;
+      letter-spacing: 4px;
+      line-height: 1;
+    }
+
+    /* ── NAVIGATION ── */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 48px;
+      border-bottom: 0.5px solid var(--border);
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #666;
+      list-style: none;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+
+    /* Language switcher */
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: #666;
+      background: transparent;
+      border: 0.5px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 10px;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      background: #fff;
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      padding: 4px;
+      min-width: 150px;
+      z-index: 200;
+      display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: #444;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-option .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+
+    .btn-cta {
+      background: var(--green);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 9px 20px;
+      border: none;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      min-height: 520px;
+    }
+    .hero-left {
+      padding: 72px 56px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .hero-h1 { margin-bottom: 22px; }
+    .hero-h1 .l1 {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 52px;
+      font-weight: 500;
+      line-height: 1.06;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+    .hero-h1 .l2 {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 52px;
+      font-weight: 500;
+      line-height: 1.06;
+      color: var(--green);
+      letter-spacing: -0.02em;
+    }
+    .hero-h1 .l3 {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 300;
+      font-style: italic;
+      color: #999;
+      margin-top: 12px;
+      letter-spacing: 0;
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: #777;
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 460px;
+      font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 12px; }
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 13px 26px;
+      border: none;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--black);
+      font-size: 14px;
+      font-weight: 400;
+      padding: 13px 22px;
+      border: 0.5px solid var(--border);
+      border-radius: 4px;
+      transition: border-color 0.15s;
+    }
+    .btn-secondary:hover { border-color: #aaa; }
+
+    .hero-right {
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Cg transform='translate(10,20)'%3E%3Crect x='0' y='0' width='9' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.15'/%3E%3Crect x='13' y='0' width='6' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.07'/%3E%3Ctext x='23' y='20' font-family='Arial Black,sans-serif' font-size='14' font-weight='900' fill='%231D9E75' opacity='0.15' letter-spacing='0.5'%3EBIB%3C/text%3E%3Ctext x='23' y='31' font-family='Arial,sans-serif' font-size='6' font-weight='700' fill='%231D9E75' opacity='0.15' letter-spacing='3.5'%3EPARTS%3C/text%3E%3C/g%3E%3Cg transform='translate(110,80)'%3E%3Crect x='0' y='0' width='9' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.15'/%3E%3Crect x='13' y='0' width='6' height='30' rx='1.5' transform='skewX(-8)' fill='%231D9E75' opacity='0.07'/%3E%3Ctext x='23' y='20' font-family='Arial Black,sans-serif' font-size='14' font-weight='900' fill='%231D9E75' opacity='0.15' letter-spacing='0.5'%3EBIB%3C/text%3E%3Ctext x='23' y='31' font-family='Arial,sans-serif' font-size='6' font-weight='700' fill='%231D9E75' opacity='0.15' letter-spacing='3.5'%3EPARTS%3C/text%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 120px;
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+    }
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Slideshow */
+    .slide-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; background: rgba(0,0,0,0.25); border: none; color: #fff; font-size: 1.5rem; line-height: 1; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; backdrop-filter: blur(4px); }
+    .slide-btn:hover { background: rgba(0,0,0,0.45); }
+    .slide-btn-prev { left: 12px; }
+    .slide-btn-next { right: 12px; }
+    .slideshow {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      padding: 24px;
+    }
+    .hero-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 420px;
+    }
+    .hero-placeholder-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #dde8e3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-placeholder p {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #9ab5ac;
+      letter-spacing: 0.06em;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(255,255,255,0.94);
+      border-radius: 6px;
+      padding: 11px 16px;
+      border: 0.5px solid rgba(0,0,0,0.07);
+      backdrop-filter: blur(4px);
+    }
+    .hero-badge-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: #999;
+      margin-bottom: 3px;
+    }
+    .hero-badge-value {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    /* ── STATS ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .stat {
+      padding: 28px 36px;
+      border-right: 0.5px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--green);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 5px;
+      line-height: 1.45;
+      font-weight: 300;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-h {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-faint);
+      font-weight: 300;
+    }
+
+    /* ── CAPABILITIES ── */
+    .capabilities { padding: 72px 48px; }
+    .caps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .cap-card {
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      padding: 26px 22px;
+      transition: border-color 0.15s;
+    }
+    .cap-card:hover { border-color: var(--green); }
+    .cap-accent {
+      width: 28px;
+      height: 3px;
+      background: var(--green);
+      margin-bottom: 16px;
+      border-radius: 1px;
+    }
+    .cap-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+    .cap-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .cap-spec {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--green);
+      margin-top: 14px;
+    }
+
+    /* ── PROJECTS ── */
+    .projects {
+      padding: 72px 48px;
+      border-top: 1px solid #d4d0cb;
+      border-bottom: 1px solid #d4d0cb;
+    }
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .proj-card {
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      border: 0.5px solid var(--border);
+      transition: border-color 0.15s;
+      position: relative;
+      cursor: pointer;
+    }
+    .proj-card:hover { border-color: var(--green); }
+    .proj-card-link { position: absolute; inset: 0; z-index: 2; }
+    .proj-img {
+      height: 200px;
+      background-color: #fff;
+      background-image: var(--pattern);
+      background-repeat: repeat;
+      background-size: 200px 120px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .proj-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      position: relative;
+      z-index: 1;
+    }
+    .proj-img-placeholder {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #9ab5ac;
+    }
+    .proj-body { padding: 20px; }
+    .proj-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--green);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .proj-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--black);
+    }
+    .proj-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 72px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+      border-top: 0.5px solid var(--border);
+    }
+    .contact-desc {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.75;
+      margin-top: 14px;
+      max-width: 360px;
+      font-weight: 300;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .contact-item {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: #aaa;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .inp, .txa {
+      border: 0.5px solid var(--border);
+      border-radius: 4px;
+      padding: 11px 14px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--black);
+      background: #fff;
+      transition: border-color 0.15s;
+      width: 100%;
+    }
+    .inp:focus, .txa:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+    .txa { height: 100px; resize: none; }
+
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+    }
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--text-faint);
+      list-style: none;
+    }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #ccc;
+    }
+
+    /* ── RESPONSIVE ── */
+    /* ── BURGER MENU ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 10px; cursor: pointer;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px;
+      transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 999;
+      padding: 32px 24px;
+      flex-direction: column; gap: 0;
+      border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border);
+      display: block;
+    }
+    .mobile-menu-link.active { color: var(--green); }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom {
+      margin-top: auto; padding-top: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff;
+      font-size: 15px; font-weight: 500; text-align: center;
+      padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 260px; }
+      .hero-badge { display: none; }
+      .hero-left { padding: 48px 24px 40px; }
+      .hero-h1 .l1, .hero-h1 .l2 { font-size: 38px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .caps-grid { grid-template-columns: 1fr; }
+      .capabilities { padding: 48px 24px; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .projects { padding: 48px 24px; }
+      .contact { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; align-items: center; }
+      .lang-btn { font-size: 14px; padding: 10px 14px; }
+      .lang-chevron { font-size: 11px; }
+      .nav { padding: 16px 20px; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      .capabilities { padding: 32px 20px; }
+      .projects { padding: 32px 20px; }
+      .contact { padding: 32px 20px; gap: 24px; }
+      .hero-left { padding: 32px 20px 28px; }
+      .stat { padding: 20px; }
+      .stat:nth-child(4) { border-right: none; }
+    }
+    @media (max-width: 600px) {
+      .caps-grid { grid-template-columns: 1fr; }
+      .hero-h1 .l1, .hero-h1 .l2 { font-size: 32px; }
+      .hero-h1 .l3 { font-size: 18px; }
+      .hero-h1 .l1, .hero-h1 .l2 { letter-spacing: -0.01em; }
+      .hero-sub { font-size: 14px; }
+      .section-h { font-size: 26px; }
+      .contact { padding: 28px 16px; gap: 20px; }
+      .capabilities { padding: 28px 16px; }
+      .projects { padding: 28px 16px; }
+      .hero-left { padding: 28px 16px; }
+      .stat { padding: 16px; }
+    }
+    .home-form-success {
+      padding: 24px; background: var(--green-light);
+      border-radius: 8px; border: 0.5px solid rgba(29,158,117,0.25);
+      font-size: 14px; color: var(--green-dark); font-weight: 400; line-height: 1.6;
+      display: none;
+    }
+    .home-form-success.show { display: block; }
+    .home-form-error {
+      font-size: 13px; color: #e24b4a; background: #fff5f5;
+      border: 0.5px solid #f5c2c2; border-radius: 4px;
+      padding: 10px 14px; display: none; margin-top: 8px;
+    }
+    .home-form-error.show { display: block; }
+    .btn-primary:disabled { opacity: 0.65; cursor: not-allowed; }
+    .home-file-upload {
+      border: 0.5px dashed #c8c4be; border-radius: 6px;
+      background: #fff; position: relative; cursor: pointer; transition: border-color 0.15s;
+    }
+    .home-file-upload:hover { border-color: var(--green); }
+    .home-file-upload-inner { padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
+    .home-file-icon {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      background: var(--green-light); display: flex; align-items: center; justify-content: center;
+      border: 0.5px solid rgba(29,158,117,0.2);
+    }
+    .home-file-icon svg { width: 16px; height: 16px; }
+    .home-file-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+    .home-file-title { font-size: 13px; font-weight: 500; color: var(--black); }
+    .home-file-hint { font-size: 11px; color: #aaa; font-weight: 300; }
+    .home-file-btn {
+      font-size: 11px; font-weight: 500; color: var(--green);
+      border: 0.5px solid var(--green); border-radius: 3px; padding: 4px 10px;
+      background: transparent; white-space: nowrap; pointer-events: none;
+    }
+    .home-file-inp { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+    .home-file-list { display: flex; flex-direction: column; gap: 3px; padding: 0 12px 10px; }
+    .home-file-item {
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'DM Mono', monospace; font-size: 11px; color: #888;
+      background: #f5f4f2; border-radius: 3px; padding: 4px 8px;
+    }
+    .home-file-rm { background: none; border: none; color: #ccc; cursor: pointer; font-size: 13px; line-height: 1; padding: 0 0 0 6px; pointer-events: all; position: relative; z-index: 2; }
+    .home-file-rm:hover { color: #e24b4a; }
+    .home-form-success { padding: 24px; background: var(--green-light); border-radius: 8px; border: 0.5px solid rgba(29,158,117,0.25); font-size: 14px; color: var(--green-dark); font-weight: 400; line-height: 1.6; display: none; }
+    .home-form-success.show { display: block; }
+    .home-form-error { font-size: 13px; color: #e24b4a; background: #fff5f5; border: 0.5px solid #f5c2c2; border-radius: 4px; padding: 10px 14px; display: none; margin-top: 8px; }
+    .home-form-error.show { display: block; }
+    .btn-primary:disabled { opacity: 0.65; cursor: not-allowed; }
+  </style>
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "ManufacturingBusiness"],
+    "@id": "https://bibparts.com/#organization",
+    "name": "BIB Parts",
+    "legalName": "Baltijas Inzenieru Birojs SIA",
+    "url": "https://bibparts.com",
+    "email": "info@bibparts.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bibparts.com/assets/images/logo.svg"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "LV",
+      "addressRegion": "Baltics"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@bibparts.com",
+      "contactType": "sales",
+      "availableLanguage": ["English", "German", "Spanish", "French", "Polish"]
+    },
+    "description": "Producent precyzyjnych elementów metalowych. Obróbka CNC, odlewanie, kucie, metalurgia proszków i siłowniki hydrauliczne. Pełny cykl od prototypu do serii.",
+    "areaServed": "Worldwide",
+    "knowsLanguage": ["en", "de", "es", "fr", "pl"]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQYL01TKEC');
+  </script>
+</head>
+
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <a href="/pl/" class="nav-logo" aria-label="BIB Parts strona główna">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/pl/" class="active" aria-current="page">Strona główna</a></li>
+        <li><a href="/pl/capabilities/">Możliwości</a></li>
+        <li><a href="/pl/projects/">Projekty</a></li>
+        <li><a href="/pl/blog/">Blog</a></li>
+        <li><a href="/pl/contact/">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Zmień język" aria-expanded="false">
+            <span id="lang-code">PL</span>
+            <span class="lang-chevron" id="lang-chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+            <div class="lang-option" onclick="selectLang('EN','/en/',this)" role="option">
+              <span class="lang-name">English</span>
+            </div>
+            <div class="lang-option" onclick="selectLang('DE','/de/',this)" role="option">
+              <span class="lang-name">Deutsch</span>
+            </div>
+            <div class="lang-option" onclick="selectLang('ES','/es/',this)" role="option"><span class="lang-name">Español</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/',this)" role="option"><span class="lang-name">Français</span></div>
+            <div class="lang-option active" onclick="selectLang('PL','/pl/',this)" role="option"><span class="lang-name">Polski</span><span class="lang-check">✓</span></div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/pl/contact/" class="btn-cta">Zapytaj o wycenę</a>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/pl/" class="mobile-menu-link active">Strona główna</a>
+    <a href="/pl/capabilities/" class="mobile-menu-link">Możliwości</a>
+    <a href="/pl/projects/" class="mobile-menu-link">Projekty</a>
+    <a href="/pl/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/pl/contact/" class="mobile-menu-link">Kontakt</a>
+    <div class="mobile-menu-bottom">
+      <a href="/pl/contact/" class="mobile-menu-cta">Zapytaj o wycenę</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn" onclick="selectLang('EN','/en/',this)">EN</button>
+        <button class="mobile-lang-btn" onclick="selectLang('DE','/de/',this)">DE</button>
+        <button class="mobile-lang-btn" onclick="selectLang('ES','/es/',this)">ES</button>
+        <button class="mobile-lang-btn" onclick="selectLang('FR','/fr/',this)">FR</button>
+        <button class="mobile-lang-btn active" onclick="selectLang('PL','/pl/',this)">PL</button>
+      </div>
+    </div>
+  </div>
+
+  <main role="main">
+
+  <!-- ── HERO ── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-left">
+      <p class="hero-tag">Producent części metalowych · Bałtyk · UE</p>
+      <h1 class="hero-h1">
+        <span class="l1">Precyzyjne części,</span>
+        <span class="l2">pełny cykl.</span>
+        <span class="l3">Od prototypu do serii.</span>
+      </h1>
+      <p class="hero-sub">Niestandardowe elementy metalowe poprzez obróbkę CNC, odlewanie, kucie i metalurgię proszków. Siłowniki hydrauliczne. Obsługujemy przemysł OEM, lotniczy, naftowo-gazowy i medyczny na całym świecie.</p>
+      <div class="hero-btns">
+        <a href="/pl/contact/" class="btn-primary">Zapytaj o wycenę</a>
+        <a href="/pl/capabilities/" class="btn-secondary">Zobacz możliwości →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="slideshow" id="slideshow">
+        <div class="slide active">
+          <img src="/assets/images/slide-1.png" alt="BIB Parts produkcja" loading="eager">
+        </div>
+        <div class="slide">
+          <img src="/assets/images/slide-2.png" alt="BIB Parts obróbka CNC" loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="/assets/images/slide-3.png" alt="BIB Parts komponenty" loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="/assets/images/slide-4.png" alt="BIB Parts zakład" loading="lazy">
+        </div>
+        <button class="slide-btn slide-btn-prev" aria-label="Poprzedni">&#8249;</button>
+        <button class="slide-btn slide-btn-next" aria-label="Następny">&#8250;</button>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-label">Certyfikat ISO · Bałtyk · UE</div>
+        <div class="hero-badge-value">Dostawy do Europy i dalej</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <section class="stats" aria-label="Kluczowe liczby">
+    <div class="stat">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Możliwości produkcyjne<br>pod jednym dachem</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">20+</div>
+      <div class="stat-label">Obsługiwane kraje<br>w Europie i krajach GCC</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Własne zaplecze inżynierskie<br>od rysunku do części</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">ISO</div>
+      <div class="stat-label">Produkcja z certyfikatem<br>jakości</div>
+    </div>
+  </section>
+
+  <!-- ── CAPABILITIES ── -->
+  <section class="capabilities" id="capabilities" aria-labelledby="caps-heading">
+    <div class="section-tag">Co produkujemy</div>
+    <h2 class="section-h" id="caps-heading">Możliwości produkcyjne</h2>
+    <p class="section-sub">Trzy kierunki produktowe – jeden partner inżynierski.</p>
+    <div class="caps-grid">
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Części obrabiane CNC</h3>
+        <p class="cap-desc">Precyzyjne frezowanie i toczenie złożonych geometrii. Od pojedynczych prototypów do serii średnioseryjnych. Stal, aluminium, tytan, mosiądz.</p>
+        <p class="cap-spec">Tolerancje od ±0,01 mm</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Odlewanie i kucie</h3>
+        <p class="cap-desc">Odlewanie ciśnieniowe i kucie dla części konstrukcyjnych wymagających wysokiej wytrzymałości. Odlewanie aluminium i żeliwa z pełnym wykończeniem.</p>
+        <p class="cap-spec">Od 50 szt. · Możliwość wyrobu netto</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Części metalurgii proszków</h3>
+        <p class="cap-desc">Spiekane komponenty do produkcji wielkoseryjnej. Złożone kształty, wąskie tolerancje, minimalne odpady. Idealne do serii OEM.</p>
+        <p class="cap-spec">Wielka seria · Kształt zbliżony do docelowego</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Prototypowanie</h3>
+        <p class="cap-desc">Szybki prototyp do funkcjonalnej próbki. Wsparcie DFM, dobór materiału, inspekcja pierwszego artykułu. Rozpocznij projekt w ciągu 10 dni roboczych.</p>
+        <p class="cap-spec">Czas realizacji do 10 dni roboczych</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Siłowniki hydrauliczne</h3>
+        <p class="cap-desc">Niestandardowe siłowniki jednostronnego i dwustronnego działania dla zastosowań mobilnych, przemysłowych i OEM. Pełne projektowanie, produkcja i testowanie.</p>
+        <p class="cap-spec">Otwór 30-1500 mm · Do 450 bar</p>
+      </article>
+
+      <article class="cap-card">
+        <div class="cap-accent" aria-hidden="true"></div>
+        <h3 class="cap-title">Wsparcie inżynierskie</h3>
+        <p class="cap-desc">Nasi inżynierowie analizują Twoje rysunki i sugerują ulepszenia pod kątem produkowalności, kosztów i czasu realizacji.</p>
+        <p class="cap-spec">DFM · DFQ · Inżynieria wartości</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="projects" id="projects" aria-labelledby="proj-heading">
+    <div class="section-tag">Studia przypadków</div>
+    <h2 class="section-h" id="proj-heading">Wybrane projekty</h2>
+    <p class="section-sub">Części i podzespoły dostarczone do różnych gałęzi przemysłu.</p>
+    <div class="proj-grid">
+
+      <article class="proj-card">
+        <a href="/pl/projects/shock-absorber-parts/" class="proj-card-link" aria-label="Zobacz projekt części amortyzatora"></a>
+        <div class="proj-img">
+          <img loading="lazy" src="/assets/images/proj-shock-absorber.webp" alt="Części tłoka amortyzatora">
+        </div>
+        <div class="proj-body">
+          <p class="proj-tag">Motorsport</p>
+          <h3 class="proj-title">Części amortyzatora</h3>
+          <p class="proj-desc">Tłoki Al 6061-T6 toczone CNC do zawieszenia samochodu rajdowego. Anodowanie + folia PTFE.</p>
+          <span style="display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:500;color:var(--green);">Zobacz projekt →</span>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <a href="/pl/projects/hydraulic-cylinder-parts/" class="proj-card-link" aria-label="Zobacz projekt części siłownika hydraulicznego"></a>
+        <div class="proj-img">
+          <img loading="lazy" src="/assets/images/proj-hydraulic-cylinder.webp" alt="Części siłownika hydraulicznego">
+        </div>
+        <div class="proj-body">
+          <p class="proj-tag">Maszyny mobilne</p>
+          <h3 class="proj-title">Części siłownika hydraulicznego</h3>
+          <p class="proj-desc">Precyzyjnie obrabiane uszczelnienia i tłoki do siłowników hydraulicznych. Stal C45, tolerancje do H7/h6.</p>
+          <span style="display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:500;color:var(--green);">Zobacz projekt →</span>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <a href="/pl/projects/tungsten-carbide-parts/" class="proj-card-link" aria-label="Zobacz projekt części z węglika wolframu"></a>
+        <div class="proj-img">
+          <img loading="lazy" src="/assets/images/proj-tungsten-carbide.webp" alt="Części z węglika wolframu">
+        </div>
+        <div class="proj-body">
+          <p class="proj-tag">Przemysł</p>
+          <h3 class="proj-title">Części z węglika wolframu</h3>
+          <p class="proj-desc">Spiekane części WC-Co, twardość 88-92 HRA, szlifowane do tolerancji ±0,01 mm.</p>
+          <span style="display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:500;color:var(--green);">Zobacz projekt →</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div>
+      <div class="section-tag">Skontaktuj się</div>
+      <h2 class="section-h" id="contact-heading">Omówmy<br>Twój projekt</h2>
+      <p class="contact-desc">Prześlij nam rysunki lub specyfikacje. Odpowiadamy w ciągu jednego dnia roboczego z wyceną lub pytaniami technicznymi.</p>
+      <div class="contact-info">
+        <a href="mailto:info@bibparts.com" class="contact-item">info@bibparts.com</a>
+        <span class="contact-item">Bałtyk · UE</span>
+      </div>
+    </div>
+    <form class="contact-form" id="home-contact-form" novalidate>
+      <div class="form-row">
+        <input class="inp" type="text" name="name" placeholder="Imię i nazwisko" required>
+        <input class="inp" type="text" name="company" placeholder="Firma" required>
+      </div>
+      <input class="inp" type="email" name="email" placeholder="E-mail" required>
+      <input class="inp" type="text" name="subject_field" placeholder="Temat - obróbka / hydraulika / metalurgia proszków">
+      <textarea class="txa" name="message" placeholder="Opisz swoje wymagania…" required></textarea>
+      <div class="home-file-upload" id="home-file-area">
+        <div class="home-file-upload-inner">
+          <div class="home-file-icon">
+            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 2v10M5 6l4-4 4 4" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 13v1a2 2 0 002 2h10a2 2 0 002-2v-1" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="home-file-text">
+            <div class="home-file-title">Upuść pliki lub kliknij</div>
+            <div class="home-file-hint">DWG, DXF, STEP, PDF, obrazy, ZIP — do 50 MB każdy</div>
+          </div>
+          <div class="home-file-btn">Wybierz pliki</div>
+        </div>
+        <div class="home-file-list" id="home-file-list"></div>
+        <input class="home-file-inp" type="file" id="home-file-input" name="files" multiple
+          accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.obj,.3mf,.xlsx,.xls,.docx,.doc,.txt,.csv,.zip,.rar,.7z,.tar,.gz,.png,.jpg,.jpeg,.gif,.webp,.tiff,.tif,.bmp,.svg"
+        >
+      </div>
+      <button type="submit" class="btn-primary" style="align-self:flex-start;">Wyślij wiadomość</button>
+    </form>
+    <div class="home-form-error"></div>
+    <div class="home-form-success"></div>
+  </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <a href="/pl/" aria-label="BIB Parts strona główna">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/pl/capabilities/">Możliwości</a></li>
+        <li><a href="/pl/projects/">Projekty</a></li>
+        <li><a href="/pl/blog/">Blog</a></li>
+        <li><a href="/pl/contact/">Kontakt</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="/pl/privacy/">Polityka prywatności</a></li>
+        <li><a href="/pl/cookies/">Polityka cookies</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Burger menu
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+
+      // Lang switcher
+      window.toggleLang = function() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        if (c) c.classList.toggle('open', open);
+      };
+      window.selectLang = function(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '✓';
+        el.appendChild(chk);
+        window.location.href = path;
+      };
+
+      // Close on outside click
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      // Slideshow
+      var slides = document.querySelectorAll(".slide");
+      if (slides.length > 1) {
+        var current = 0;
+        function goSlide(n) {
+          slides[current].classList.remove("active");
+          current = (n + slides.length) % slides.length;
+          slides[current].classList.add("active");
+        }
+        var slideTimer = setInterval(function() { goSlide(current + 1); }, 8000);
+        function resetSlideTimer() { clearInterval(slideTimer); slideTimer = setInterval(function() { goSlide(current + 1); }, 8000); }
+        var prevBtn = document.querySelector(".slide-btn-prev");
+        var nextBtn = document.querySelector(".slide-btn-next");
+        if (prevBtn) prevBtn.addEventListener("click", function() { goSlide(current - 1); resetSlideTimer(); });
+        if (nextBtn) nextBtn.addEventListener("click", function() { goSlide(current + 1); resetSlideTimer(); });
+        var ss = document.getElementById("slideshow");
+        if (ss) {
+          var touchX = 0;
+          ss.addEventListener("touchstart", function(e) { touchX = e.touches[0].clientX; }, {passive: true});
+          ss.addEventListener("touchend", function(e) {
+            var dx = touchX - e.changedTouches[0].clientX;
+            if (Math.abs(dx) > 40) { goSlide(dx > 0 ? current + 1 : current - 1); resetSlideTimer(); }
+          }, {passive: true});
+        }
+      }
+
+      // HOME FORM
+      var homeForm = document.getElementById('home-contact-form');
+      var homeSuccess = document.querySelector('.home-form-success');
+      var homeError = document.querySelector('.home-form-error');
+      var homeFileInput = document.getElementById('home-file-input');
+      var homeFileList = document.getElementById('home-file-list');
+      var homeFiles = [];
+      if (homeFileInput && homeFileList) {
+        homeFileInput.addEventListener('change', function() {
+          Array.from(homeFileInput.files).forEach(function(f) {
+            if (homeFiles.length < 10 && !homeFiles.find(function(x) { return x.name === f.name && x.size === f.size; })) homeFiles.push(f);
+          });
+          homeFileInput.value = '';
+          renderHomeFiles();
+        });
+      }
+      function renderHomeFiles() {
+        if (!homeFileList) return;
+        homeFileList.innerHTML = '';
+        homeFiles.forEach(function(f, i) {
+          var item = document.createElement('div'); item.className = 'home-file-item';
+          var nm = document.createElement('span'); nm.textContent = f.name;
+          var rm = document.createElement('button'); rm.className = 'home-file-rm'; rm.type = 'button'; rm.textContent = '×';
+          rm.addEventListener('click', function(e) { e.stopPropagation(); homeFiles.splice(i, 1); renderHomeFiles(); });
+          item.appendChild(nm); item.appendChild(rm); homeFileList.appendChild(item);
+        });
+      }
+      if (homeForm) {
+        homeForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var nameVal = homeForm.querySelector('[name="name"]').value.trim();
+          var emailVal = homeForm.querySelector('[name="email"]').value.trim();
+          if (!nameVal || !emailVal) { if (homeError) { homeError.textContent = 'Proszę podać imię i adres e-mail.'; homeError.classList.add('show'); } return; }
+          var subjectEl = homeForm.querySelector('[name="subject_field"],[name="subject"]');
+          var subjectVal = subjectEl ? subjectEl.value.trim() : '';
+          var msgEl = homeForm.querySelector('[name="message"]');
+          var msgVal = msgEl ? msgEl.value.trim() : '';
+          var fd = new FormData();
+          fd.append('name', nameVal);
+          fd.append('company', homeForm.querySelector('[name="company"]').value.trim());
+          fd.append('email', emailVal);
+          fd.append('message', subjectVal ? subjectVal + '\n\n' + msgVal : msgVal);
+          homeFiles.forEach(function(f) { fd.append('files', f); });
+          var btn = homeForm.querySelector('.btn-primary');
+          if (btn) { btn.disabled = true; btn.textContent = 'Wysyłanie…'; }
+          if (homeError) homeError.classList.remove('show');
+          try {
+            var res = await fetch('https://form.bibparts.com/contact', { method: 'POST', body: fd });
+            var data = await res.json();
+            if (data.ok) { homeForm.style.display = 'none'; if (homeSuccess) { homeSuccess.textContent = 'Dziękujemy! Odpowiemy w ciągu jednego dnia roboczego.'; homeSuccess.classList.add('show'); } }
+            else { if (homeError) { homeError.textContent = data.error || 'Wystąpił błąd. Spróbuj ponownie.'; homeError.classList.add('show'); } if (btn) { btn.disabled = false; btn.textContent = 'Wyślij wiadomość'; } }
+          } catch (err) { if (homeError) { homeError.textContent = 'Błąd połączenia. Spróbuj ponownie.'; homeError.classList.add('show'); } if (btn) { btn.disabled = false; btn.textContent = 'Wyślij wiadomość'; } }
+        });
+      }
+
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+
+
+    });
+  </script>
+
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f6596ac2f05b1ed',t:'MTc3Nzg3NzYwOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def927a583469',t:'MTc3ODEzMjkwNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c73a19619e92',t:'MTc3ODg1NDc3Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2d63bad8632d6',t:'MTc3ODg1NTM4Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2e14fdf6fabed',t:'MTc3ODg1NTg0MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

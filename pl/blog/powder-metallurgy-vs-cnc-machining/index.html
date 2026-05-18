@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Metalurgia proszków czy obróbka CNC? Praktyczne porównanie obu procesów pod kątem kosztów, wolumenu, złożoności geometrii i tolerancji — pomoże wybrać właściwą metodę.">
+  <meta property="og:title" content="Metalurgia proszków a obróbka CNC — BIB Parts">
+  <meta property="og:description" content="Metalurgia proszków czy obróbka CNC? Praktyczne porównanie obu procesów pod kątem kosztów, wolumenu, złożoności geometrii i tolerancji — pomoże wybrać właściwą metodę.">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bibparts.com/pl/blog/powder-metallurgy-vs-cnc-machining/">
+  <meta property="og:locale" content="pl_PL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://bibparts.com/assets/images/powder-metallurgy-vs-cnc-machining.webp">
+  <meta property="article:published_time" content="2026-04-14">
+  <meta property="article:author" content="BIB Parts">
+  <link rel="canonical" href="https://bibparts.com/pl/blog/powder-metallurgy-vs-cnc-machining/">
+  <!-- Hreflang for multilingual -->
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/blog/powder-metallurgy-vs-cnc-machining/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/blog/powder-metallurgy-vs-cnc-machining/"/>
+
+  <title>Metalurgia proszków a obróbka CNC: jak wybrać właściwy proces — BIB Parts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #E1F5EE;
+      --black: #111111;
+      --gray-bg: #F5F4F2;
+      --border: #e0deda;
+      --text-muted: #666666;
+      --text-faint: #999999;
+      --content-width: 680px;
+    }
+
+    /* ── LOGO ── */
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px; border-bottom: 0.5px solid var(--border);
+      background: #fff; position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .active { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #666;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 4px; padding: 6px 10px; cursor: pointer;
+    }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      background: #fff; border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 4px; min-width: 150px; z-index: 200; display: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .lang-dropdown.show { display: block; }
+    .lang-option {
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #444;
+      border-radius: 4px; cursor: pointer;
+    }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+    .btn-cta {
+      background: var(--green); color: #fff; font-size: 13px; font-weight: 500;
+      padding: 9px 20px; border: none; border-radius: 4px;
+    }
+    .btn-cta:hover { background: var(--green-dark); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      padding: 14px 48px;
+      border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-faint);
+    }
+    .breadcrumb a:hover { color: var(--green); }
+    .breadcrumb-sep { color: var(--text-faint); }
+
+    /* ── ARTICLE HEADER ── */
+    .article-header {
+      padding: 56px 48px 40px;
+      border-bottom: 0.5px solid var(--border);
+      max-width: calc(var(--content-width) + 96px);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .article-meta {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+    }
+    .article-cat {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      color: var(--green); text-transform: uppercase;
+    }
+    .article-date {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .meta-sep { color: var(--text-faint); font-size: 10px; }
+    .article-read-time {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .article-author {
+      font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-faint);
+    }
+    .article-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 36px; font-weight: 500;
+      line-height: 1.2; letter-spacing: -0.02em;
+      color: var(--black); margin-bottom: 16px;
+    }
+    .article-lead {
+      font-size: 17px; color: #555; line-height: 1.75; font-weight: 300;
+    }
+
+    /* ── COVER IMAGE ── */
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16/5;
+      max-height: 280px;
+      background: #EEF2F0;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 6px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .article-cover img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      padding: 48px 48px 64px;
+      max-width: calc(var(--content-width) + 96px);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .article-body h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px; font-weight: 500;
+      color: var(--black); margin: 40px 0 14px;
+      letter-spacing: -0.01em; line-height: 1.3;
+    }
+    .article-body h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px; font-weight: 500;
+      color: var(--black); margin: 28px 0 10px;
+    }
+    .article-body p {
+      font-size: 15px; color: #444; line-height: 1.85;
+      font-weight: 300; margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol { margin: 0 0 20px 20px; }
+    .article-body li {
+      font-size: 15px; color: #444; line-height: 1.8;
+      font-weight: 300; margin-bottom: 6px;
+    }
+    .article-body strong { font-weight: 500; color: var(--black); }
+    .article-body em { font-style: italic; color: #666; }
+    .article-body a { color: var(--green); border-bottom: 0.5px solid rgba(29,158,117,0.3); }
+    .article-body a:hover { border-bottom-color: var(--green); }
+    .article-body code {
+      font-family: 'DM Mono', monospace; font-size: 13px;
+      background: var(--gray-bg); color: var(--black);
+      padding: 2px 6px; border-radius: 3px;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--green);
+      padding: 16px 24px; margin: 32px 0;
+      background: var(--green-light); border-radius: 0 6px 6px 0;
+    }
+    .article-body blockquote p {
+      font-size: 17px; color: var(--green-dark); font-weight: 400;
+      font-style: italic; margin: 0;
+    }
+    .article-body table {
+      width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13px;
+    }
+    .article-body th {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-faint);
+      border-bottom: 0.5px solid var(--border); padding: 8px 12px;
+      text-align: left; font-weight: 400;
+    }
+    .article-body td {
+      padding: 10px 12px; border-bottom: 0.5px solid var(--border);
+      color: #444; font-weight: 300; line-height: 1.5;
+    }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body hr {
+      border: none; border-top: 0.5px solid var(--border); margin: 40px 0;
+    }
+
+    /* ── ARTICLE FOOTER ── */
+    .article-footer {
+      border-top: 0.5px solid var(--border);
+      padding: 40px 48px;
+      max-width: calc(var(--content-width) + 96px);
+      margin: 0 auto; width: 100%;
+      display: flex; flex-direction: column; gap: 32px;
+    }
+    .article-tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .tag-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+      color: var(--text-faint); text-transform: uppercase;
+    }
+    .tag {
+      font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em;
+      color: #777; background: var(--gray-bg);
+      border: 0.5px solid var(--border); border-radius: 2px;
+      padding: 4px 10px; text-transform: uppercase;
+    }
+    .article-cta {
+      background: var(--green-light); border-radius: 8px;
+      padding: 28px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      border: 0.5px solid rgba(29,158,117,0.2);
+    }
+    .article-cta-text h3 {
+      font-size: 17px; font-weight: 500; color: var(--black); margin-bottom: 4px;
+    }
+    .article-cta-text p {
+      font-size: 13px; color: #666; font-weight: 300; margin: 0;
+    }
+    .article-cta-btn {
+      display: inline-block; background: var(--green); color: #fff;
+      font-size: 13px; font-weight: 500; padding: 10px 22px;
+      border-radius: 4px; white-space: nowrap; flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .article-cta-btn:hover { background: var(--green-dark); }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--text-muted); transition: color 0.12s;
+    }
+    .back-link:hover { color: var(--green); }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 24px 48px; border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; background: #fff;
+    }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .breadcrumb { padding: 12px 24px; }
+      .article-header { padding: 40px 24px 28px; }
+      .article-title { font-size: 26px; }
+      .article-body { padding: 32px 24px 48px; }
+      .article-footer { padding: 28px 24px; }
+      .article-cta { flex-direction: column; align-items: flex-start; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+    }
+    /* ── BURGER MENU ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; background: transparent;
+      border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 10px; cursor: pointer;
+    }
+    .burger span {
+      display: block; width: 100%; height: 1.5px;
+      background: #111; border-radius: 1px; transition: all 0.2s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; top: 61px;
+      background: #fff; z-index: 999; padding: 32px 24px;
+      flex-direction: column; gap: 0; border-top: 0.5px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link {
+      font-size: 22px; font-weight: 500; color: #111;
+      padding: 16px 0; border-bottom: 0.5px solid var(--border); display: block;
+    }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .mobile-menu-cta {
+      background: var(--green); color: #fff; font-size: 15px; font-weight: 500;
+      text-align: center; padding: 14px; border-radius: 4px; display: block;
+    }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: #888;
+      background: transparent; border: 0.5px solid var(--border);
+      border-radius: 3px; padding: 5px 10px; cursor: pointer;
+    }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    @media (max-width: 768px) { .burger { display: flex; } }
+  </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Metalurgia proszków a obróbka CNC: jak wybrać właściwy proces dla swojej części",
+    "description": "Metalurgia proszków czy obróbka CNC? Praktyczne porównanie obu procesów pod kątem kosztów, wolumenu, złożoności geometrii i tolerancji.",
+    "author": { "@type": "Organization", "name": "BIB Parts" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BIB Parts",
+      "url": "https://bibparts.com"
+    },
+    "image": "https://bibparts.com/assets/images/powder-metallurgy-vs-cnc-machining.webp",
+    "datePublished": "2026-04-14",
+    "inLanguage": "pl",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://bibparts.com/pl/blog/powder-metallurgy-vs-cnc-machining/" },
+    "url": "https://bibparts.com/pl/blog/powder-metallurgy-vs-cnc-machining/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://bibparts.com/pl/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bibparts.com/pl/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Metalurgia proszków a obróbka CNC" }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQYL01TKEC');
+  </script>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <a href="/pl/" class="nav-logo" aria-label="BIB Parts — strona główna">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/pl/">Strona główna</a></li>
+        <li><a href="/pl/capabilities/">Możliwości</a></li>
+        <li><a href="/pl/projects/">Projekty</a></li>
+        <li><a href="/pl/blog/" class="active" aria-current="page">Blog</a></li>
+        <li><a href="/pl/contact/">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-wrap">
+          <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Wybierz język">
+            <span id="lang-code">PL</span>
+            <span class="lang-chevron" id="lang-chevron">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <div class="lang-option" onclick="selectLang('EN','/en/blog/powder-metallurgy-vs-cnc-machining/',this)"><span class="lang-name">English</span></div>
+            <div class="lang-option" onclick="selectLang('DE','/de/blog/powder-metallurgy-vs-cnc-machining/',this)"><span class="lang-name">Deutsch</span></div>
+            <div class="lang-option" onclick="selectLang('ES','/es/blog/powder-metallurgy-vs-cnc-machining/',this)"><span class="lang-name">Español</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/blog/powder-metallurgy-vs-cnc-machining/',this)"><span class="lang-name">Français</span></div>
+            <div class="lang-option active" onclick="selectLang('PL','/pl/blog/powder-metallurgy-vs-cnc-machining/',this)"><span class="lang-name">Polski</span><span class="lang-check">✓</span></div>
+          </div>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="/pl/contact/" class="btn-cta">Zapytaj o wycenę</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/pl/" class="mobile-menu-link">Strona główna</a>
+    <a href="/pl/capabilities/" class="mobile-menu-link">Możliwości</a>
+    <a href="/pl/projects/" class="mobile-menu-link">Projekty</a>
+    <a href="/pl/blog/" class="mobile-menu-link">Blog</a>
+    <a href="/pl/contact/" class="mobile-menu-link">Kontakt</a>
+    <div class="mobile-menu-bottom">
+      <a href="/pl/contact/" class="mobile-menu-cta">Zapytaj o wycenę</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-btn" onclick="location.href='/en/blog/powder-metallurgy-vs-cnc-machining/'">EN</button>
+        <button class="mobile-lang-btn" onclick="location.href='/de/blog/powder-metallurgy-vs-cnc-machining/'">DE</button>
+        <button class="mobile-lang-btn" onclick="location.href='/es/blog/powder-metallurgy-vs-cnc-machining/'">ES</button>
+        <button class="mobile-lang-btn" onclick="location.href='/fr/blog/powder-metallurgy-vs-cnc-machining/'">FR</button>
+        <button class="mobile-lang-btn active">PL</button>
+      </div>
+    </div>
+  </div>
+
+  <main role="main">
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/pl/">Strona główna</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="/pl/blog/">Blog</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Metalurgia proszków a obróbka CNC</span>
+  </div>
+
+  <!-- ── COVER IMAGE ── -->
+  <div class="article-cover full-width">
+    <img src="/assets/images/powder-metallurgy-vs-cnc-machining.webp" alt="Porównanie metalurgii proszków i obróbki CNC">
+  </div>
+
+  <!-- ── ARTICLE HEADER ── -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="article-cat">Przewodnik inżynieryjny</span>
+      <span class="meta-sep">·</span>
+      <span class="article-date">Kwiecień 2026</span>
+      <span class="meta-sep">·</span>
+      <span class="article-read-time">6 min czytania</span>
+      <span class="meta-sep">·</span>
+      <span class="article-author">BIB Parts</span>
+    </div>
+    <h1 class="article-title">
+      Metalurgia proszków a obróbka CNC: jak wybrać właściwy proces dla swojej części
+    </h1>
+    <p class="article-lead">
+      Dwa najszerzej stosowane procesy wytwarzania precyzyjnych części metalowych — obróbka CNC i metalurgia proszków — mają nakładające się, ale odmienne obszary zastosowań. Wybór niewłaściwego procesu na etapie projektowania może oznaczać części kosztujące pięć razy więcej niż konieczne lub niespełniające wymagań. Ten przewodnik wyjaśnia, kiedy każdy z procesów jest właściwym wyborem i co decyduje o tej decyzji.
+    </p>
+  </header>
+
+  <!-- ── ARTICLE BODY ── -->
+  <article class="article-body">
+
+    <h2>Czym różnią się te procesy</h2>
+
+    <p>Obróbka CNC usuwa materiał z litego kęsa za pomocą narzędzi skrawających, aby uzyskać końcowy kształt. Jest to proces ubytkowy — elastyczny, zdolny do osiągania bardzo ciasnych tolerancji, stosowany od pojedynczych prototypów do serii kilku tysięcy sztuk.</p>
+
+    <p>Metalurgia proszków (MP) zagęszcza proszek metalowy w matrycy pod wysokim ciśnieniem, a następnie spieka wypraski w piecu, aby związać cząsteczki. Jest to proces kształtowania kształtu netto lub bliskiego netto — części wychodzą z matrycy bliskie swoim docelowym wymiarom, przy minimalnych stratach materiału i bez konieczności obróbki dla większości elementów. Ekonomia MP jest całkowicie uzależniona od wolumenu: koszt oprzyrządowania jest wysoki, ale koszt jednostkowy jest bardzo niski przy dużej skali.</p>
+
+    <h2>Kiedy obróbka CNC jest właściwym wyborem</h2>
+
+    <ul>
+      <li><strong>Małe i średnie wolumeny</strong> (1 do ok. 5 000 sztuk rocznie). Obróbka nie wymaga nakładów na oprzyrządowanie — płaci się za część i za godzinę pracy maszyny.</li>
+      <li><strong>Złożone geometrie zewnętrzne,</strong> podcięcia lub elementy, których matryca nie może wytworzyć.</li>
+      <li><strong>Ciasne tolerancje wymiarowe.</strong> CNC rutynowo osiąga <code>±0,01–0,05 mm</code>. Tolerancje po spiekaniu MP wynoszą IT8–IT10; kalibrowanie może poprawić je do IT6, ale dodaje operację.</li>
+      <li><strong>Szeroki zakres materiałów.</strong> CNC działa praktycznie z każdym metalem inżynieryjnym — stalą, aluminium, tytanem, mosiądzem, miedzią, tworzywami sztucznymi. MP jest głównie ograniczona do żelaza i stali, z niektórymi gatunkami nierdzewnymi, mosiężnymi i miedzianymi.</li>
+      <li><strong>Prototypowanie i wczesny etap rozwoju.</strong> Część CNC można wyprodukować z rysunku w ciągu kilku dni. Oprzyrządowanie MP zajmuje tygodnie.</li>
+      <li><strong>Części wymagające spawania,</strong> gwintowania w cienkich ściankach lub elementów działających tylko w materiale odkształconym plastycznie.</li>
+    </ul>
+
+    <h2>Kiedy metalurgia proszków jest właściwym wyborem</h2>
+
+    <ul>
+      <li><strong>Wysokie wolumeny</strong> (zazwyczaj 10 000+ sztuk rocznie). Przy wystarczającym wolumenie koszt jednostkowy w MP jest dramatycznie niższy niż w obróbce — często o 50–80%.</li>
+      <li><strong>Złożona geometria wewnętrzna.</strong> Elementy takie jak wewnętrzne wielowypusty, ślepe wpusty i profile krzywkowe, które wymagałyby wielu ustawień obróbczych, mogą być formowane bezpośrednio w matrycy.</li>
+      <li><strong>Łożyska samosmarujące.</strong> Łożyska nasycane olejem (spieki brązowe, spieki żelazne) to ugruntowany produkt MP o właściwościach niemożliwych do uzyskania przez obróbkę.</li>
+      <li><strong>Efektywność kształtu netto.</strong> MP wytwarza niemal zero odpadów materiałowych. Dla drogich stopów lub produkcji wielkoseryjnej jest to istotny czynnik kosztowy.</li>
+      <li><strong>Spójna jakość część do części.</strong> Ponieważ każda część jest prasowana w tej samej matrycy, zmienność wymiarowa między częściami jest bardzo mała.</li>
+    </ul>
+
+    <h2>Porównanie kosztów w zależności od wolumenu</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Wolumen (szt./rok)</th>
+          <th>Obróbka CNC</th>
+          <th>Metalurgia proszków</th>
+          <th>Zalecany proces</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>1–100</code></td>
+          <td>Niski–średni</td>
+          <td>Nieopłacalna (koszt oprzyrządowania)</td>
+          <td>Obróbka CNC</td>
+        </tr>
+        <tr>
+          <td><code>100–1 000</code></td>
+          <td>Średni</td>
+          <td>Wysoki (amortyzacja oprzyrządowania)</td>
+          <td>Obróbka CNC</td>
+        </tr>
+        <tr>
+          <td><code>1 000–5 000</code></td>
+          <td>Wysoki</td>
+          <td>Średni</td>
+          <td>Zależy od geometrii</td>
+        </tr>
+        <tr>
+          <td><code>5 000–20 000</code></td>
+          <td>Bardzo wysoki</td>
+          <td>Niski–średni</td>
+          <td>Metalurgia proszków</td>
+        </tr>
+        <tr>
+          <td><code>20 000+</code></td>
+          <td>Nieopłacalna</td>
+          <td>Bardzo niski</td>
+          <td>Metalurgia proszków</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Punkt przejścia zależy w dużej mierze od złożoności części, materiału i konkretnej geometrii. Dla prostej tulei stalowej MP może być opłacalna już od 2 000 sztuk/rok. Dla złożonej części aluminiowej CNC może pozostać konkurencyjna przy znacznie wyższych wolumenach.</p>
+
+    <h2>Tolerancja i chropowatość powierzchni</h2>
+
+    <p>Tu obróbka CNC ma wyraźną przewagę. Części MP po spiekaniu wychodzą z pieca z tolerancjami IT8–IT10 na większości wymiarów. Kalibrowanie (operacja zimnego prasowania po spiekaniu) może poprawić krytyczne wymiary otworów i średnic zewnętrznych do IT6, ale zwiększa koszty i jest ograniczone do określonych elementów.</p>
+
+    <p>Obróbka CNC rutynowo osiąga IT6–IT7 na całej części, przy czym IT5 lub ciaśniejsze jest osiągalne na konkretnych elementach przez szlifowanie lub honowanie.</p>
+
+    <blockquote>
+      <p>Jeśli część wymaga ciasnych tolerancji na wielu elementach — gniazdach łożysk, otworach precyzyjnych, ciasno pasowanych wałkach — obróbka CNC jest prawie zawsze lepszym procesem, niezależnie od wolumenu.</p>
+    </blockquote>
+
+    <h2>Właściwości materiałowe</h2>
+
+    <p>Części MP mają gęstość wynoszącą ok. <code>85–95%</code> gęstości materiału odkształconego plastycznie, w zależności od stopu i procesu spiekania. Oznacza to nieco niższą wytrzymałość na rozciąganie i odporność na zmęczenie w porównaniu z równorzędną częścią obrabianą. Dla większości zastosowań konstrukcyjnych nie stanowi to problemu — części MP stosowane są w skrzyniach biegów samochodowych, narzędziach elektrycznych i maszynach przemysłowych na całym świecie — ale dla krytycznych zmęczeniowo zastosowań lotniczych lub motorsportowych preferuje się odkształcony plastycznie materiał obrabiany.</p>
+
+    <h2>Czy procesy można łączyć?</h2>
+
+    <p>Tak — i często jest to optymalne rozwiązanie. Półfabrykat MP może być obrabiany po spiekaniu w celu osiągnięcia ciasnych tolerancji na krytycznych elementach, podczas gdy proces MP zapewnia kształt zbliżony do netto i utrzymuje ogólny koszt na niskim poziomie. To podejście hybrydowe jest standardową praktyką dla elementów samochodowych, takich jak korbowody, koła łańcuchowe i wkładki gniazd zaworów.</p>
+
+    <h2>Podsumowanie</h2>
+
+    <ul>
+      <li>Wybierz obróbkę CNC przy małych i średnich wolumenach, złożonej geometrii, ciasnych tolerancjach, szerokim wyborze materiałów lub przy prototypowaniu.</li>
+      <li>Wybierz metalurgię proszków przy wysokich wolumenach, prostej lub umiarkowanej geometrii, zastosowaniach samosmarujących lub gdy minimalizacja strat materiałowych jest krytyczna.</li>
+      <li>Punkt przejścia kosztowego wynosi zazwyczaj 1 000–10 000 sztuk/rok w zależności od złożoności części.</li>
+      <li>Tolerancje MP: IT8–IT10 po spiekaniu; kalibrowanie poprawia krytyczne elementy do IT6.</li>
+      <li>Rozważ podejście hybrydowe — kształt netto MP z obróbką po spiekaniu — dla części wielkoseryjnych z kilkoma elementami o ciasnej tolerancji.</li>
+    </ul>
+
+  </article>
+
+  <!-- ── ARTICLE FOOTER ── -->
+  <footer class="article-footer">
+
+    <a href="/pl/blog/" class="back-link">← Wróć do wszystkich artykułów</a>
+
+    <div class="article-tags">
+      <span class="tag-label">Tagi:</span>
+      <span class="tag">Metalurgia proszków</span>
+      <span class="tag">Obróbka CNC</span>
+      <span class="tag">Procesy wytwarzania</span>
+      <span class="tag">Przewodnik inżynieryjny</span>
+    </div>
+
+    <div class="article-cta">
+      <div class="article-cta-text">
+        <h3>Nie jesteś pewny, który proces jest właściwy dla Twojej części?</h3>
+        <p>Wyślij nam rysunek i wymagania dotyczące wolumenu — nasi inżynierowie zalecą najbardziej opłacalną metodę produkcji i przedstawią wycenę.</p>
+      </div>
+      <a href="/pl/contact/" class="article-cta-btn">Zapytaj o wycenę →</a>
+    </div>
+
+  </footer>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <a href="/pl/" aria-label="BIB Parts — strona główna">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <div class="logo-slash logo-slash-1"></div>
+          <div class="logo-slash logo-slash-2"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-bib">BIB</span>
+          <span class="logo-parts">PARTS</span>
+        </div>
+      </div>
+    </a>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="/pl/capabilities/">Możliwości</a></li>
+        <li><a href="/pl/projects/">Projekty</a></li>
+        <li><a href="/pl/blog/">Blog</a></li>
+        <li><a href="/pl/contact/">Kontakt</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="/pl/privacy/">Polityka prywatności</a></li>
+        <li><a href="/pl/cookies/">Pliki cookie</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.style.visibility = 'hidden';
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+
+      window.toggleLang = function() {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (!d) return;
+        var open = d.classList.toggle('show');
+        if (c) c.classList.toggle('open', open);
+      };
+      window.selectLang = function(code, path, el) {
+        var codeEl = document.getElementById('lang-code');
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (codeEl) codeEl.textContent = code;
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+        document.querySelectorAll('.lang-option').forEach(function(o) {
+          o.classList.remove('active');
+          var chk = o.querySelector('.lang-check');
+          if (chk) chk.remove();
+        });
+        el.classList.add('active');
+        var chk = document.createElement('span');
+        chk.className = 'lang-check';
+        chk.textContent = '✓';
+        el.appendChild(chk);
+        window.location.href = path;
+      };
+
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-wrap')) {
+          var d = document.getElementById('lang-dropdown');
+          var c = document.getElementById('lang-chevron');
+          if (d) d.classList.remove('show');
+          if (c) c.classList.remove('open');
+        }
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      var nav = document.querySelector('.nav');
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+        });
+      }
+
+    });
+  </script>
+
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f6596b39f2ea1aa',t:'MTc3Nzg3NzYwOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def9bdfadb1ed',t:'MTc3ODEzMjkwOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c7423e04542f',t:'MTc3ODg1NDc3NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,7 @@
+name = "polished-sun-6dcb"
+account_id = "c37d2484d003c606e1c5987d37636371"
+compatibility_date = "2024-01-01"
+main = "worker.js"
+
+[assets]
+directory = "."

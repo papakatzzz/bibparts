@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de cookies de BIB Parts: qué cookies usamos, por qué y cómo gestionarlas.">
+  <meta property="og:title" content="Política de Cookies - BIB Parts">
+  <meta property="og:description" content="Qué cookies usa BIB Parts y cómo gestionarlas.">
+  <meta property="og:site_name" content="BIB Parts">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://bibparts.com/es/cookies/">
+  <link rel="canonical" href="https://bibparts.com/es/cookies/">
+  <!-- Hreflang for multilingual -->
+  <link rel="alternate" hreflang="en" href="https://bibparts.com/en/cookies/"/>
+  <link rel="alternate" hreflang="de" href="https://bibparts.com/de/cookies/"/>
+  <link rel="alternate" hreflang="es" href="https://bibparts.com/es/cookies/"/>
+  <link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/cookies/"/>
+  <link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/cookies/"/>
+  <link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/cookies/"/>
+  <title>Política de Cookies – BIB Parts Fabricación de Precisión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Anton'; font-display: block; }
+    @font-face { font-family: 'Barlow Condensed'; font-display: block; }
+    @font-face { font-family: 'DM Sans'; font-display: block; }
+    @font-face { font-family: 'DM Mono'; font-display: block; }
+  </style>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: #111; background: #fff; font-size: 17px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+    :root {
+      --green: #1D9E75; --green-dark: #0F6E56; --green-light: #E1F5EE;
+      --black: #111111; --gray-bg: #F5F4F2; --border: #e0deda;
+      --text-muted: #666666; --text-faint: #999999;
+      --content-width: 680px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { display: flex; align-items: stretch; gap: 3px; height: 32px; }
+    .logo-slash { border-radius: 2px; transform: skewX(-8deg); }
+    .logo-slash-1 { width: 10px; background: #1D9E75; }
+    .logo-slash-2 { width: 6px; background: #1D9E75; opacity: 0.28; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-bib { font-family: 'Anton', sans-serif; font-size: 22px; color: #111; letter-spacing: 0.5px; line-height: 1.1; }
+    .logo-parts { font-family: 'Barlow Condensed', sans-serif; font-size: 8px; font-weight: 700; color: #1D9E75; letter-spacing: 4px; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 48px; border-bottom: 0.5px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 1000; }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: #666; list-style: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .lang-wrap { position: relative; }
+    .lang-btn { display: flex; align-items: center; gap: 5px; font-family: 'DM Mono', monospace; font-size: 12px; color: #666; background: transparent; border: 0.5px solid var(--border); border-radius: 4px; padding: 6px 10px; cursor: pointer; }
+    .lang-btn:hover { border-color: #bbb; }
+    .lang-chevron { font-size: 9px; color: #aaa; transition: transform 0.15s; display: inline-block; }
+    .lang-chevron.open { transform: rotate(180deg); }
+    .lang-dropdown { position: absolute; top: calc(100% + 6px); right: 0; background: #fff; border: 0.5px solid var(--border); border-radius: 6px; padding: 4px; min-width: 150px; z-index: 200; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .lang-dropdown.show { display: block; }
+    .lang-option { display: flex; align-items: center; gap: 8px; padding: 8px 10px; font-family: 'DM Mono', monospace; font-size: 12px; color: #444; border-radius: 4px; cursor: pointer; }
+    .lang-option:hover { background: var(--gray-bg); }
+    .lang-option.active { color: var(--green); }
+    .lang-name { flex: 1; }
+    .lang-check { color: var(--green); margin-left: auto; }
+    .btn-cta { background: var(--green); color: #fff; font-size: 13px; font-weight: 500; padding: 9px 20px; border: none; border-radius: 4px; }
+    .btn-cta:hover { background: var(--green-dark); }
+    .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; background: transparent; border: 0.5px solid var(--border); border-radius: 6px; padding: 10px; cursor: pointer; }
+    .burger span { display: block; width: 100%; height: 1.5px; background: #111; border-radius: 1px; transition: all 0.2s; }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: 61px; background: #fff; z-index: 999; padding: 32px 24px; flex-direction: column; gap: 0; border-top: 0.5px solid var(--border); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-link { font-size: 22px; font-weight: 500; color: #111; padding: 16px 0; border-bottom: 0.5px solid var(--border); display: block; }
+    .mobile-menu-link:hover { color: var(--green); }
+    .mobile-menu-bottom { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .mobile-menu-cta { background: var(--green); color: #fff; font-size: 15px; font-weight: 500; text-align: center; padding: 14px; border-radius: 4px; display: block; }
+    .mobile-lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mobile-lang-btn { font-family: 'DM Mono', monospace; font-size: 12px; color: #888; background: transparent; border: 0.5px solid var(--border); border-radius: 3px; padding: 5px 10px; cursor: pointer; }
+    .mobile-lang-btn.active { color: var(--green); border-color: var(--green); }
+    .legal-layout { display: grid; grid-template-columns: 1fr min(var(--content-width), 100%) 1fr; padding: 64px 24px 96px; }
+    .legal-layout > * { grid-column: 2; }
+    .legal-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 14px; }
+    .legal-title { font-family: 'DM Sans', sans-serif; font-size: 38px; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 8px; }
+    .legal-updated { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-faint); margin-bottom: 48px; }
+    .legal-body h2 { font-size: 18px; font-weight: 500; color: var(--black); margin: 36px 0 12px; }
+    .legal-body p { font-size: 15px; color: #444; line-height: 1.8; font-weight: 300; margin-bottom: 14px; }
+    .legal-body ul { font-size: 15px; color: #444; line-height: 1.8; font-weight: 300; margin-bottom: 14px; padding-left: 20px; }
+    .legal-body ul li { margin-bottom: 6px; }
+    .legal-body a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+    .legal-body a:hover { color: var(--green-dark); }
+    .cookie-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 14px; }
+    .cookie-table th { text-align: left; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); padding: 8px 12px; border-bottom: 1px solid var(--border); }
+    .cookie-table td { padding: 10px 12px; border-bottom: 0.5px solid var(--border); color: #444; font-weight: 300; vertical-align: top; line-height: 1.6; }
+    .cookie-table tr:last-child td { border-bottom: none; }
+    .footer { padding: 24px 48px; border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: #fff; }
+    .footer-right { display: flex; align-items: center; gap: 32px; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-faint); list-style: none; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
+    @media (max-width: 900px) {
+      .nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .btn-cta { display: none; }
+      .legal-layout { padding: 48px 0 72px; }
+      .footer { flex-direction: column; gap: 16px; padding: 24px; }
+      .footer-right { flex-direction: column; gap: 12px; }
+      .cookie-table { font-size: 12px; }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQYL01TKEC"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQYL01TKEC');</script>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/es/" class="nav-logo" aria-label="BIB Parts home">
+    <div class="logo">
+      <div class="logo-mark" aria-hidden="true">
+        <div class="logo-slash logo-slash-1"></div>
+        <div class="logo-slash logo-slash-2"></div>
+      </div>
+      <div class="logo-text">
+        <span class="logo-bib">BIB</span>
+        <span class="logo-parts">PARTS</span>
+      </div>
+    </div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/es/capabilities/">Capacidades</a></li>
+      <li><a href="/es/projects/">Proyectos</a></li>
+      <li><a href="/es/blog/">Blog</a></li>
+      <li><a href="/es/contact/">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-wrap">
+        <button class="lang-btn" id="lang-btn" onclick="toggleLang()" aria-label="Select language" aria-expanded="false">
+          <span id="lang-code">ES</span>
+          <span class="lang-chevron" id="lang-chevron" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+          <div class="lang-option" onclick="selectLang('EN','/en/cookies/',this)" role="option">
+              <span class="lang-name">English</span>
+            </div>
+          <div class="lang-option" onclick="selectLang('DE','/de/cookies/',this)" role="option">
+            <span class="lang-name">Deutsch</span>
+          </div>
+            <div class="lang-option active" onclick="selectLang('ES','/es/cookies/',this)" role="option"><span class="lang-name">Español</span><span class="lang-check">&#x2713;</span></div>
+            <div class="lang-option" onclick="selectLang('FR','/fr/cookies/',this)"><span class="lang-name">Français</span></div>
+            <div class="lang-option" onclick="selectLang('PL','/pl/cookies/',this)" role="option"><span class="lang-name">Polski</span></div>
+        </div>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="/es/contact/" class="btn-cta">Solicitar presupuesto</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/es/" class="mobile-menu-link">Inicio</a>
+  <a href="/es/capabilities/" class="mobile-menu-link">Capacidades</a>
+  <a href="/es/projects/" class="mobile-menu-link">Proyectos</a>
+  <a href="/es/blog/" class="mobile-menu-link">Blog</a>
+  <a href="/es/contact/" class="mobile-menu-link">Contacto</a>
+  <div class="mobile-menu-bottom">
+    <a href="/es/contact/" class="mobile-menu-cta">Solicitar presupuesto</a>
+    <div class="mobile-lang">
+      <button class="mobile-lang-btn" onclick="location.href='/en/cookies/'">EN</button>
+      <button class="mobile-lang-btn" onclick="location.href='/de/cookies/'">DE</button>
+        <button class="mobile-lang-btn active">ES</button>
+        <button class="mobile-lang-btn" onclick="location.href='/fr/cookies/'">FR</button>
+        <button class="mobile-lang-btn" onclick="location.href='/pl/cookies/'">PL</button>
+    </div>
+  </div>
+</div>
+
+<main role="main">
+  <div class="legal-layout">
+    <p class="legal-tag">Legal</p>
+    <h1 class="legal-title">Política de Cookies</h1>
+    <p class="legal-updated">Última actualización: abril de 2026</p>
+    <div class="legal-body">
+      <h2>1. Qué son las cookies</h2>
+      <p>Las cookies son pequeños archivos de texto almacenados en su dispositivo cuando visita un sitio web. Permiten al sitio web recordar información sobre su visita, mejorar su experiencia y ayudarnos a entender cómo se utiliza el sitio. Las cookies pueden ser de sesión (eliminadas al cerrar el navegador) o persistentes (almacenadas durante un período definido).</p>
+
+      <h2>2. Categorías de cookies que usamos</h2>
+      <p>Usamos las siguientes categorías de cookies:</p>
+      <ul>
+        <li><strong>Cookies estrictamente necesarias</strong> &mdash; esenciales para el funcionamiento seguro del sitio web. No pueden desactivarse sin afectar al funcionamiento del sitio. Estas cookies no requieren consentimiento según la legislación aplicable.</li>
+        <li><strong>Cookies funcionales</strong> &mdash; recuerdan sus preferencias (como su elección de consentimiento de cookies) para mejorar su experiencia.</li>
+        <li><strong>Cookies analíticas</strong> &mdash; recopilan información anonimizada sobre cómo los visitantes utilizan nuestro sitio web. Solo se activan después de que haya dado su consentimiento.</li>
+      </ul>
+
+      <h2>3. Cookies en detalle</h2>
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Cookie</th>
+            <th>Proveedor</th>
+            <th>Finalidad</th>
+            <th>Categoría</th>
+            <th>Duración</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>cookie_consent</td>
+            <td>BIB Parts</td>
+            <td>Almacena su preferencia de consentimiento de cookies para no mostrar el banner de nuevo</td>
+            <td>Funcional</td>
+            <td>1 año</td>
+          </tr>
+          <tr>
+            <td>__cf_bm</td>
+            <td>Cloudflare</td>
+            <td>Gestión de bots y seguridad; distingue humanos de bots</td>
+            <td>Estrictamente necesaria</td>
+            <td>30 minutos</td>
+          </tr>
+          <tr>
+            <td>cf_clearance</td>
+            <td>Cloudflare</td>
+            <td>Almacena el resultado de una comprobación de seguridad superada para evitar comprobaciones repetidas</td>
+            <td>Estrictamente necesaria</td>
+            <td>1 día</td>
+          </tr>
+          <tr>
+            <td>_ga</td>
+            <td>Google Analytics</td>
+            <td>Registra un ID único para generar datos estadísticos sobre el uso del sitio web</td>
+            <td>Analítica</td>
+            <td>2 años</td>
+          </tr>
+          <tr>
+            <td>_ga_*</td>
+            <td>Google Analytics</td>
+            <td>Utilizado por Google Analytics para mantener el estado de la sesión</td>
+            <td>Analítica</td>
+            <td>2 años</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Base jurídica de las cookies</h2>
+      <ul>
+        <li><strong>Cookies estrictamente necesarias y funcionales</strong> &mdash; tratadas en base al interés legítimo (Art. 6(1)(f) RGPD). Son necesarias para el funcionamiento seguro y funcional del sitio web.</li>
+        <li><strong>Cookies analíticas</strong> &mdash; tratadas en base a su consentimiento (Art. 6(1)(a) RGPD), otorgado a través del banner de cookies. Puede retirar el consentimiento en cualquier momento (véase el apartado 5).</li>
+      </ul>
+
+      <h2>5. Gestión y retirada del consentimiento</h2>
+      <p>Puede controlar o eliminar las cookies en cualquier momento a través de la configuración de su navegador. La mayoría de los navegadores le permiten:</p>
+      <ul>
+        <li>Ver y eliminar cookies individuales</li>
+        <li>Bloquear cookies de terceros</li>
+        <li>Bloquear todas las cookies (nota: esto puede afectar al funcionamiento del sitio web)</li>
+        <li>Recibir una notificación antes de que se almacene una cookie</li>
+      </ul>
+      <p>Para instrucciones específicas de cada navegador, visite <a href="https://www.aboutcookies.org" target="_blank" rel="noopener">aboutcookies.org</a>. Para desactivar específicamente Google Analytics, utilice el <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Complemento de inhabilitación de Google Analytics</a>.</p>
+      <p>La retirada del consentimiento no afecta a la legalidad del tratamiento realizado con anterioridad.</p>
+
+      <h2>6. Cookies de terceros e información adicional</h2>
+      <p>Las cookies de terceros (Google Analytics, Cloudflare) están reguladas por las políticas de privacidad de los respectivos proveedores. Le recomendamos revisarlas para obtener información completa. Para preguntas sobre nuestro uso de cookies o para ejercer sus derechos sobre sus datos, contáctenos en <a href="mailto:info@bibparts.com">info@bibparts.com</a>. Consulte también nuestra <a href="/es/privacy/">Política de Privacidad</a>.</p>
+
+      <h2>7. Cambios en esta política</h2>
+      <p>Podemos actualizar esta Política de Cookies para reflejar cambios en las cookies que usamos o en los requisitos legales aplicables. La fecha de "Última actualización" al inicio de esta página indica la revisión más reciente.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <a href="/es/" aria-label="BIB Parts home">
+    <div class="logo">
+      <div class="logo-mark" aria-hidden="true">
+        <div class="logo-slash logo-slash-1"></div>
+        <div class="logo-slash logo-slash-2"></div>
+      </div>
+      <div class="logo-text">
+        <span class="logo-bib">BIB</span>
+        <span class="logo-parts">PARTS</span>
+      </div>
+    </div>
+  </a>
+  <div class="footer-right">
+    <ul class="footer-links">
+      <li><a href="/es/capabilities/">Capacidades</a></li>
+      <li><a href="/es/projects/">Proyectos</a></li>
+      <li><a href="/es/blog/">Blog</a></li>
+      <li><a href="/es/contact/">Contacto</a></li>
+    </ul>
+    <ul class="footer-links">
+      <li><a href="/es/privacy/">Privacidad</a></li>
+      <li><a href="/es/cookies/">Cookies</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.style.visibility = 'hidden';
+  document.fonts.ready.then(function() { document.documentElement.style.visibility = ''; });
+  document.addEventListener('DOMContentLoaded', function() {
+    var burgerBtn = document.getElementById('burger');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (burgerBtn && mobileMenu) {
+      burgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        burgerBtn.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      });
+    }
+    window.toggleLang = function() {
+      var d = document.getElementById('lang-dropdown');
+      var c = document.getElementById('lang-chevron');
+      if (!d) return;
+      var open = d.classList.toggle('show');
+      if (c) c.classList.toggle('open', open);
+    };
+    window.selectLang = function(code, path, el) {
+      var codeEl = document.getElementById('lang-code');
+      var d = document.getElementById('lang-dropdown');
+      var c = document.getElementById('lang-chevron');
+      if (codeEl) codeEl.textContent = code;
+      if (d) d.classList.remove('show');
+      if (c) c.classList.remove('open');
+      document.querySelectorAll('.lang-option').forEach(function(o) {
+        o.classList.remove('active');
+        var chk = o.querySelector('.lang-check');
+        if (chk) chk.remove();
+      });
+      el.classList.add('active');
+      var chk = document.createElement('span');
+      chk.className = 'lang-check'; chk.textContent = String.fromCharCode(10003);
+      el.appendChild(chk);
+      window.location.href = path;
+    };
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.lang-wrap')) {
+        var d = document.getElementById('lang-dropdown');
+        var c = document.getElementById('lang-chevron');
+        if (d) d.classList.remove('show');
+        if (c) c.classList.remove('open');
+      }
+      if (mobileMenu && mobileMenu.classList.contains('open')) {
+        if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
+          mobileMenu.classList.remove('open');
+          if (burgerBtn) burgerBtn.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+    var nav = document.querySelector('.nav');
+    if (nav) {
+      window.addEventListener('scroll', function() {
+        nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
+      });
+    }
+  });
+</script>
+<script src="/assets/cookie-consent.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9dd8bf632d6',t:'MTc3NzQzOTMwMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f5214218a3dc7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f65969bdb4f5424',t:'MTc3Nzg3NzYwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def7d6ea3542f',t:'MTc3ODEzMjkwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c72d18a5543a',t:'MTc3ODg1NDc3MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
