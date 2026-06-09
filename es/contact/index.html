@@ -34,7 +34,8 @@
     @font-face { font-family: 'Barlow Condensed'; font-display: block; }
     @font-face { font-family: 'DM Sans'; font-display: block; }
     @font-face { font-family: 'DM Mono'; font-display: block; }
-  </style>
+  .file-upload-wrap{display:flex;flex-direction:column;gap:6px;margin-top:4px}.file-label{display:inline-flex;align-items:center;cursor:pointer}.file-input{position:absolute;opacity:0;width:0;height:0;pointer-events:none}.file-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1.5px dashed #c9c5be;border-radius:6px;font-size:13px;color:#666;cursor:pointer;transition:border-color .2s,color .2s;white-space:nowrap}.file-btn:hover{border-color:#7ab07a;color:#333}.file-names{font-size:12px;color:#666;word-break:break-all;margin-top:4px}
+</style>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -236,46 +237,15 @@
     .inp::placeholder, .txa::placeholder { color: #ccc; }
     .txa { height: 120px; resize: none; }
     .sel { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%23aaa' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
-    /* File upload */
-    .file-upload {
-      border: 0.5px dashed #c8c4be; border-radius: 6px;
-      background: #fff; transition: border-color 0.15s; position: relative; cursor: pointer;
+
+    /* Drawings hint */
+    .drawings-hint {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: var(--green-light); border-radius: 6px;
+      padding: 12px 16px; border: 0.5px solid rgba(29,158,117,0.2);
     }
-    .file-upload:hover { border-color: var(--green); }
-    .file-upload-inner {
-      padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center;
-    }
-    .file-icon {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: var(--green-light); display: flex; align-items: center; justify-content: center;
-      border: 0.5px solid rgba(29,158,117,0.2);
-    }
-    .file-icon svg { width: 18px; height: 18px; }
-    .file-upload-title { font-size: 13px; font-weight: 500; color: var(--black); }
-    .file-upload-hint { font-size: 11px; color: var(--text-faint); font-weight: 300; line-height: 1.5; }
-    .file-upload-btn {
-      font-size: 12px; font-weight: 500; color: var(--green);
-      border: 0.5px solid var(--green); border-radius: 3px; padding: 5px 14px;
-      background: transparent; cursor: pointer; pointer-events: none;
-    }
-    .file-inp { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
-    .file-selected-list { padding: 0 16px 12px; display: flex; flex-direction: column; gap: 4px; position: relative; z-index: 1; }
-    .file-selected-item {
-      display: flex; align-items: center; justify-content: space-between;
-      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted);
-      background: var(--gray-bg); border-radius: 3px; padding: 5px 10px;
-    }
-    .file-remove { background: none; border: none; color: #ccc; cursor: pointer; font-size: 14px; line-height: 1; padding: 0 0 0 8px; pointer-events: all; position: relative; z-index: 2; }
-    .file-remove:hover { color: #e24b4a; }
-    .form-success { display: none; flex-direction: column; align-items: center; text-align: center; padding: 48px 24px; gap: 16px; }
-    .form-success.show { display: flex; }
-    .success-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--green-light); display: flex; align-items: center; justify-content: center; border: 0.5px solid rgba(29,158,117,0.3); }
-    .success-icon svg { width: 28px; height: 28px; }
-    .success-title { font-size: 20px; font-weight: 500; color: var(--black); letter-spacing: -0.01em; }
-    .success-text { font-size: 14px; color: #777; font-weight: 300; line-height: 1.7; max-width: 340px; }
-    .form-error-msg { font-size: 13px; color: #e24b4a; background: #fff5f5; border: 0.5px solid #f5c2c2; border-radius: 4px; padding: 10px 14px; display: none; }
-    .form-error-msg.show { display: block; }
-    .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+    .drawings-hint-text { font-size: 13px; color: var(--green-dark); line-height: 1.5; }
+    .drawings-hint-text a { color: var(--green-dark); text-decoration: underline; text-underline-offset: 2px; }
 
     /* Submit */
     .form-submit { display: flex; align-items: center; gap: 16px; margin-top: 4px; }
@@ -508,7 +478,11 @@
     <div class="contact-right">
       <div class="form-heading">Envíenos una solicitud</div>
 
-      <form class="contact-form" id="contact-form" novalidate onsubmit="return bibSub(event)">
+      <form
+        class="contact-form"
+        method="POST"
+        enctype="multipart/form-data"
+      >
 
         <!-- Name + Company -->
         <div class="form-row">
@@ -540,30 +514,13 @@
           <textarea class="txa" id="message" name="message" placeholder="Describa su pieza, requisitos de material, tolerancias, cantidad requerida, fecha de entrega u otros detalles relevantes…" required></textarea>
         </div>
 
-        <!-- File upload -->
-        <div class="form-group">
-          <div class="form-label">Archivos adjuntos</div>
-          <div class="file-upload" id="file-upload-area">
-            <div class="file-upload-inner">
-              <div class="file-icon">
-                <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 2v10M5 6l4-4 4 4" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M2 13v1a2 2 0 002 2h10a2 2 0 002-2v-1" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div class="file-upload-title">Suelta archivos aquí o haz clic</div>
-              <div class="file-upload-hint">DWG, DXF, STEP, IGES, STL, PDF, XLSX, DOCX, ZIP...<br>Hasta 50 MB por archivo · Hasta 10 archivos</div>
-              <div class="file-upload-btn">Elegir archivos</div>
-            </div>
-            <div class="file-selected-list" id="file-list"></div>
-            <input class="file-inp" type="file" name="files" id="file-input" multiple
-              accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.obj,.3mf,.xlsx,.xls,.docx,.doc,.txt,.csv,.zip,.rar,.7z,.tar,.gz,.png,.jpg,.jpeg,.gif,.webp,.tiff,.tif,.bmp,.svg"
-            >
-          </div>
+        <div class="file-upload-wrap">
+          <label class="file-label">
+            <input type="file" name="files" multiple accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.obj,.3mf,.ipt,.iam,.catpart,.catproduct,.prt,.asm,.x_t,.x_b,.jpg,.jpeg,.png,.gif,.webp,.tif,.tiff,.bmp,.svg,.doc,.docx,.xls,.xlsx,.txt,.csv,.zip,.rar,.7z" class="file-input">
+            <span class="file-btn">&#128206; Adjuntar archivos</span>
+          </label>
+          <span class="file-names"></span>
         </div>
-
-        <!-- Error -->
-        <div class="form-error-msg" role="alert"></div>
 
         <!-- Submit -->
         <div class="form-submit">
@@ -572,18 +529,6 @@
         </div>
 
       </form>
-
-      <!-- Success state -->
-      <div class="form-success" role="status" aria-live="polite">
-        <div class="success-icon">
-          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 14l5 5 9-9" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="success-title">¡Solicitud enviada!</div>
-        <div class="success-text">Gracias — hemos recibido tu consulta y te responderemos en un día hábil.</div>
-      </div>
-
     </div>
 
   </div>
@@ -618,89 +563,28 @@
       <p class="footer-copy">&copy; 2026 BIB Parts &middot; Baltijas Inzenieru Birojs</p>
     </div>
   </footer>
+
   <script>
     document.documentElement.style.visibility = 'hidden';
-    document.fonts.ready.then(function() { document.documentElement.style.visibility = ''; });
+    document.fonts.ready.then(function() {
+      document.documentElement.style.visibility = '';
+    });
 
-    // File upload - top level, runs immediately (script at end of body)
-    var _bF = [];
-    var _bFI = document.getElementById('file-input');
-    var _bFL = document.getElementById('file-list');
-    if (_bFI) {
-      _bFI.addEventListener('change', function() {
-        Array.from(_bFI.files).forEach(function(f) {
-          if (_bF.length < 10 && !_bF.find(function(x) { return x.name === f.name && x.size === f.size; })) _bF.push(f);
-        });
-        _bFI.value = '';
-        _bRFL();
-      });
-    }
-    function _bRFL() {
-      if (!_bFL) return;
-      _bFL.innerHTML = '';
-      _bF.forEach(function(f, i) {
-        var item = document.createElement('div'); item.className = 'file-selected-item';
-        var nm = document.createElement('span'); nm.textContent = f.name;
-        var rm = document.createElement('button'); rm.className = 'file-remove'; rm.type = 'button'; rm.textContent = '×';
-        rm.addEventListener('click', function(e) { e.stopPropagation(); _bF.splice(i, 1); _bRFL(); });
-        item.appendChild(nm); item.appendChild(rm);
-        if (_bFL) _bFL.appendChild(item);
-      });
-    }
-
-    // Form submit handler - global function called via onsubmit attribute
-    function bibSub(e) {
-      e.preventDefault();
-      var cf = document.getElementById('contact-form');
-      if (!cf) return false;
-      var nv = cf.querySelector('[name="name"]').value.trim();
-      var ev = cf.querySelector('[name="email"]').value.trim();
-      var eb = cf.querySelector('.form-error-msg');
-      var sb = cf.querySelector('.btn-submit');
-      var sc = document.querySelector('.form-success');
-      if (!nv || !ev) {
-        if (eb) { eb.textContent = 'Por favor, completa tu nombre y correo electrónico.'; eb.classList.add('show'); }
-        return false;
-      }
-      var fd = new FormData();
-      fd.append('name', nv);
-      fd.append('company', cf.querySelector('[name="company"]').value.trim());
-      fd.append('email', ev);
-      fd.append('phone', cf.querySelector('[name="phone"]').value.trim());
-      fd.append('message', cf.querySelector('[name="message"]').value.trim());
-      _bF.forEach(function(f) { fd.append('files', f); });
-      if (sb) { sb.disabled = true; sb.textContent = 'Enviando…'; }
-      if (eb) eb.classList.remove('show');
-      fetch('https://form.bibparts.com/contact', { method: 'POST', body: fd })
-        .then(function(r) { return r.json(); })
-        .then(function(d) {
-          if (d.ok) {
-            cf.style.display = 'none';
-            if (sc) sc.classList.add('show');
-          } else {
-            if (eb) { eb.textContent = d.error || 'Ha ocurrido un error. Por favor, inténtalo de nuevo.'; eb.classList.add('show'); }
-            if (sb) { sb.disabled = false; sb.textContent = 'Enviar solicitud'; }
-          }
-        })
-        .catch(function() {
-          if (eb) { eb.textContent = 'Error de conexión. Por favor, inténtalo de nuevo.'; eb.classList.add('show'); }
-          if (sb) { sb.disabled = false; sb.textContent = 'Enviar solicitud'; }
-        });
-      return false;
-    }
-
-    // Nav: burger + lang switcher + scroll shadow
     document.addEventListener('DOMContentLoaded', function() {
-      var burger = document.getElementById('burger');
-      var menu = document.getElementById('mobile-menu');
-      if (burger && menu) {
-        burger.addEventListener('click', function(e) {
+
+      // Burger menu
+      var burgerBtn = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function(e) {
           e.stopPropagation();
-          burger.classList.toggle('open');
-          menu.classList.toggle('open');
-          document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+          burgerBtn.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+          document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
         });
       }
+
+      // Lang switcher
       window.toggleLang = function() {
         var d = document.getElementById('lang-dropdown');
         var c = document.getElementById('lang-chevron');
@@ -727,6 +611,8 @@
         el.appendChild(chk);
         window.location.href = path;
       };
+
+      // Close on outside click
       document.addEventListener('click', function(e) {
         if (!e.target.closest('.lang-wrap')) {
           var d = document.getElementById('lang-dropdown');
@@ -734,23 +620,63 @@
           if (d) d.classList.remove('show');
           if (c) c.classList.remove('open');
         }
-        if (menu && menu.classList.contains('open')) {
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
           if (!e.target.closest('.nav') && !e.target.closest('.mobile-menu')) {
-            menu.classList.remove('open');
-            if (burger) burger.classList.remove('open');
+            mobileMenu.classList.remove('open');
+            if (burgerBtn) burgerBtn.classList.remove('open');
             document.body.style.overflow = '';
           }
         }
       });
+
+      // Nav shadow
       var nav = document.querySelector('.nav');
       if (nav) {
         window.addEventListener('scroll', function() {
           nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.06)' : 'none';
         });
       }
+
+      // Contact form
+      var form = document.querySelector('.contact-form');
+      if (form) {
+        var fi = form.querySelector('.file-input');
+        var fn = form.querySelector('.file-names');
+        if (fi && fn) {
+          fi.addEventListener('change', function() {
+            fn.textContent = Array.from(this.files).map(function(f){return f.name;}).join(', ');
+          });
+        }
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var btn = form.querySelector('.btn-submit');
+          btn.disabled = true;
+          btn.textContent = 'Enviando…';
+          fetch('https://form.bibparts.com/contact', {
+            method: 'POST',
+            body: new FormData(form)
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            if (data.ok) {
+              (form.closest('.contact-right') || form).innerHTML = '<p style="color:var(--green);font-size:1.1rem;padding:24px 0;">¡Gracias! Le responderemos en 1 día hábil.</p>';
+            } else {
+              btn.disabled = false;
+              btn.textContent = 'Enviar solicitud';
+              alert(data.error || 'Algo salió mal. Inténtelo de nuevo o escríbanos: info@bibparts.com');
+            }
+          })
+          .catch(function() {
+            btn.disabled = false;
+            btn.textContent = 'Enviar solicitud';
+            alert('Algo salió mal. Inténtelo de nuevo o escríbanos: info@bibparts.com');
+          });
+        });
+      }
+
     });
   </script>
 
 <script src="/assets/cookie-consent.js" defer></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed9dd6f387cc7e7',t:'MTc3NjQxMjUwMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9d94d8d7122',t:'MTc3NzQzOTMwMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f52142009d3c7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f65969b1d3a5426',t:'MTc3Nzg3NzYwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def7bc8c1542e',t:'MTc3ODEzMjkwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2a735cf3b6386',t:'MTc3ODg1MzQ2MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed9dd6f387cc7e7',t:'MTc3NjQxMjUwMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9d94d8d7122',t:'MTc3NzQzOTMwMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f52142009d3c7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a08e7b67dd8d7126',t:'MTc4MDk5MDc2Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

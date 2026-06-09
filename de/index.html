@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -36,7 +36,8 @@
     @font-face { font-family: 'Barlow Condensed'; font-display: block; }
     @font-face { font-family: 'DM Sans'; font-display: block; }
     @font-face { font-family: 'DM Mono'; font-display: block; }
-  </style>
+  .file-upload-wrap{display:flex;flex-direction:column;gap:6px;margin-top:4px}.file-label{display:inline-flex;align-items:center;cursor:pointer}.file-input{position:absolute;opacity:0;width:0;height:0;pointer-events:none}.file-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1.5px dashed #c9c5be;border-radius:6px;font-size:13px;color:#666;cursor:pointer;transition:border-color .2s,color .2s;white-space:nowrap}.file-btn:hover{border-color:#7ab07a;color:#333}.file-names{font-size:12px;color:#666;word-break:break-all;margin-top:4px}
+</style>
 
   <style>
     /* ── Reset & Base ── */
@@ -278,54 +279,6 @@
       .hero-left { padding: 28px 16px; }
       .stat { padding: 16px; }
     }
-    .home-form-success {
-      padding: 24px; background: var(--green-light);
-      border-radius: 8px; border: 0.5px solid rgba(29,158,117,0.25);
-      font-size: 14px; color: var(--green-dark); font-weight: 400; line-height: 1.6;
-      display: none;
-    }
-    .home-form-success.show { display: block; }
-    .home-form-error {
-      font-size: 13px; color: #e24b4a; background: #fff5f5;
-      border: 0.5px solid #f5c2c2; border-radius: 4px;
-      padding: 10px 14px; display: none; margin-top: 8px;
-    }
-    .home-form-error.show { display: block; }
-    .btn-primary:disabled { opacity: 0.65; cursor: not-allowed; }
-    .home-file-upload {
-      border: 0.5px dashed #c8c4be; border-radius: 6px;
-      background: #fff; position: relative; cursor: pointer; transition: border-color 0.15s;
-    }
-    .home-file-upload:hover { border-color: var(--green); }
-    .home-file-upload-inner { padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
-    .home-file-icon {
-      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
-      background: var(--green-light); display: flex; align-items: center; justify-content: center;
-      border: 0.5px solid rgba(29,158,117,0.2);
-    }
-    .home-file-icon svg { width: 16px; height: 16px; }
-    .home-file-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
-    .home-file-title { font-size: 13px; font-weight: 500; color: var(--black); }
-    .home-file-hint { font-size: 11px; color: #aaa; font-weight: 300; }
-    .home-file-btn {
-      font-size: 11px; font-weight: 500; color: var(--green);
-      border: 0.5px solid var(--green); border-radius: 3px; padding: 4px 10px;
-      background: transparent; white-space: nowrap; pointer-events: none;
-    }
-    .home-file-inp { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
-    .home-file-list { display: flex; flex-direction: column; gap: 3px; padding: 0 12px 10px; }
-    .home-file-item {
-      display: flex; align-items: center; justify-content: space-between;
-      font-family: 'DM Mono', monospace; font-size: 11px; color: #888;
-      background: #f5f4f2; border-radius: 3px; padding: 4px 8px;
-    }
-    .home-file-rm { background: none; border: none; color: #ccc; cursor: pointer; font-size: 13px; line-height: 1; padding: 0 0 0 6px; pointer-events: all; position: relative; z-index: 2; }
-    .home-file-rm:hover { color: #e24b4a; }
-    .home-form-success { padding: 24px; background: var(--green-light); border-radius: 8px; border: 0.5px solid rgba(29,158,117,0.25); font-size: 14px; color: var(--green-dark); font-weight: 400; line-height: 1.6; display: none; }
-    .home-form-success.show { display: block; }
-    .home-form-error { font-size: 13px; color: #e24b4a; background: #fff5f5; border: 0.5px solid #f5c2c2; border-radius: 4px; padding: 10px 14px; display: none; margin-top: 8px; }
-    .home-form-error.show { display: block; }
-    .btn-primary:disabled { opacity: 0.65; cursor: not-allowed; }
   </style>
 
   <script type="application/ld+json">
@@ -597,7 +550,7 @@
         <span class="contact-item">Baltikum · EU</span>
       </div>
     </div>
-    <form class="contact-form" id="home-contact-form" novalidate>
+    <form class="contact-form" name="contact-de" method="POST" enctype="multipart/form-data">
       <div class="form-row">
         <input class="inp" type="text" name="name" placeholder="Ihr Name" required>
         <input class="inp" type="text" name="company" placeholder="Unternehmen" required>
@@ -605,29 +558,15 @@
       <input class="inp" type="email" name="email" placeholder="E-Mail" required>
       <input class="inp" type="text" name="subject" placeholder="Betreff – Bearbeitung / Hydraulik / Pulvermetall">
       <textarea class="txa" name="message" placeholder="Beschreiben Sie Ihre Anforderungen…" required></textarea>
-      <div class="home-file-upload" id="home-file-area">
-        <div class="home-file-upload-inner">
-          <div class="home-file-icon">
-            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 2v10M5 6l4-4 4 4" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M2 13v1a2 2 0 002 2h10a2 2 0 002-2v-1" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="home-file-text">
-            <div class="home-file-title">Dateien ablegen oder klicken</div>
-            <div class="home-file-hint">DWG, DXF, STEP, PDF, Bilder, ZIP — bis zu 50 MB pro Datei</div>
-          </div>
-          <div class="home-file-btn">Dateien auswählen</div>
-        </div>
-        <div class="home-file-list" id="home-file-list"></div>
-        <input class="home-file-inp" type="file" id="home-file-input" name="files" multiple
-          accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.obj,.3mf,.xlsx,.xls,.docx,.doc,.txt,.csv,.zip,.rar,.7z,.tar,.gz,.png,.jpg,.jpeg,.gif,.webp,.tiff,.tif,.bmp,.svg"
-        >
+      <div class="file-upload-wrap">
+        <label class="file-label">
+          <input type="file" name="files" multiple accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.stl,.obj,.3mf,.ipt,.iam,.catpart,.catproduct,.prt,.asm,.x_t,.x_b,.jpg,.jpeg,.png,.gif,.webp,.tif,.tiff,.bmp,.svg,.doc,.docx,.xls,.xlsx,.txt,.csv,.zip,.rar,.7z" class="file-input">
+          <span class="file-btn">&#128206; Dateien anhängen</span>
+        </label>
+        <span class="file-names"></span>
       </div>
       <button type="submit" class="btn-primary" style="align-self:flex-start;">Anfrage senden</button>
     </form>
-    <div class="home-form-error"></div>
-    <div class="home-form-success"></div>
   </section>
 
   </main>
@@ -749,61 +688,6 @@
         }
       }
 
-      // HOME FORM
-      var homeForm = document.getElementById('home-contact-form');
-      var homeSuccess = document.querySelector('.home-form-success');
-      var homeError = document.querySelector('.home-form-error');
-      var homeFileInput = document.getElementById('home-file-input');
-      var homeFileList = document.getElementById('home-file-list');
-      var homeFiles = [];
-      if (homeFileInput && homeFileList) {
-        homeFileInput.addEventListener('change', function() {
-          Array.from(homeFileInput.files).forEach(function(f) {
-            if (homeFiles.length < 10 && !homeFiles.find(function(x) { return x.name === f.name && x.size === f.size; })) homeFiles.push(f);
-          });
-          homeFileInput.value = '';
-          renderHomeFiles();
-        });
-      }
-      function renderHomeFiles() {
-        if (!homeFileList) return;
-        homeFileList.innerHTML = '';
-        homeFiles.forEach(function(f, i) {
-          var item = document.createElement('div'); item.className = 'home-file-item';
-          var nm = document.createElement('span'); nm.textContent = f.name;
-          var rm = document.createElement('button'); rm.className = 'home-file-rm'; rm.type = 'button'; rm.textContent = '×';
-          rm.addEventListener('click', function(e) { e.stopPropagation(); homeFiles.splice(i, 1); renderHomeFiles(); });
-          item.appendChild(nm); item.appendChild(rm); homeFileList.appendChild(item);
-        });
-      }
-      if (homeForm) {
-        homeForm.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          var nameVal = homeForm.querySelector('[name="name"]').value.trim();
-          var emailVal = homeForm.querySelector('[name="email"]').value.trim();
-          if (!nameVal || !emailVal) { if (homeError) { homeError.textContent = 'Bitte füllen Sie Name und E-Mail aus.'; homeError.classList.add('show'); } return; }
-          var subjectEl = homeForm.querySelector('[name="subject_field"],[name="subject"]');
-          var subjectVal = subjectEl ? subjectEl.value.trim() : '';
-          var msgEl = homeForm.querySelector('[name="message"]');
-          var msgVal = msgEl ? msgEl.value.trim() : '';
-          var fd = new FormData();
-          fd.append('name', nameVal);
-          fd.append('company', homeForm.querySelector('[name="company"]').value.trim());
-          fd.append('email', emailVal);
-          fd.append('message', subjectVal ? subjectVal + '\n\n' + msgVal : msgVal);
-          homeFiles.forEach(function(f) { fd.append('files', f); });
-          var btn = homeForm.querySelector('.btn-primary');
-          if (btn) { btn.disabled = true; btn.textContent = 'Wird gesendet…'; }
-          if (homeError) homeError.classList.remove('show');
-          try {
-            var res = await fetch('https://form.bibparts.com/contact', { method: 'POST', body: fd });
-            var data = await res.json();
-            if (data.ok) { homeForm.style.display = 'none'; if (homeSuccess) { homeSuccess.textContent = 'Vielen Dank! Wir melden uns innerhalb eines Werktages bei Ihnen.'; homeSuccess.classList.add('show'); } }
-            else { if (homeError) { homeError.textContent = data.error || 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.'; homeError.classList.add('show'); } if (btn) { btn.disabled = false; btn.textContent = 'Anfrage senden'; } }
-          } catch (err) { if (homeError) { homeError.textContent = 'Verbindungsfehler. Bitte versuchen Sie es erneut.'; homeError.classList.add('show'); } if (btn) { btn.disabled = false; btn.textContent = 'Anfrage senden'; } }
-        });
-      }
-
       var nav = document.querySelector('.nav');
       if (nav) {
         window.addEventListener('scroll', function() {
@@ -812,9 +696,46 @@
       }
 
 
+      // Main page contact form
+      var mf = document.querySelector('.contact-form');
+      if (mf) {
+        var mfi = mf.querySelector('.file-input');
+        var mfn = mf.querySelector('.file-names');
+        if (mfi && mfn) {
+          mfi.addEventListener('change', function() {
+            mfn.textContent = Array.from(this.files).map(function(f){return f.name;}).join(', ');
+          });
+        }
+        mf.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var btn = mf.querySelector('[type="submit"]');
+          btn.disabled = true;
+          btn.textContent = 'Senden…';
+          fetch('https://form.bibparts.com/contact', {
+            method: 'POST',
+            body: new FormData(mf)
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            if (data.ok) {
+              mf.innerHTML = '<p style="color:var(--green,#2a7a2a);font-size:1.05rem;padding:24px 0;">Vielen Dank! Wir melden uns innerhalb eines Werktages bei Ihnen.</p>';
+            } else {
+              btn.disabled = false;
+              btn.textContent = 'Anfrage senden';
+              alert(data.error || 'Etwas ist schiefgelaufen. Bitte erneut versuchen oder schreiben Sie uns: info@bibparts.com');
+            }
+          })
+          .catch(function() {
+            btn.disabled = false;
+            btn.textContent = 'Anfrage senden';
+            alert('Etwas ist schiefgelaufen. Bitte erneut versuchen oder schreiben Sie uns: info@bibparts.com');
+          });
+        });
+      }
+
     });
   </script>
 
 <script src="/assets/cookie-consent.js" defer></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed9dd5698d27123',t:'MTc3NjQxMjQ5Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9c8df305436',t:'MTc3NzQzOTI5OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f52141d9939c7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f6596908882a1aa',t:'MTc3Nzg3NzYwMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f7def5a5cf15c27',t:'MTc3ODEzMjg5OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2c71808534dd3',t:'MTc3ODg1NDc2Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2d638fe2ac7da',t:'MTc3ODg1NTM4Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fc2e14d7fda542a',t:'MTc3ODg1NTg0MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed9dd5698d27123',t:'MTc3NjQxMjQ5Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3bc9c8df305436',t:'MTc3NzQzOTI5OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f52141d9939c7de',t:'MTc3NzY3MzAzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a08e7b303e30a1aa',t:'MTc4MDk5MDc1Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

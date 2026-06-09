@@ -1,4 +1,6 @@
+.git/
 worker.js
 wrangler.toml
 .assetsignore
 tools
+.wrangler/
