@@ -746,4 +746,67 @@
     <priority>0.3</priority>
   </url>
 
+
+  <!-- custom-gear-manufacturing -->
+  <url>
+    <loc>https://bibparts.com/en/blog/custom-gear-manufacturing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bibparts.com/de/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bibparts.com/es/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bibparts.com/de/blog/custom-gear-manufacturing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bibparts.com/de/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bibparts.com/es/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bibparts.com/es/blog/custom-gear-manufacturing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bibparts.com/de/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bibparts.com/es/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bibparts.com/fr/blog/custom-gear-manufacturing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bibparts.com/de/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bibparts.com/es/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bibparts.com/pl/blog/custom-gear-manufacturing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bibparts.com/de/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bibparts.com/es/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bibparts.com/fr/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bibparts.com/pl/blog/custom-gear-manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bibparts.com/en/blog/custom-gear-manufacturing/"/>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
